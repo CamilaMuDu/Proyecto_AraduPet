@@ -1,0 +1,827 @@
+/* =======================
+        AJUSTES GENERALES
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =======================
+         EL LOGO
+========================== */
+.logo {
+    width: 140px;
+    height: auto;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =======================
+        INICIO NAVBAR
+========================== */
+
+.navbar {
+    padding: 0;
+    background-color: rgb(20, 156, 79);
+}
+
+.navbar .container-fluid {
+    width: 100%;
+    background-color: rgb(20, 156, 79);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: 0.3s;
+    font-size: 19px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(0, 217, 255);
+}
+
+.navbar .navbar-nav .nav-link.active {
+    color: white;
+}
+
+.navbar .navbar-nav .nav-link.active:hover {
+    color: rgb(0, 217, 255);
+    ;
+}
+
+.dropdown-menu {
+    background-color: rgb(20, 156, 79) !important;
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.dropdown-menu .dropdown-item {
+    background-color: rgb(20, 156, 79) !important;
+    color: white !important;
+    padding: 12px 20px;
+    border: none;
+    transition: .3s;
+    font-size: 19px;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: rgb(20, 156, 79) !important;
+    color: rgb(0, 217, 255) !important;
+}
+
+.dropdown-divider {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, .7) !important;
+    opacity: 1;
+}
+
+.navbar .btn-outline-success {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.navbar .btn-outline-success:hover {
+    color: rgb(0, 217, 255);
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.navbar .btn-outline-success:focus,
+.navbar .btn-outline-success:active,
+.navbar .btn-outline-success:focus-visible {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    box-shadow: none;
+}
+
+.navbar .btn-outline-success:active:focus {
+    background-color: transparent;
+    border-color: white;
+    box-shadow: none;
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+/* =======================
+        FIN NAVBAR
+========================== */
+
+/* =======================
+        INICIO CAROUSEL
+========================== */
+.seccion-carousel {
+    background-color: #f8f9fa;
+    padding: 25px 15px;
+}
+
+.carousel-aradu {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-aradu .carousel-item {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: white;
+}
+
+.carousel-aradu .carousel-imagen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.carousel-aradu .carousel-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.28);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-aradu .carousel-caption {
+    z-index: 2;
+    bottom: 13%;
+}
+
+.carousel-aradu .carousel-caption h1 {
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-aradu .carousel-caption p {
+    color: white;
+    font-size: 18px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-aradu .btn-success {
+    padding: 10px 25px;
+    background-color: rgb(20, 156, 79);
+    border-color: rgb(20, 156, 79);
+}
+
+.carousel-aradu .btn-success:hover {
+    color: black;
+    background-color: rgb(0, 217, 255);
+    border-color: rgb(0, 217, 255);
+}
+
+.carousel-aradu .carousel-control-prev,
+.carousel-aradu .carousel-control-next {
+    z-index: 3;
+}
+
+.carousel-aradu .carousel-control-prev-icon,
+.carousel-aradu .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-aradu .carousel-indicators {
+    z-index: 3;
+}
+
+/*TABLET*/
+
+@media (max-width: 992px) {
+
+    .carousel-aradu {
+        max-width: 95%;
+    }
+
+    .carousel-aradu .carousel-caption h1 {
+        font-size: 30px;
+    }
+
+    .carousel-aradu .carousel-caption p {
+        font-size: 16px;
+    }
+}
+
+/*CELULAR*/
+
+@media (max-width: 768px) {
+
+    .seccion-carousel {
+        padding: 24px 22px;
+    }
+
+    .carousel-aradu {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    /*
+    Se mantiene 16:9 también en celular,
+    exactamente igual que en computadora.
+    */
+    .carousel-aradu .carousel-item {
+        aspect-ratio: 16 / 9;
+    }
+
+    .carousel-aradu .carousel-imagen {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    /*
+    Oculta el texto en celular para que quede
+    como en la segunda captura.
+    */
+    .carousel-aradu .carousel-caption {
+        display: none;
+    }
+
+    .carousel-aradu .carousel-control-prev-icon,
+    .carousel-aradu .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+/* =======================
+      FIN DEL CAROUSEL
+========================== */
+
+/* =================================
+           INICIO HISTORIA
+================================= */
+.historia {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.historia-card {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 45px;
+    background-color: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.historia-titulo {
+    margin-bottom: 40px;
+    color: #212529;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color:#149c4f;
+}
+
+.historia-content {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.historia-imagen-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.historia-img {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+
+.historia-descripcion {
+    width: 100%;
+}
+
+.historia-texto {
+    margin-bottom: 16px;
+    color: #444444;
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+
+.historia-objetivos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 35px;
+    margin-top: 30px;
+}
+
+
+.historia-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+    background-color: #f8f9fa;
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historia-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.10);
+}
+
+.historia-icono {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #16bde3;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+
+.historia-item h3 {
+    margin: 0 0 7px;
+    color: #212529;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.historia-item p {
+    margin: 0;
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* MÓVIL*/
+
+@media screen and (max-width: 768px) {
+
+    .historia {
+        padding: 35px 15px;
+    }
+
+    .historia-card {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .historia-titulo {
+        margin-bottom: 30px;
+        font-size: 27px;
+    }
+
+    .historia-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .historia-img {
+        max-width: 280px;
+    }
+
+    .historia-texto {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .historia-objetivos {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+/* =================================
+          FIN HISTORIA
+================================= */
+
+
+/* ============================
+        SECCIÓN CATEGORÍAS
+============================ */
+
+.seccion-categorias {
+    padding: 55px 0;
+    background-color: #ffffff;
+}
+
+/* Encabezado */
+.categorias-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.categorias-titulo {
+    margin: 0;
+    color: #161616;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/*
+Las flechas permanecen ocultas en computadora.
+Solo aparecerán en tablet y teléfono.
+*/
+.categorias-controles {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botones de las flechas */
+.categoria-flecha {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    color: #333333;
+    background-color: #eeeeee;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.categoria-flecha:hover {
+    color: white;
+    background-color: rgb(0, 217, 255);
+    transform: scale(1.08);
+}
+.categoria-flecha:disabled {
+    color: #999999;
+    background-color: #eeeeee;
+    cursor: default;
+    opacity: 0.55;
+    transform: none;
+}
+
+.categoria-flecha:disabled:hover {
+    color: #999999;
+    background-color: #eeeeee;
+    transform: none;
+}
+
+/* Caja exterior */
+.categorias-caja {
+    padding: 30px;
+
+    border: 1px solid #dedede;
+    border-radius: 6px;
+
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Lista horizontal */
+.categorias-lista {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 28px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: auto;
+    scroll-snap-type: x proximity;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra horizontal */
+.categorias-lista::-webkit-scrollbar {
+    display: none;
+}
+
+/*
+En computadora aparecen las cinco categorías
+en una sola fila.
+*/
+.categoria-card {
+    flex: 0 0 calc((100% - 112px) / 5);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+/* Enlace de la tarjeta */
+.categoria-enlace {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Imagen */
+.categoria-imagen {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 6px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Efecto al pasar el mouse */
+.categoria-enlace:hover .categoria-imagen {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+/* Nombre */
+.categoria-nombre {
+    margin: 18px 0 8px;
+
+    color: #111111;
+    font-size: 18px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.categoria-enlace:hover .categoria-nombre {
+    color: rgb(0, 217, 255);
+}
+
+/* Descripción */
+.categoria-cantidad {
+    margin: 0;
+
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/* ============================
+             TABLET
+============================ */
+
+@media screen and (max-width: 992px) {
+
+    /*
+    Las flechas aparecen en tablet.
+    */
+    .categorias-controles {
+        display: flex;
+    }
+
+    .categorias-lista {
+        gap: 20px;
+        overflow-x: hidden;
+    }
+
+    /*
+    Se muestran exactamente dos categorías.
+    */
+    .categoria-card {
+        flex: 0 0 calc((100% - 20px) / 2);
+        min-width: 0;
+    }
+}
+
+
+/* ============================
+            TELÉFONO
+============================ */
+
+@media screen and (max-width: 768px) {
+
+    .seccion-categorias {
+        padding: 40px 12px;
+    }
+
+    .seccion-categorias .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .categorias-encabezado {
+        margin-bottom: 16px;
+    }
+
+    .categorias-titulo {
+        font-size: 22px;
+    }
+
+    .categorias-controles {
+        display: flex;
+        gap: 8px;
+    }
+
+    .categoria-flecha {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .categorias-caja {
+        padding: 18px;
+    }
+
+    .categorias-lista {
+        gap: 16px;
+        overflow-x: hidden;
+    }
+
+    /*
+    Dos categorías visibles en teléfono.
+    */
+    .categoria-card {
+        flex: 0 0 calc((100% - 16px) / 2);
+        min-width: 0;
+    }
+
+    .categoria-nombre {
+        margin-top: 13px;
+        font-size: 17px;
+    }
+
+    .categoria-cantidad {
+        font-size: 14px;
+    }
+}
+
+
+/* ============================
+        TELÉFONO PEQUEÑO
+============================ */
+
+@media screen and (max-width: 480px) {
+
+    .seccion-categorias {
+        padding: 35px 11px;
+    }
+
+    .categorias-titulo {
+        font-size: 20px;
+    }
+
+    .categoria-flecha {
+        width: 34px;
+        height: 34px;
+    }
+
+    .categorias-caja {
+        padding: 16px;
+    }
+
+    .categorias-lista {
+        gap: 14px;
+    }
+
+    .categoria-card {
+        flex: 0 0 calc((100% - 14px) / 2);
+        min-width: 0;
+    }
+
+    .categoria-nombre {
+        margin-top: 12px;
+        font-size: 16px;
+    }
+
+    .categoria-cantidad {
+        font-size: 13px;
+    }
+}
+/* ============================
+       FIN SECCIÓN CATEGORÍAS
+============================ */
+
+
+/* ============================
+     INICIO MULTIMEDIA
+============================ */
+.multimedia {
+    background: #ffffff;
+}
+
+.multimedia h2 {
+    color: #149c4f;
+    font-weight: 700;
+}
+/* ============================
+        FIN MULTIMEDIA
+============================ */
+
+
+/*=============================
+        INICIO UBICACIÓN
+==============================*/
+.ubicacion h2 {
+    color: #149c4f;
+}
+
+.ubicacion iframe {
+    border-radius: 15px;
+}
+/*=============================
+        FIN UBICACIÓN
+==============================*/
+
+/*=============================
+        INICIO ACERCA DE 
+==============================*/
+.acerca {
+    background: #ffffff;
+}
+
+.acerca h2 {
+    color: #149c4f;
+}
+
+.acerca img {
+    max-width: 320px;
+    display: block;
+    margin: auto;
+}
+
+.acerca p {
+    line-height: 1.8;
+    text-align: justify;
+}
+/*=============================
+        FIN ACERCA DE
+==============================*/
+
+
+/* =======================
+        INICIO FOOTER
+========================== */
+footer a {
+    transition: .3s;
+}
+
+footer a:hover {
+    color: #0dcaf0 !important;
+    transform: translateX(5px);
+}
+
+footer p {
+    color: #d6d6d6;
+}
+/* =======================
+        FIN FOOTER
+========================== */
