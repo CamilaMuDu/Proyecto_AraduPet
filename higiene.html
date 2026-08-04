@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Higiene y Bienestar | Aradu Pet</title>
+
+    <!-- CSS exclusivo de higiene -->
+    <link rel="stylesheet" href="css/higiene.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="catalogo-higiene">
+
+            <div class="catalogo-contenedor">
+
+                <!--------------------------------
+                       ENCABEZADO
+                --------------------------------->
+
+                <div class="catalogo-encabezado">
+
+                    <h1 class="catalogo-titulo">
+                        Higiene y Bienestar
+                    </h1>
+
+                    <p class="catalogo-subtitulo">
+                        Encuentra productos para el cuidado, limpieza
+                        y bienestar de tu mascota.
+                    </p>
+
+                </div>
+
+
+                <!--------------------------------
+                     BOTONES PERRO Y GATO
+                --------------------------------->
+
+                <div class="filtros-mascota">
+
+                    <button
+                        type="button"
+                        class="boton-mascota activo"
+                        data-filtro="perro">
+
+                        Perro
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="boton-mascota"
+                        data-filtro="gato">
+
+                        Gato
+
+                    </button>
+
+                </div>
+
+
+                <!--------------------------------
+                       HERRAMIENTAS
+                --------------------------------->
+
+                <div class="catalogo-herramientas">
+
+                    <button
+                        type="button"
+                        class="boton-abrir-filtros"
+                        id="abrirFiltros">
+
+                        Filtros
+
+                    </button>
+
+                    <div class="herramientas-derecha">
+
+                        <p
+                            class="cantidad-productos"
+                            id="cantidadProductos">
+
+                            5 productos
+
+                        </p>
+
+                        <select
+                            class="ordenar-productos"
+                            id="ordenarProductos"
+                            aria-label="Ordenar productos de higiene">
+
+                            <option value="original">
+                                Orden predeterminado
+                            </option>
+
+                            <option value="az">
+                                Alfabéticamente, A-Z
+                            </option>
+
+                            <option value="za">
+                                Alfabéticamente, Z-A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!--------------------------------
+                       PANEL DE FILTROS
+                --------------------------------->
+
+                <aside
+                    class="panel-filtros"
+                    id="panelFiltros">
+
+                    <div class="panel-filtros-encabezado">
+
+                        <h2>
+                            Filtrar productos
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="boton-cerrar-filtros"
+                            id="cerrarFiltros"
+                            aria-label="Cerrar filtros">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="filtros-contenido">
+
+                        <!-- Tipo de producto -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Tipo de producto
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="shampoo"
+                                    class="filtro-tipo">
+
+                                Shampoo
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="cepillo"
+                                    class="filtro-tipo">
+
+                                Cepillo
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="toallas"
+                                    class="filtro-tipo">
+
+                                Toallas
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="colonia"
+                                    class="filtro-tipo">
+
+                                Colonia
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="higiene-oral"
+                                    class="filtro-tipo">
+
+                                Higiene oral
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Uso -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Uso
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="pelo"
+                                    class="filtro-uso">
+
+                                Pelo
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="piel"
+                                    class="filtro-uso">
+
+                                Piel
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="dientes"
+                                    class="filtro-uso">
+
+                                Dientes
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="patas"
+                                    class="filtro-uso">
+
+                                Patas
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="limpieza-general"
+                                    class="filtro-uso">
+
+                                Limpieza general
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="boton-limpiar-filtros"
+                        id="limpiarFiltros">
+
+                        Limpiar filtros
+
+                    </button>
+
+                </aside>
+
+
+                <!-- Fondo oscuro del panel -->
+                <div
+                    class="fondo-filtros"
+                    id="fondoFiltros">
+                </div>
+
+
+                <!--------------------------------
+                       CUADRÍCULA
+                --------------------------------->
+
+                <div
+                    class="productos-grid"
+                    id="productosGrid">
+
+
+                    <!-- PRODUCTO 1: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="shampoo"
+                        data-uso="pelo"
+                        data-nombre="Shampoo para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/HigieneBienestar/IMG_7489.jpg"
+                                alt="Shampoo para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Shampoo para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Producto para la limpieza y cuidado del pelaje.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 2: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="cepillo"
+                        data-uso="pelo"
+                        data-nombre="Cepillo para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/HigieneBienestar/IMG_7490.jpg"
+                                alt="Cepillo para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Cepillo para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Cepillo para desenredar y retirar pelo suelto.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 3: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="toallas"
+                        data-uso="limpieza-general"
+                        data-nombre="Toallas húmedas para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/HigieneBienestar/IMG_7491.jpg"
+                                alt="Toallas húmedas para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Toallas húmedas para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Toallas para limpieza rápida de patas y pelaje.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 4: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="colonia"
+                        data-uso="pelo"
+                        data-nombre="Colonia para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/HigieneBienestar/IMG_7492.jpg"
+                                alt="Colonia para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Colonia para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Colonia de aroma suave para después del baño.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 5: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="higiene-oral"
+                        data-uso="dientes"
+                        data-nombre="Cepillo dental para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/HigieneBienestar/IMG_7493.jpg"
+                                alt="Cepillo dental para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Cepillo dental para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Accesorio para apoyar la higiene bucal.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 1: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="shampoo"
+                        data-uso="pelo"
+                        data-nombre="Shampoo para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Higiene/gato/higiene-gato-01.jpg"
+                                alt="Shampoo para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Shampoo para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Producto para la limpieza y cuidado del pelaje.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 2: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="cepillo"
+                        data-uso="pelo"
+                        data-nombre="Cepillo para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Higiene/gato/higiene-gato-02.jpg"
+                                alt="Cepillo para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Cepillo para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Cepillo para retirar pelo suelto y mantener el pelaje.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 3: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="toallas"
+                        data-uso="limpieza-general"
+                        data-nombre="Toallas húmedas para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Higiene/gato/higiene-gato-03.jpg"
+                                alt="Toallas húmedas para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Toallas húmedas para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Toallas para una limpieza rápida y sencilla.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 4: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="higiene-oral"
+                        data-uso="dientes"
+                        data-nombre="Kit dental para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Higiene/gato/higiene-gato-04.jpg"
+                                alt="Kit dental para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Kit dental para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Kit básico para apoyar la higiene bucal.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 5: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="toallas"
+                        data-uso="patas"
+                        data-nombre="Limpiador de patas para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Higiene/gato/higiene-gato-05.jpg"
+                                alt="Limpiador de patas para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Limpiador de patas para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Producto para limpiar suavemente las patas.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Mensaje sin resultados -->
+                <div
+                    class="productos-vacios"
+                    id="productosVacios">
+
+                    No se encontraron productos con los filtros seleccionados.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript de higiene -->
+    <script src="js/higiene.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alimentos | Aradu Pet</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS de alimentos -->
+    <link rel="stylesheet" href="css/alimentos.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="catalogo-alimentos">
+
+            <div class="catalogo-contenedor">
+
+                <!--------------------------------
+                    ENCABEZADO
+                --------------------------------->
+
+                <div class="catalogo-encabezado">
+
+                    <h1 class="catalogo-titulo">
+                        Alimentos para mascotas
+                    </h1>
+
+                    <p class="catalogo-subtitulo">
+                        Encuentra alimentos para perros y gatos.
+                    </p>
+
+                </div>
+
+
+                <!--------------------------------
+                    BOTONES PERRO Y GATO
+                --------------------------------->
+
+                <div class="filtros-mascota">
+
+                    <button type="button" class="boton-mascota activo" data-filtro="perro">
+
+                        Perro
+
+                    </button>
+
+                    <button type="button" class="boton-mascota" data-filtro="gato">
+
+                        Gato
+
+                    </button>
+
+                </div>
+
+
+                <!--------------------------------
+                    HERRAMIENTAS
+                --------------------------------->
+
+                <div class="catalogo-herramientas">
+
+                    <button type="button" class="boton-abrir-filtros" id="abrirFiltros">
+
+                        Filtros
+
+                    </button>
+
+                    <div class="herramientas-derecha">
+
+                        <p class="cantidad-productos" id="cantidadProductos">
+
+                            6 productos
+
+                        </p>
+
+                        <select class="ordenar-productos" id="ordenarProductos" aria-label="Ordenar productos">
+
+                            <option value="original">
+                                Orden predeterminado
+                            </option>
+
+                            <option value="az">
+                                Alfabéticamente, A-Z
+                            </option>
+
+                            <option value="za">
+                                Alfabéticamente, Z-A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!--------------------------------
+                    FILTROS
+                --------------------------------->
+
+                <aside class="panel-filtros" id="panelFiltros">
+
+                    <div class="panel-filtros-encabezado">
+
+                        <h2>
+                            Filtrar productos
+                        </h2>
+
+                        <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
+                            aria-label="Cerrar filtros">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="filtros-contenido">
+
+
+
+                        <!-- Marca -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Marca
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="marca-a" class="filtro-marca">
+
+                                Marca A
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="marca-b" class="filtro-marca">
+
+                                Marca B
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="marca-c" class="filtro-marca">
+
+                                Marca C
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Etapa -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Etapa de vida
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="cachorro" class="filtro-etapa">
+
+                                Cachorro
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="adulto" class="filtro-etapa">
+
+                                Adulto
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="senior" class="filtro-etapa">
+
+                                Senior
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+
+                        Limpiar filtros
+
+                    </button>
+
+                </aside>
+
+
+                <!-- Fondo oscuro al abrir filtros -->
+                <div class="fondo-filtros" id="fondoFiltros">
+                </div>
+
+
+                <!--------------------------------
+                    PRODUCTOS
+                --------------------------------->
+
+                <div class="productos-grid" id="productosGrid">
+
+
+                    <!-- PRODUCTO PERRO 1 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-a" data-etapa="cachorro"
+                        data-nombre="Alimento para perro cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/4c9eb755-cbc2-44ba-b34e-6cc8962da6fd.JPG"
+                                alt="Alimento para perro cachorro" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para perro cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO PERRO 2 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-a" data-etapa="adulto"
+                        data-nombre="Alimento para perro adulto">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/bb39adc1-9a05-4ef4-b145-2122be9bafd6.JPG"
+                                alt="Alimento para perro adulto" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para perro adulto
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO PERRO 3 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-b" data-etapa="adulto"
+                        data-nombre="Alimento premium para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/dc8d3307-f7be-4ab4-8c83-8eedd4fbbfe7.JPG"
+                                alt="Alimento premium para perro" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento premium para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO PERRO 4 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-b" data-etapa="senior"
+                        data-nombre="Alimento para perro senior">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7442.jpg" alt="Alimento para perro senior"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para perro senior
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO PERRO 5 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="adulto"
+                        data-nombre="Alimento especial para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+
+
+                            <img src="img/AlimentosPerro/IMG_7443.jpg" alt="Alimento especial para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento especial para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver Producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO PERRO 6 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7444.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 7-->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7445.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 8 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7447.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 9 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7448.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 10 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7449.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 11 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7450.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 12 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7451.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- PRODUCTO PERRO 13 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7452.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 14 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7453.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 15 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7454.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 16 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7463.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 17 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7464.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 18 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7465.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 19 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7466.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 20 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7467.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 21 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7468.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 22 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7469.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 23 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7470.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 24 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/IMG_7471.jpg" alt="Alimento completo para cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!------------------------------
+                     ALIMENTOS PARA GATO
+                    --------------------------------->
+
+                    <!-- PRODUCTO GATO 1 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-a" data-etapa="cachorro"
+                        data-nombre="Alimento para gato cachorro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7455.jpg" alt="Alimento para gato cachorro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para gato cachorro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO GATO 2 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-a" data-etapa="adulto"
+                        data-nombre="Alimento para gato adulto">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7456.jpg" alt="Alimento para gato adulto"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para gato adulto
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO GATO 3 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-b" data-etapa="adulto"
+                        data-nombre="Alimento premium para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7457.jpg" alt="Alimento premium para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento premium para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO GATO 4 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-b" data-etapa="senior"
+                        data-nombre="Alimento para gato senior">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7458.jpg" alt="Alimento para gato senior"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para gato senior
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO GATO 5 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="adulto"
+                        data-nombre="Alimento especial para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+
+
+                            <img src="img/AlimentosGato/IMG_7459.jpg" alt="Alimento especial para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento especial para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver Producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO GATO 6 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para gatito">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7460.jpg" alt="Alimento completo para gatito"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para gatito
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                 <!-- PRODUCTO GATO 7 -->
+                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="cachorro"
+                        data-nombre="Alimento completo para gatito">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosGato/IMG_7462.jpg" alt="Alimento completo para gatito"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento completo para gatito
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Agrega aquí una descripción breve del producto.
+                            </p>
+
+
+                            <button type="button" class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- Sin resultados -->
+                <div class="productos-vacios" id="productosVacios">
+
+                    No se encontraron productos con los filtros seleccionados.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="js/alimentos.js"></script>
+
+</body>
+
+</html>

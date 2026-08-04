@@ -6,9 +6,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CatalogoAraduPet</title>
+    <title>Catálogo | AraduPet</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/alimentos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -72,10 +73,25 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
+                    <div class="buscador-contenedor">
+
+                        <form class="d-flex buscador-formulario" id="formularioBusqueda" role="search">
+
+                            <input class="form-control me-2" id="campoBusqueda" type="search" placeholder="Buscar"
+                                aria-label="Buscar productos o secciones" autocomplete="off">
+
+                            <button class="btn btn-outline-success" type="submit">
+
+                                Buscar
+
+                            </button>
+
+                        </form>
+
+                        <div class="buscador-sugerencias" id="sugerenciasBusqueda">
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </nav>
@@ -222,12 +238,10 @@
 
             <div class="historia-content">
 
-                <!-- Imagen de la veterinaria -->
                 <div class="historia-imagen-contenedor">
                     <img src="img/historia.png" alt="Historia del emprendimiento Aradu Pet" class="historia-img">
                 </div>
 
-                <!-- Información -->
                 <div class="historia-descripcion">
 
                     <p class="historia-texto">
@@ -238,7 +252,6 @@
                         Desde nuestros inicios hemos trabajado con un propósito muy claro: brindar productos de calidad,
                         asesoría personalizada y un servicio cercano, porque entendemos que las mascotas son mucho más
                         que animales de compañía; son parte de la familia.
-
                     </p>
 
                     <p class="historia-texto">
@@ -248,7 +261,6 @@
                         veterinaria, atendido por un médico veterinario de nuestra propia familia. Esto nos permite
                         ofrecer un cuidado integral, desde la prevención hasta la atención médica, todo en un mismo
                         lugar.
-
                     </p>
 
                     <div class="historia-objetivos">
@@ -291,20 +303,18 @@
 
 
     <!-------------------------------
-            INICIO PRODUCTOS GENERALES
+        INICIO PRODUCTOS GENERALES
     -------------------------------->
     <section id="categorias" class="seccion-categorias">
 
         <div class="container">
 
-            <!-- Encabezado -->
             <div class="categorias-encabezado">
 
                 <h2 class="categorias-titulo">
                     Productos Generales
                 </h2>
 
-                <!-- Flechas -->
                 <div class="categorias-controles">
 
                     <button type="button" class="categoria-flecha" id="categoriaAnterior"
@@ -325,7 +335,6 @@
 
             </div>
 
-            <!-- Contenedor de productos generales -->
             <div class="categorias-caja">
 
                 <div class="categorias-lista" id="listaCategorias">
@@ -436,7 +445,7 @@
 
     </section>
     <!-------------------------------
-            FIN PRODUCTOS GENERALES
+        FIN PRODUCTOS GENERALES
     -------------------------------->
 
     <!-------------------------------
@@ -557,14 +566,16 @@
                     </h2>
 
                     <p>
-                        Nos llena de orgullo poder ofrecer este servicio al alcance de nuestra comunidad, facilitando que
+                        Nos llena de orgullo poder ofrecer este servicio al alcance de nuestra comunidad, facilitando
+                        que
                         las familias de Villa Bonita y de las zonas cercanas encuentren atención profesional y de
                         calidad para sus mascotas sin tener que recorrer largas distancias.
 
                     </p>
 
                     <p>
-                        En Aradu Pet creemos que la confianza se construye con un trato humano, honesto y con compromiso.
+                        En Aradu Pet creemos que la confianza se construye con un trato humano, honesto y con
+                        compromiso.
                         Por eso, cada cliente y cada mascota que nos visita es recibido con respeto, calidez y la
                         dedicación que pondríamos en el cuidado de los nuestros.
 
@@ -584,7 +595,7 @@
 
     </section>
     <!-------------------------------
-        FIN ACERCA DE
+            FIN ACERCA DE
 -------------------------------->
 
     <!-------------------------------
@@ -592,7 +603,50 @@
     -------------------------------->
 
     <!-------------------------------
-        FIN HIPERVINCULO-CONTACTO
+        FIN HIPERVINCULO CONTACTO
+    -------------------------------->
+
+    <!-------------------------------
+          INICIO RESULTADOS
+    -------------------------------->
+    <section id="resultadosBusqueda" class="resultados-busqueda">
+
+        <div class="container">
+
+            <div class="resultados-encabezado">
+
+                <div>
+
+                    <h2 class="resultados-titulo">
+
+                        Resultados de búsqueda
+
+                    </h2>
+
+                    <p class="resultados-informacion" id="informacionResultados">
+
+                        Busca productos o secciones de Aradu Pet.
+
+                    </p>
+
+                </div>
+
+                <button type="button" class="btn-limpiar-busqueda" id="limpiarBusqueda">
+
+                    Limpiar resultados
+
+                </button>
+
+            </div>
+
+            <div class="resultados-lista" id="listaResultados">
+            </div>
+
+        </div>
+
+    </section>
+    <!-------------------------------
+           FIN RESULTADOS
     -------------------------------->
 
     <!-------------------------------
@@ -678,6 +732,7 @@
 
     <!-- JavaScript personalizado -->
     <script src="./js/logica.js"></script>
+    <script src="js/alimentos.js"></script>
 </body>
 
 </html>

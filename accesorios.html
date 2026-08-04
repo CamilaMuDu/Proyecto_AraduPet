@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Accesorios | Aradu Pet</title>
+
+    <!-- CSS exclusivo de accesorios -->
+    <link rel="stylesheet" href="css/accesorios.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="catalogo-accesorios">
+
+            <div class="catalogo-contenedor">
+
+                <!--------------------------------
+                       ENCABEZADO
+                --------------------------------->
+
+                <div class="catalogo-encabezado">
+
+                    <h1 class="catalogo-titulo">
+                        Accesorios
+                    </h1>
+
+                    <p class="catalogo-subtitulo">
+                        Encuentra accesorios para el cuidado,
+                        comodidad y bienestar de tu mascota.
+                    </p>
+
+                </div>
+
+
+                <!--------------------------------
+                     BOTONES PERRO Y GATO
+                --------------------------------->
+
+                <div class="filtros-mascota">
+
+                    <button
+                        type="button"
+                        class="boton-mascota activo"
+                        data-filtro="perro">
+
+                        Perro
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="boton-mascota"
+                        data-filtro="gato">
+
+                        Gato
+
+                    </button>
+
+                </div>
+
+
+                <!--------------------------------
+                       HERRAMIENTAS
+                --------------------------------->
+
+                <div class="catalogo-herramientas">
+
+                    <button
+                        type="button"
+                        class="boton-abrir-filtros"
+                        id="abrirFiltros">
+
+                        Filtros
+
+                    </button>
+
+                    <div class="herramientas-derecha">
+
+                        <p
+                            class="cantidad-productos"
+                            id="cantidadProductos">
+
+                            4 accesorios
+
+                        </p>
+
+                        <select
+                            class="ordenar-productos"
+                            id="ordenarProductos"
+                            aria-label="Ordenar accesorios">
+
+                            <option value="original">
+                                Orden predeterminado
+                            </option>
+
+                            <option value="az">
+                                Alfabéticamente, A-Z
+                            </option>
+
+                            <option value="za">
+                                Alfabéticamente, Z-A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!--------------------------------
+                       PANEL DE FILTROS
+                --------------------------------->
+
+                <aside
+                    class="panel-filtros"
+                    id="panelFiltros">
+
+                    <div class="panel-filtros-encabezado">
+
+                        <h2>
+                            Filtrar accesorios
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="boton-cerrar-filtros"
+                            id="cerrarFiltros"
+                            aria-label="Cerrar filtros">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="filtros-contenido">
+
+                        <!-- Tipo de accesorio -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Tipo de accesorio
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="collar"
+                                    class="filtro-tipo">
+
+                                Collar
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="correa"
+                                    class="filtro-tipo">
+
+                                Correa
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="cama"
+                                    class="filtro-tipo">
+
+                                Cama
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="comedero"
+                                    class="filtro-tipo">
+
+                                Comedero
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="transportadora"
+                                    class="filtro-tipo">
+
+                                Transportadora
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Material -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Material
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="nylon"
+                                    class="filtro-material">
+
+                                Nylon
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="tela"
+                                    class="filtro-material">
+
+                                Tela
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="plastico"
+                                    class="filtro-material">
+
+                                Plástico
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="metal"
+                                    class="filtro-material">
+
+                                Metal
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="cuero"
+                                    class="filtro-material">
+
+                                Cuero
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="boton-limpiar-filtros"
+                        id="limpiarFiltros">
+
+                        Limpiar filtros
+
+                    </button>
+
+                </aside>
+
+
+                <!-- Fondo oscuro del panel -->
+                <div
+                    class="fondo-filtros"
+                    id="fondoFiltros">
+                </div>
+
+
+                <!--------------------------------
+                       CUADRÍCULA
+                --------------------------------->
+
+                <div
+                    class="productos-grid"
+                    id="productosGrid">
+
+
+                    <!-- ACCESORIO 1: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="collar"
+                        data-material="nylon"
+                        data-nombre="Collar de nylon para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/perro/accesorio-perro-01.jpg"
+                                alt="Collar de nylon para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Collar de nylon para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Collar ajustable para paseos y uso diario.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 2: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="correa"
+                        data-material="nylon"
+                        data-nombre="Correa para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/perro/accesorio-perro-02.jpg"
+                                alt="Correa para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Correa para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Correa resistente para paseos seguros.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 3: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="cama"
+                        data-material="tela"
+                        data-nombre="Cama acolchada para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/perro/accesorio-perro-03.jpg"
+                                alt="Cama acolchada para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Cama acolchada para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Cama suave para el descanso de tu mascota.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 4: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="comedero"
+                        data-material="metal"
+                        data-nombre="Comedero metálico para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/perro/accesorio-perro-04.jpg"
+                                alt="Comedero metálico para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Comedero metálico para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Recipiente resistente para alimento o agua.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 5: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="transportadora"
+                        data-material="plastico"
+                        data-nombre="Transportadora para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/perro/accesorio-perro-05.jpg"
+                                alt="Transportadora para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Transportadora para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Transportadora para viajes y visitas veterinarias.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 1: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="collar"
+                        data-material="nylon"
+                        data-nombre="Collar ajustable para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/gato/accesorio-gato-01.jpg"
+                                alt="Collar ajustable para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Collar ajustable para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Collar ligero y ajustable para gatos.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 2: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="cama"
+                        data-material="tela"
+                        data-nombre="Cama suave para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/gato/accesorio-gato-02.jpg"
+                                alt="Cama suave para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Cama suave para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Espacio cómodo para el descanso de tu gato.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 3: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="comedero"
+                        data-material="plastico"
+                        data-nombre="Comedero para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/gato/accesorio-gato-03.jpg"
+                                alt="Comedero para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Comedero para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Recipiente práctico para alimento o agua.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 4: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="transportadora"
+                        data-material="plastico"
+                        data-nombre="Transportadora para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/gato/accesorio-gato-04.jpg"
+                                alt="Transportadora para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Transportadora para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Transportadora segura para trasladar a tu gato.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACCESORIO 5: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="correa"
+                        data-material="cuero"
+                        data-nombre="Arnés con correa para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Accesorios/gato/accesorio-gato-05.jpg"
+                                alt="Arnés con correa para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Arnés con correa para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Arnés para paseos controlados y seguros.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Mensaje sin resultados -->
+                <div
+                    class="productos-vacios"
+                    id="productosVacios">
+
+                    No se encontraron accesorios con los filtros seleccionados.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript de accesorios -->
+    <script src="js/accesorios.js"></script>
+
+</body>
+
+</html>

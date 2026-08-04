@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Snacks | Aradu Pet</title>
+
+    <!-- CSS exclusivo de snacks -->
+    <link rel="stylesheet" href="css/snacks.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="catalogo-snacks">
+
+            <div class="catalogo-contenedor">
+
+                <!--------------------------------
+                       ENCABEZADO
+                --------------------------------->
+
+                <div class="catalogo-encabezado">
+
+                    <h1 class="catalogo-titulo">
+                        Snacks
+                    </h1>
+
+                    <p class="catalogo-subtitulo">
+                        Encuentra premios y bocadillos para consentir a tu mascota.
+                    </p>
+
+                </div>
+
+
+                <!--------------------------------
+                     BOTONES PERRO Y GATO
+                --------------------------------->
+
+                <div class="filtros-mascota">
+
+                    <button
+                        type="button"
+                        class="boton-mascota activo"
+                        data-filtro="perro">
+
+                        Perro
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="boton-mascota"
+                        data-filtro="gato">
+
+                        Gato
+
+                    </button>
+
+                </div>
+
+
+                <!--------------------------------
+                       HERRAMIENTAS
+                --------------------------------->
+
+                <div class="catalogo-herramientas">
+
+                    <button
+                        type="button"
+                        class="boton-abrir-filtros"
+                        id="abrirFiltros">
+
+                        Filtros
+
+                    </button>
+
+                    <div class="herramientas-derecha">
+
+                        <p
+                            class="cantidad-productos"
+                            id="cantidadProductos">
+
+                            5 snacks
+
+                        </p>
+
+                        <select
+                            class="ordenar-productos"
+                            id="ordenarProductos"
+                            aria-label="Ordenar snacks">
+
+                            <option value="original">
+                                Orden predeterminado
+                            </option>
+
+                            <option value="az">
+                                Alfabéticamente, A-Z
+                            </option>
+
+                            <option value="za">
+                                Alfabéticamente, Z-A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!--------------------------------
+                       PANEL DE FILTROS
+                --------------------------------->
+
+                <aside
+                    class="panel-filtros"
+                    id="panelFiltros">
+
+                    <div class="panel-filtros-encabezado">
+
+                        <h2>
+                            Filtrar snacks
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="boton-cerrar-filtros"
+                            id="cerrarFiltros"
+                            aria-label="Cerrar filtros">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="filtros-contenido">
+
+                        <!-- Tipo de snack -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Tipo de snack
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="galleta"
+                                    class="filtro-tipo">
+
+                                Galletas
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="premio"
+                                    class="filtro-tipo">
+
+                                Premios
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="hueso"
+                                    class="filtro-tipo">
+
+                                Huesos
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="carne"
+                                    class="filtro-tipo">
+
+                                Carnes
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="dental"
+                                    class="filtro-tipo">
+
+                                Snacks dentales
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Presentación -->
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Presentación
+                            </h3>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="bolsa"
+                                    class="filtro-presentacion">
+
+                                Bolsa
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="paquete"
+                                    class="filtro-presentacion">
+
+                                Paquete
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="unidad"
+                                    class="filtro-presentacion">
+
+                                Unidad
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input
+                                    type="checkbox"
+                                    value="frasco"
+                                    class="filtro-presentacion">
+
+                                Frasco
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="boton-limpiar-filtros"
+                        id="limpiarFiltros">
+
+                        Limpiar filtros
+
+                    </button>
+
+                </aside>
+
+
+                <!-- Fondo oscuro del panel -->
+                <div
+                    class="fondo-filtros"
+                    id="fondoFiltros">
+                </div>
+
+
+                <!--------------------------------
+                       CUADRÍCULA
+                --------------------------------->
+
+                <div
+                    class="productos-grid"
+                    id="productosGrid">
+
+
+                    <!-- SNACK 1: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="galleta"
+                        data-presentacion="bolsa"
+                        data-nombre="Galletas para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/perro/snack-perro-01.jpg"
+                                alt="Galletas para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Galletas para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Galletas crujientes para premiar a tu mascota.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 2: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="premio"
+                        data-presentacion="bolsa"
+                        data-nombre="Premios suaves para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/perro/snack-perro-02.jpg"
+                                alt="Premios suaves para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Premios suaves para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Bocadillos suaves ideales para entrenamiento.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 3: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="hueso"
+                        data-presentacion="unidad"
+                        data-nombre="Hueso masticable">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/perro/snack-perro-03.jpg"
+                                alt="Hueso masticable para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Hueso masticable
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Snack para masticar y entretener a tu perro.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 4: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="carne"
+                        data-presentacion="paquete"
+                        data-nombre="Tiras de carne para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/perro/snack-perro-04.jpg"
+                                alt="Tiras de carne para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Tiras de carne para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Bocadillos de carne para consentir a tu mascota.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 5: PERRO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="perro"
+                        data-tipo="dental"
+                        data-presentacion="bolsa"
+                        data-nombre="Snack dental para perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/perro/snack-perro-05.jpg"
+                                alt="Snack dental para perro"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Snack dental para perro
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Snack diseñado para apoyar la higiene dental.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 1: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="premio"
+                        data-presentacion="bolsa"
+                        data-nombre="Premios para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/gato/snack-gato-01.jpg"
+                                alt="Premios para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Premios para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Bocadillos pequeños para premiar a tu gato.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 2: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="carne"
+                        data-presentacion="paquete"
+                        data-nombre="Tiras de carne para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/gato/snack-gato-02.jpg"
+                                alt="Tiras de carne para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Tiras de carne para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Bocadillos de carne en pequeñas porciones.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 3: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="galleta"
+                        data-presentacion="bolsa"
+                        data-nombre="Galletas para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/gato/snack-gato-03.jpg"
+                                alt="Galletas para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Galletas para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Galletas pequeñas para complementar sus premios.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 4: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="premio"
+                        data-presentacion="frasco"
+                        data-nombre="Premios en frasco para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/gato/snack-gato-04.jpg"
+                                alt="Premios en frasco para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Premios en frasco para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Premios prácticos para almacenar y servir.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 5: GATO -->
+                    <article
+                        class="producto-card"
+                        data-mascota="gato"
+                        data-tipo="dental"
+                        data-presentacion="bolsa"
+                        data-nombre="Snack dental para gato">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img
+                                src="img/Snacks/gato/snack-gato-05.jpg"
+                                alt="Snack dental para gato"
+                                class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Gato
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Snack dental para gato
+                            </h2>
+
+                            <p class="producto-descripcion">
+                                Snack crujiente para apoyar su higiene oral.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="producto-boton">
+
+                                Ver producto
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Mensaje sin resultados -->
+                <div
+                    class="productos-vacios"
+                    id="productosVacios">
+
+                    No se encontraron snacks con los filtros seleccionados.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript de snacks -->
+    <script src="js/snacks.js"></script>
+
+</body>
+
+</html>
