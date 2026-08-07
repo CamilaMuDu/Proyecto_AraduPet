@@ -5,13 +5,10 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Snacks | Aradu Pet</title>
 
-    <!-- CSS exclusivo de snacks -->
     <link rel="stylesheet" href="css/snacks.css">
 
 </head>
@@ -40,44 +37,13 @@
 
                 </div>
 
-
-                <!--------------------------------
-                     BOTONES PERRO Y GATO
-                --------------------------------->
-
-                <div class="filtros-mascota">
-
-                    <button
-                        type="button"
-                        class="boton-mascota activo"
-                        data-filtro="perro">
-
-                        Perro
-
-                    </button>
-
-                    <button
-                        type="button"
-                        class="boton-mascota"
-                        data-filtro="gato">
-
-                        Gato
-
-                    </button>
-
-                </div>
-
-
                 <!--------------------------------
                        HERRAMIENTAS
                 --------------------------------->
 
                 <div class="catalogo-herramientas">
 
-                    <button
-                        type="button"
-                        class="boton-abrir-filtros"
-                        id="abrirFiltros">
+                    <button type="button" class="boton-abrir-filtros" id="abrirFiltros">
 
                         Filtros
 
@@ -85,18 +51,13 @@
 
                     <div class="herramientas-derecha">
 
-                        <p
-                            class="cantidad-productos"
-                            id="cantidadProductos">
+                        <p class="cantidad-productos" id="cantidadProductos">
 
                             5 snacks
 
                         </p>
 
-                        <select
-                            class="ordenar-productos"
-                            id="ordenarProductos"
-                            aria-label="Ordenar snacks">
+                        <select class="ordenar-productos" id="ordenarProductos" aria-label="Ordenar snacks">
 
                             <option value="original">
                                 Orden predeterminado
@@ -121,9 +82,7 @@
                        PANEL DE FILTROS
                 --------------------------------->
 
-                <aside
-                    class="panel-filtros"
-                    id="panelFiltros">
+                <aside class="panel-filtros" id="panelFiltros">
 
                     <div class="panel-filtros-encabezado">
 
@@ -131,10 +90,7 @@
                             Filtrar snacks
                         </h2>
 
-                        <button
-                            type="button"
-                            class="boton-cerrar-filtros"
-                            id="cerrarFiltros"
+                        <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
                             ×
@@ -155,10 +111,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="galleta"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="galleta" class="filtro-tipo">
 
                                 Galletas
 
@@ -166,10 +119,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="premio"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="premio" class="filtro-tipo">
 
                                 Premios
 
@@ -177,10 +127,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="hueso"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="hueso" class="filtro-tipo">
 
                                 Huesos
 
@@ -188,10 +135,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="carne"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="carne" class="filtro-tipo">
 
                                 Carnes
 
@@ -199,10 +143,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="dental"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="dental" class="filtro-tipo">
 
                                 Snacks dentales
 
@@ -220,10 +161,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="bolsa"
-                                    class="filtro-presentacion">
+                                <input type="checkbox" value="bolsa" class="filtro-presentacion">
 
                                 Bolsa
 
@@ -231,10 +169,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="paquete"
-                                    class="filtro-presentacion">
+                                <input type="checkbox" value="paquete" class="filtro-presentacion">
 
                                 Paquete
 
@@ -242,10 +177,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="unidad"
-                                    class="filtro-presentacion">
+                                <input type="checkbox" value="unidad" class="filtro-presentacion">
 
                                 Unidad
 
@@ -253,10 +185,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="frasco"
-                                    class="filtro-presentacion">
+                                <input type="checkbox" value="frasco" class="filtro-presentacion">
 
                                 Frasco
 
@@ -267,10 +196,7 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="boton-limpiar-filtros"
-                        id="limpiarFiltros">
+                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
                         Limpiar filtros
 
@@ -280,9 +206,7 @@
 
 
                 <!-- Fondo oscuro del panel -->
-                <div
-                    class="fondo-filtros"
-                    id="fondoFiltros">
+                <div class="fondo-filtros" id="fondoFiltros">
                 </div>
 
 
@@ -290,24 +214,15 @@
                        CUADRÍCULA
                 --------------------------------->
 
-                <div
-                    class="productos-grid"
-                    id="productosGrid">
+                <div class="productos-grid" id="productosGrid">
 
 
                     <!-- SNACK 1: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="galleta"
-                        data-presentacion="bolsa"
-                        data-nombre="Galletas para perro">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/perro/snack-perro-01.jpg"
-                                alt="Galletas para perro"
+                            <img src="img/Snacks/34d599e3-22af-4770-bd5d-e4b4a0840acc.JPG" alt="Helado de carne"
                                 class="producto-imagen">
 
                         </div>
@@ -319,39 +234,24 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Galletas para perro
+                                Helado de carne
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Galletas crujientes para premiar a tu mascota.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- SNACK 2: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="premio"
-                        data-presentacion="bolsa"
-                        data-nombre="Premios suaves para perro">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/perro/snack-perro-02.jpg"
-                                alt="Premios suaves para perro"
+                            <img src="img/Snacks/4315a07e-c3e9-4191-af8b-741351e5ed39.JPG" alt="Bites concelados"
                                 class="producto-imagen">
 
                         </div>
@@ -363,40 +263,24 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Premios suaves para perro
+                                Bites congelados
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Bocadillos suaves ideales para entrenamiento.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- SNACK 3: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="hueso"
-                        data-presentacion="unidad"
-                        data-nombre="Hueso masticable">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/perro/snack-perro-03.jpg"
-                                alt="Hueso masticable para perro"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7472.jpg" alt="Bully Strap" class="producto-imagen">
 
                         </div>
 
@@ -407,40 +291,24 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Hueso masticable
+                                Bully Strap
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Snack para masticar y entretener a tu perro.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- SNACK 4: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="carne"
-                        data-presentacion="paquete"
-                        data-nombre="Tiras de carne para perro">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/perro/snack-perro-04.jpg"
-                                alt="Tiras de carne para perro"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7473.jpg" alt="Chicken Fingers 6 unidades" class="producto-imagen">
 
                         </div>
 
@@ -451,39 +319,24 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Tiras de carne para perro
+                                Chicken Fingers 6 unidades
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Bocadillos de carne para consentir a tu mascota.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- SNACK 5: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="dental"
-                        data-presentacion="bolsa"
-                        data-nombre="Snack dental para perro">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/perro/snack-perro-05.jpg"
-                                alt="Snack dental para perro"
+                            <img src="img/Snacks/IMG_7474.jpg" alt="Chicken Fingers 15 unidades"
                                 class="producto-imagen">
 
                         </div>
@@ -495,18 +348,97 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Snack dental para perro
+                                Chicken Fingers 15 unidades
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Snack diseñado para apoyar la higiene dental.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
+                                Ver especificaciones
 
-                                Ver producto
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 6: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7475.jpg" alt="Suplemento Alimenticio" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Suplemento Alimenticio
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+                        </div>
+                    </article>
+
+
+                    <!-- SNACK 7: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7476.jpg" alt="Treats de salmón" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de salmón
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+                        </div>
+                    </article>
+
+
+                    <!-- SNACK 8: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7477.jpg" alt="Treats de pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
 
                             </button>
 
@@ -515,20 +447,187 @@
                     </article>
 
 
-                    <!-- SNACK 1: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="premio"
-                        data-presentacion="bolsa"
-                        data-nombre="Premios para gato">
+                    <!-- SNACK 9: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/gato/snack-gato-01.jpg"
-                                alt="Premios para gato"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7478.jpg" alt="Treats de cordero" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de cordero
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SNACK 10: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7479.jpg" alt="Treats de pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 11: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7480.jpg" alt="Steak suave" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Steak suave
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 12: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7481.jpg" alt="Treats de carne" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de carne
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 13: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7482.jpg" alt="Dentastix de pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Dentastix de pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 14: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7484.jpg" alt="Treats de carne" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Treats de carne
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 15: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7485.jpg" alt="Steak creamy" class="producto-imagen">
 
                         </div>
 
@@ -539,18 +638,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Premios para gato
+                                Steak creamy
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Bocadillos pequeños para premiar a tu gato.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -558,21 +651,302 @@
 
                     </article>
 
-
-                    <!-- SNACK 2: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="carne"
-                        data-presentacion="paquete"
-                        data-nombre="Tiras de carne para gato">
+                    <!-- SNACK 16: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/gato/snack-gato-02.jpg"
-                                alt="Tiras de carne para gato"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7486.jpg" alt="Galletas con relleno de mani" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Galletas con relleno de mani
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 17: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7487.jpg" alt="Dental treats" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Dental treats
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 18: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7488.jpg" alt="Dental treats" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Dental treats
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 19: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7527.jpg" alt="Steak de diferentes sabores" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Steak de diferentes sabores
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 20: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7528.jpg" alt="Hueso de carnaza" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Hueso de carnaza
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 21: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7529.jpg" alt="Tasty bone" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Teasty bone
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 22: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7530.jpg" alt="Hueso de carnaza" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Hueso de carnaza
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 23: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7531.jpg" alt="Hueso de carnaza" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Hueso de carnaza
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 24: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7532.jpg" alt="Higado deshidratado" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Higado deshidratado 
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 25: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7533.jpg" alt="Traqueas deshidratadas" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Traqueas deshidratadas
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- SNACK 26: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Snacks/IMG_7534.jpg" alt="Higado deshidratado" class="producto-imagen">
 
                         </div>
 
@@ -583,18 +957,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Tiras de carne para gato
+                                Higado deshidratado
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Bocadillos de carne en pequeñas porciones.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -602,43 +970,28 @@
 
                     </article>
 
-
-                    <!-- SNACK 3: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="galleta"
-                        data-presentacion="bolsa"
-                        data-nombre="Galletas para gato">
+                    <!-- SNACK 27: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/gato/snack-gato-03.jpg"
-                                alt="Galletas para gato"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7535.jpg" alt="Strips de cerdo" class="producto-imagen">
 
                         </div>
 
                         <div class="producto-informacion">
 
                             <span class="producto-etiqueta">
-                                Gato
+                                Perro
                             </span>
 
                             <h2 class="producto-nombre">
-                                Galletas para gato
+                                Strips de cerdo
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Galletas pequeñas para complementar sus premios.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -646,43 +999,28 @@
 
                     </article>
 
-
-                    <!-- SNACK 4: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="premio"
-                        data-presentacion="frasco"
-                        data-nombre="Premios en frasco para gato">
+                    <!-- SNACK 28: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/gato/snack-gato-04.jpg"
-                                alt="Premios en frasco para gato"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7536.jpg" alt="Oreja de cerdo deshidratada" class="producto-imagen">
 
                         </div>
 
                         <div class="producto-informacion">
 
                             <span class="producto-etiqueta">
-                                Gato
+                                Perro
                             </span>
 
                             <h2 class="producto-nombre">
-                                Premios en frasco para gato
+                                Oreja de cerdo deshidratada
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Premios prácticos para almacenar y servir.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -690,66 +1028,44 @@
 
                     </article>
 
-
-                    <!-- SNACK 5: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="dental"
-                        data-presentacion="bolsa"
-                        data-nombre="Snack dental para gato">
+                    <!-- SNACK 29: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Snacks/gato/snack-gato-05.jpg"
-                                alt="Snack dental para gato"
-                                class="producto-imagen">
+                            <img src="img/Snacks/IMG_7539.jpg" alt="Oreja de res deshidratada" class="producto-imagen">
 
                         </div>
 
                         <div class="producto-informacion">
 
                             <span class="producto-etiqueta">
-                                Gato
+                                Perro
                             </span>
 
                             <h2 class="producto-nombre">
-                                Snack dental para gato
+                                Oreja de res deshidratada   
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Snack crujiente para apoyar su higiene oral.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
                         </div>
 
                     </article>
+
+                    <!-- Mensaje sin resultados -->
+                    <div class="productos-vacios" id="productosVacios">
+
+                        No se encontraron snacks con los filtros seleccionados.
+
+                    </div>
 
                 </div>
-
-
-                <!-- Mensaje sin resultados -->
-                <div
-                    class="productos-vacios"
-                    id="productosVacios">
-
-                    No se encontraron snacks con los filtros seleccionados.
-
-                </div>
-
-            </div>
-
         </section>
-
     </main>
 
 

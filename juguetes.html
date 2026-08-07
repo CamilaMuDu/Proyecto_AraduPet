@@ -5,13 +5,10 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Juguetes | Aradu Pet</title>
 
-    <!-- CSS exclusivo de juguetes -->
     <link rel="stylesheet" href="css/juguetes.css">
 
 </head>
@@ -40,44 +37,9 @@
 
                 </div>
 
-
-                <!--------------------------------
-                     BOTONES PERRO Y GATO
-                --------------------------------->
-
-                <div class="filtros-mascota">
-
-                    <button
-                        type="button"
-                        class="boton-mascota activo"
-                        data-filtro="perro">
-
-                        Perro
-
-                    </button>
-
-                    <button
-                        type="button"
-                        class="boton-mascota"
-                        data-filtro="gato">
-
-                        Gato
-
-                    </button>
-
-                </div>
-
-
-                <!--------------------------------
-                       HERRAMIENTAS
-                --------------------------------->
-
                 <div class="catalogo-herramientas">
 
-                    <button
-                        type="button"
-                        class="boton-abrir-filtros"
-                        id="abrirFiltros">
+                    <button type="button" class="boton-abrir-filtros" id="abrirFiltros">
 
                         Filtros
 
@@ -85,18 +47,13 @@
 
                     <div class="herramientas-derecha">
 
-                        <p
-                            class="cantidad-productos"
-                            id="cantidadProductos">
+                        <p class="cantidad-productos" id="cantidadProductos">
 
                             4 juguetes
 
                         </p>
 
-                        <select
-                            class="ordenar-productos"
-                            id="ordenarProductos"
-                            aria-label="Ordenar juguetes">
+                        <select class="ordenar-productos" id="ordenarProductos" aria-label="Ordenar juguetes">
 
                             <option value="original">
                                 Orden predeterminado
@@ -121,9 +78,7 @@
                        PANEL DE FILTROS
                 --------------------------------->
 
-                <aside
-                    class="panel-filtros"
-                    id="panelFiltros">
+                <aside class="panel-filtros" id="panelFiltros">
 
                     <div class="panel-filtros-encabezado">
 
@@ -131,10 +86,7 @@
                             Filtrar juguetes
                         </h2>
 
-                        <button
-                            type="button"
-                            class="boton-cerrar-filtros"
-                            id="cerrarFiltros"
+                        <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
                             ×
@@ -155,10 +107,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="mordedor"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="mordedor" class="filtro-tipo">
 
                                 Mordedor
 
@@ -166,10 +115,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="peluche"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="peluche" class="filtro-tipo">
 
                                 Peluche
 
@@ -177,10 +123,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="pelota"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="pelota" class="filtro-tipo">
 
                                 Pelota
 
@@ -188,10 +131,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="interactivo"
-                                    class="filtro-tipo">
+                                <input type="checkbox" value="interactivo" class="filtro-tipo">
 
                                 Interactivo
 
@@ -209,10 +149,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="goma"
-                                    class="filtro-material">
+                                <input type="checkbox" value="goma" class="filtro-material">
 
                                 Goma
 
@@ -220,10 +157,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="tela"
-                                    class="filtro-material">
+                                <input type="checkbox" value="tela" class="filtro-material">
 
                                 Tela
 
@@ -231,10 +165,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="cuerda"
-                                    class="filtro-material">
+                                <input type="checkbox" value="cuerda" class="filtro-material">
 
                                 Cuerda
 
@@ -242,10 +173,7 @@
 
                             <label class="filtro-opcion">
 
-                                <input
-                                    type="checkbox"
-                                    value="plastico"
-                                    class="filtro-material">
+                                <input type="checkbox" value="plastico" class="filtro-material">
 
                                 Plástico
 
@@ -256,10 +184,7 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="boton-limpiar-filtros"
-                        id="limpiarFiltros">
+                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
                         Limpiar filtros
 
@@ -269,9 +194,7 @@
 
 
                 <!-- Fondo oscuro del panel -->
-                <div
-                    class="fondo-filtros"
-                    id="fondoFiltros">
+                <div class="fondo-filtros" id="fondoFiltros">
                 </div>
 
 
@@ -279,24 +202,15 @@
                        CUADRÍCULA
                 --------------------------------->
 
-                <div
-                    class="productos-grid"
-                    id="productosGrid">
+                <div class="productos-grid" id="productosGrid">
 
 
                     <!-- JUGUETE 1: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="mordedor"
-                        data-material="goma"
-                        data-nombre="Mordedor verde">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7497.jpg"
-                                alt="Mordedor verde para perro"
+                            <img src="img/Juguetes/IMG_7497.jpg" alt="Mordedor verde para perro"
                                 class="producto-imagen">
 
                         </div>
@@ -311,36 +225,21 @@
                                 Mordedor verde
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete de goma para entretenimiento y estimulación.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- JUGUETE 2: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="mordedor"
-                        data-material="goma"
-                        data-nombre="Mordedor naranja">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7498.jpg"
-                                alt="Mordedor naranja para perro"
+                            <img src="img/Juguetes/IMG_7498.jpg" alt="Mordedor naranja para perro"
                                 class="producto-imagen">
 
                         </div>
@@ -355,36 +254,21 @@
                                 Mordedor naranja
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete resistente para morder y jugar.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- JUGUETE 3: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="peluche"
-                        data-material="tela"
-                        data-nombre="Peluche de cactus">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7499.jpg"
-                                alt="Peluche de cactus para perro"
+                            <img src="img/Juguetes/IMG_7499.jpg" alt="Peluche de cactus para perro"
                                 class="producto-imagen">
 
                         </div>
@@ -399,36 +283,21 @@
                                 Peluche de cactus
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Peluche suave para acompañar y entretener a tu mascota.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
 
                     <!-- JUGUETE 4: PERRO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="perro"
-                        data-tipo="peluche"
-                        data-material="cuerda"
-                        data-nombre="Conejo con cuerda">
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7500.jpg"
-                                alt="Conejo con cuerda para perro"
+                            <img src="img/Juguetes/IMG_7500.jpg" alt="Conejo con cuerda para perro"
                                 class="producto-imagen">
 
                         </div>
@@ -443,37 +312,20 @@
                                 Conejo con cuerda
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete de tela y cuerda para juegos de tirar.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
-
-                    <!-- JUGUETE 5: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="pelota"
-                        data-material="plastico"
-                        data-nombre="Pelota con cuerda">
+                    <!-- JUGUETE 5: Gato -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7501.jpg"
-                                alt="Pelota con cuerda para gato"
-                                class="producto-imagen">
+                            <img src="img/Juguetes/IMG_7501.jpg" alt="Cascabel con cuerda" class="producto-imagen">
 
                         </div>
 
@@ -484,40 +336,23 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Pelota con cuerda
+                                Cascabel con cuerda
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete para perseguir, atrapar y estimular el movimiento.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
-
-                    <!-- JUGUETE 6: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="interactivo"
-                        data-material="tela"
-                        data-nombre="Juguete interactivo de aves">
+                    <!-- JUGUETE 6: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7502.jpg"
-                                alt="Juguete interactivo para gato"
-                                class="producto-imagen">
+                            <img src="img/Juguetes/IMG_7502.jpg" alt="Raton de peluche" class="producto-imagen">
 
                         </div>
 
@@ -528,40 +363,23 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Juguete interactivo de aves
+                                Ratón de peluche
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete para estimular el instinto de caza.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
-
-                    <!-- JUGUETE 7: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="mordedor"
-                        data-material="cuerda"
-                        data-nombre="Pez de cuerda">
+                    <!-- JUGUETE 7: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7503.jpg"
-                                alt="Pez de cuerda para gato"
-                                class="producto-imagen">
+                            <img src="img/Juguetes/IMG_7503.jpg" alt="Pescado de cuerda" class="producto-imagen">
 
                         </div>
 
@@ -572,40 +390,50 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Pez de cuerda
+                                Conejo con cuerda
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Juguete de cuerda para rascar, morder y atrapar.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
 
-
-                    <!-- JUGUETE 8: GATO -->
-                    <article
-                        class="producto-card"
-                        data-mascota="gato"
-                        data-tipo="interactivo"
-                        data-material="goma"
-                        data-nombre="Figuras de alimentos">
+                    <!-- JUGUETE 8: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img
-                                src="img/Juguetes/IMG_7504.jpg"
-                                alt="Figuras de alimentos para gato"
-                                class="producto-imagen">
+                            <img src="img/Juguetes/IMG_7504.jpg" alt="Peluches de comida" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Peluches de comida
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- JUGUETE 8: PERRO -->
+                    <article class="producto-card" data-mascota="perro">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/Juguetes/IMG_7489.jpg" alt="Rascador" class="producto-imagen">
 
                         </div>
 
@@ -616,32 +444,21 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Figuras de alimentos
+                                Rascador
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Figuras pequeñas para juego y estimulación.
-                            </p>
+                            <button type="button" class="producto-boton">
 
-                            <button
-                                type="button"
-                                class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
-
                         </div>
-
                     </article>
-
                 </div>
 
 
                 <!-- Mensaje sin resultados -->
-                <div
-                    class="productos-vacios"
-                    id="productosVacios">
+                <div class="productos-vacios" id="productosVacios">
 
                     No se encontraron juguetes con los filtros seleccionados.
 
