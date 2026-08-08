@@ -78,22 +78,30 @@
                 </div>
 
 
-                <!--------------------------------
-                       PANEL DE FILTROS
-                --------------------------------->
+                <!-- ================================
+        PANEL DE FILTROS
+================================= -->
 
                 <aside class="panel-filtros" id="panelFiltros">
 
                     <div class="panel-filtros-encabezado">
 
-                        <h2>
-                            Filtrar snacks
-                        </h2>
+                        <div>
+
+                            <h2>
+                                Filtrar snacks
+                            </h2>
+
+                            <p>
+                                Encuentra lo que necesitas
+                            </p>
+
+                        </div>
 
                         <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
-                            ×
+                            &times;
 
                         </button>
 
@@ -102,92 +110,126 @@
 
                     <div class="filtros-contenido">
 
-                        <!-- Tipo de snack -->
+
+                        <!-- ==========================
+                MASCOTA
+        =========================== -->
+
                         <div class="grupo-filtro">
 
                             <h3>
-                                Tipo de snack
+                                Mascota
                             </h3>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="galleta" class="filtro-tipo">
+                                <input type="checkbox" value="perro" class="filtro-mascota">
 
-                                Galletas
+                                <span>
+                                    Perro
+                                </span>
 
                             </label>
 
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="premio" class="filtro-tipo">
-
-                                Premios
-
-                            </label>
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="hueso" class="filtro-tipo">
+                                <input type="checkbox" value="gato" class="filtro-mascota">
 
-                                Huesos
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="carne" class="filtro-tipo">
-
-                                Carnes
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="dental" class="filtro-tipo">
-
-                                Snacks dentales
+                                <span>
+                                    Gato
+                                </span>
 
                             </label>
 
                         </div>
 
 
-                        <!-- Presentación -->
+                        <!-- ==========================
+              TIPO DE SNACK
+        =========================== -->
+
                         <div class="grupo-filtro">
 
                             <h3>
-                                Presentación
+                                Tipo de snack
                             </h3>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="bolsa" class="filtro-presentacion">
+                                <input type="checkbox" value="premio" class="filtro-tipo">
 
-                                Bolsa
+                                <span>
+                                    Treats y premios
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="paquete" class="filtro-presentacion">
+                                <input type="checkbox" value="hueso" class="filtro-tipo">
 
-                                Paquete
+                                <span>
+                                    Huesos
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="unidad" class="filtro-presentacion">
+                                <input type="checkbox" value="dental" class="filtro-tipo">
 
-                                Unidad
+                                <span>
+                                    Dentales
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="frasco" class="filtro-presentacion">
+                                <input type="checkbox" value="deshidratado" class="filtro-tipo">
 
-                                Frasco
+                                <span>
+                                    Deshidratados
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="galleta" class="filtro-tipo">
+
+                                <span>
+                                    Galletas
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="carne" class="filtro-tipo">
+
+                                <span>
+                                    Snacks de carne
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="otros" class="filtro-tipo">
+
+                                <span>
+                                    Otros snacks
+                                </span>
 
                             </label>
 
@@ -196,16 +238,21 @@
                     </div>
 
 
-                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+                    <div class="filtros-acciones">
 
-                        Limpiar filtros
+                        <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
-                    </button>
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
 
                 </aside>
 
 
-                <!-- Fondo oscuro del panel -->
+                <!-- Fondo oscuro -->
+
                 <div class="fondo-filtros" id="fondoFiltros">
                 </div>
 
@@ -656,7 +703,8 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Snacks/IMG_7486.jpg" alt="Galletas con relleno de mani" class="producto-imagen">
+                            <img src="img/Snacks/IMG_7486.jpg" alt="Galletas con relleno de mani"
+                                class="producto-imagen">
 
                         </div>
 
@@ -743,7 +791,8 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Snacks/IMG_7527.jpg" alt="Steak de diferentes sabores" class="producto-imagen">
+                            <img src="img/Snacks/IMG_7527.jpg" alt="Steak de diferentes sabores"
+                                class="producto-imagen">
 
                         </div>
 
@@ -899,7 +948,7 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Higado deshidratado 
+                                Higado deshidratado
                             </h2>
 
                             <button type="button" class="producto-boton">
@@ -1004,7 +1053,8 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Snacks/IMG_7536.jpg" alt="Oreja de cerdo deshidratada" class="producto-imagen">
+                            <img src="img/Snacks/IMG_7536.jpg" alt="Oreja de cerdo deshidratada"
+                                class="producto-imagen">
 
                         </div>
 
@@ -1044,7 +1094,7 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Oreja de res deshidratada   
+                                Oreja de res deshidratada
                             </h2>
 
                             <button type="button" class="producto-boton">

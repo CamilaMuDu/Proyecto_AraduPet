@@ -9,10 +9,8 @@
 
     <title>Alimentos | Aradu Pet</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS de alimentos -->
     <link rel="stylesheet" href="css/alimentos.css">
 
 </head>
@@ -105,106 +103,383 @@
 
 
                 <!--------------------------------
-                    FILTROS
-                --------------------------------->
+        PANEL DE FILTROS
+--------------------------------->
 
                 <aside class="panel-filtros" id="panelFiltros">
 
+
+                    <!----------------------------
+        ENCABEZADO DEL PANEL
+    ----------------------------->
+
                     <div class="panel-filtros-encabezado">
 
-                        <h2>
-                            Filtrar productos
-                        </h2>
+
+                        <div>
+
+                            <h2>
+                                Filtrar alimentos
+                            </h2>
+
+                            <p>
+                                Encuentra lo que necesitas
+                            </p>
+
+                        </div>
+
 
                         <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
-                            ×
+                            &times;
 
                         </button>
+
 
                     </div>
 
 
+
+                    <!----------------------------
+        CONTENIDO DE FILTROS
+    ----------------------------->
+
                     <div class="filtros-contenido">
 
 
+                        <!-------------------------
+                MARCA
+        -------------------------->
 
-                        <!-- Marca -->
                         <div class="grupo-filtro">
+
 
                             <h3>
                                 Marca
                             </h3>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="marca-a" class="filtro-marca">
+                                <input type="checkbox" value="nutrisource" class="filtro-marca">
 
-                                Marca A
+                                <span>
+                                    NutriSource
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="balance" class="filtro-marca">
+
+                                <span>
+                                    Balance
+                                </span>
 
                             </label>
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="marca-b" class="filtro-marca">
+                                <input type="checkbox" value="duketas" class="filtro-marca">
 
-                                Marca B
+                                <span>
+                                    Duketas
+                                </span>
 
                             </label>
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="marca-c" class="filtro-marca">
+                                <input type="checkbox" value="purina" class="filtro-marca">
 
-                                Marca C
+                                <span>
+                                    Purina
+                                </span>
 
                             </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="superperro" class="filtro-marca">
+
+                                <span>
+                                    Super Perro
+                                </span>
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="totalnutrition" class="filtro-marca">
+
+                                <span>
+                                    Total Nutrition
+                                </span>
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="maxidog" class="filtro-marca">
+
+                                <span>
+                                    Maxi Dog
+                                </span>
+
+                            </label>
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="1stchoice" class="filtro-marca">
+
+                                <span>
+                                    1st Choice
+                                </span>
+
+                            </label>
+
+
+
+                            <!--
+            CUANDO AGREGUES OTRA MARCA:
+
+            <label class="filtro-opcion">
+
+                <input
+                    type="checkbox"
+                    value="nombre-marca"
+                    class="filtro-marca">
+
+                <span>
+                    Nombre de marca
+                </span>
+
+            </label>
+            -->
+
 
                         </div>
 
 
-                        <!-- Etapa -->
+
+                        <!-------------------------
+            TIPO DE ALIMENTO
+        -------------------------->
+
                         <div class="grupo-filtro">
+
+
+                            <h3>
+                                Tipo de alimento
+                            </h3>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="carne" class="filtro-tipo">
+
+                                <span>
+                                    Carne
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="pienso" class="filtro-tipo">
+
+                                <span>
+                                    Pienso
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+
+
+                        <!-------------------------
+            ETAPA DE VIDA
+        -------------------------->
+
+                        <div class="grupo-filtro">
+
 
                             <h3>
                                 Etapa de vida
                             </h3>
 
+
                             <label class="filtro-opcion">
 
                                 <input type="checkbox" value="cachorro" class="filtro-etapa">
 
-                                Cachorro
+                                <span>
+                                    Cachorro
+                                </span>
 
                             </label>
+
 
                             <label class="filtro-opcion">
 
                                 <input type="checkbox" value="adulto" class="filtro-etapa">
 
-                                Adulto
+                                <span>
+                                    Adulto
+                                </span>
 
                             </label>
+
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="senior" class="filtro-etapa">
+                                <input type="checkbox" value="adulto-mayor" class="filtro-etapa">
 
-                                Senior
+                                <span>
+                                    Adulto mayor
+                                </span>
 
                             </label>
 
+
                         </div>
+
+
+
+                        <!-------------------------
+            TAMAÑO / RAZA
+        -------------------------->
+
+                        <div class="grupo-filtro">
+
+
+                            <h3>
+                                Tamaño / raza
+                            </h3>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="pequena" class="filtro-raza">
+
+                                <span>
+                                    Raza pequeña
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="mediana" class="filtro-raza">
+
+                                <span>
+                                    Raza mediana
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="grande" class="filtro-raza">
+
+                                <span>
+                                    Raza grande
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+
+
+                        <!-------------------------
+                SABOR
+        -------------------------->
+
+                        <div class="grupo-filtro">
+
+
+                            <h3>
+                                Sabor
+                            </h3>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="pollo" class="filtro-sabor">
+
+                                <span>
+                                    Pollo
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="cordero" class="filtro-sabor">
+
+                                <span>
+                                    Cordero
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="salmon" class="filtro-sabor">
+
+                                <span>
+                                    Salmón
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="res" class="filtro-sabor">
+
+                                <span>
+                                    Res
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
 
                     </div>
 
 
-                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
-                        Limpiar filtros
+                    <!----------------------------
+        LIMPIAR FILTROS
+    ----------------------------->
 
-                    </button>
+                    <div class="filtros-acciones">
+
+
+                        <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+
+                            Limpiar filtros
+
+                        </button>
+
+
+                    </div>
+
 
                 </aside>
 
@@ -222,13 +497,11 @@
 
 
                     <!-- PRODUCTO PERRO 1 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-a" data-etapa="cachorro"
-                        data-nombre="Alimento para perro cachorro">
-
+                    <article class="producto-card" data-mascota="perro" data-tipo="carne" data-sabor="pollo">
                         <div class="producto-imagen-contenedor">
 
                             <img src="img/AlimentosPerro/4c9eb755-cbc2-44ba-b34e-6cc8962da6fd.JPG"
-                                alt="Alimento para perro cachorro" class="producto-imagen">
+                                alt="Alimento Barf de pollo tamaño grande" class="producto-imagen">
 
                         </div>
 
@@ -239,18 +512,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para perro cachorro
+                                Alimento Barf de pollo tamaño grande
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -260,13 +527,12 @@
 
 
                     <!-- PRODUCTO PERRO 2 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-a" data-etapa="adulto"
-                        data-nombre="Alimento para perro adulto">
+                    <article class="producto-card" data-mascota="perro" data-tipo="carne" data-sabor="cordero">
 
                         <div class="producto-imagen-contenedor">
 
                             <img src="img/AlimentosPerro/bb39adc1-9a05-4ef4-b145-2122be9bafd6.JPG"
-                                alt="Alimento para perro adulto" class="producto-imagen">
+                                alt="Alimento Barf de cordero tamaño grande" class="producto-imagen">
 
                         </div>
 
@@ -277,17 +543,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para perro adulto
+                                Alimento Barf de cordero tamaño grande
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -297,13 +558,12 @@
 
 
                     <!-- PRODUCTO PERRO 3 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-b" data-etapa="adulto"
-                        data-nombre="Alimento premium para perro">
+                    <article class="producto-card" data-mascota="perro" data-tipo="carne" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
                             <img src="img/AlimentosPerro/dc8d3307-f7be-4ab4-8c83-8eedd4fbbfe7.JPG"
-                                alt="Alimento premium para perro" class="producto-imagen">
+                                alt="Alimento Barf de pollo tamaño pequeño" class="producto-imagen">
 
                         </div>
 
@@ -314,18 +574,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento premium para perro
+                                Alimento Barf de pollo tamaño pequeño
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -335,12 +589,12 @@
 
 
                     <!-- PRODUCTO PERRO 4 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-b" data-etapa="senior"
-                        data-nombre="Alimento para perro senior">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-sabor="res">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7442.jpg" alt="Alimento para perro senior"
+                            <img src="img/AlimentosPerro/IMG_7442.jpg" alt="Alimento de carne y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -352,18 +606,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para perro senior
+                                Alimento de carne y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -373,14 +621,12 @@
 
 
                     <!-- PRODUCTO PERRO 5 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="adulto"
-                        data-nombre="Alimento especial para perro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-sabor="Cordero">
 
                         <div class="producto-imagen-contenedor">
 
-
-
-                            <img src="img/AlimentosPerro/IMG_7443.jpg" alt="Alimento especial para perro"
+                            <img src="img/AlimentosPerro/IMG_7443.jpg" alt="Alimento de cordero y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -392,18 +638,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento especial para perro
+                                Alimento de cordero y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver Producto
+                                Ver especificaciones
 
                             </button>
 
@@ -413,12 +653,12 @@
 
 
                     <!-- PRODUCTO PERRO 6 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7444.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7444.jpg" alt="Alimento de pollo y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -430,17 +670,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -449,12 +684,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 7-->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7445.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7445.jpg" alt="Alimento de pollo y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -466,17 +701,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -485,12 +715,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 8 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7447.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7447.jpg" alt="Alimento de pollo y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -502,17 +732,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -521,8 +746,8 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 9 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="salmon">
 
                         <div class="producto-imagen-contenedor">
 
@@ -538,17 +763,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de salmón
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
+                           <button type="button" class="producto-boton">
 
-
-                            <button type="button" class="producto-boton">
-
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -557,12 +777,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 10 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="NutriSource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7449.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7449.jpg" alt="Alimento de pollo y guisantes"
                                 class="producto-imagen">
 
                         </div>
@@ -574,17 +794,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo y guisantes
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -593,12 +808,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 11 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="salmon">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7450.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7450.jpg" alt="Alimento de cordero y guisantes"
                                 class="producto-imagen">
 
                         </div>
@@ -610,17 +825,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cordero y guisantes
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -629,12 +839,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 12 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7451.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7451.jpg" alt="Alimento para control de peso"
                                 class="producto-imagen">
 
                         </div>
@@ -646,29 +856,25 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento para control de peso
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
 
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUCTO PERRO 13 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7452.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7452.jpg" alt="Alimento de pollo y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -680,17 +886,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -699,12 +900,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 14 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="salmon">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7453.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7453.jpg" alt="Alimento de salmón y guisantes"
                                 class="producto-imagen">
 
                         </div>
@@ -716,17 +917,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de salmón y guisantes
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -735,12 +931,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 15 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-sabor="cordero">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7454.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7454.jpg" alt="Alimento de cordero con proteina"
                                 class="producto-imagen">
 
                         </div>
@@ -752,17 +948,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cordero con proteina 
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -771,12 +962,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 16 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="salmon pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7463.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7463.jpg" alt="Alimento de cerdo y pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -788,17 +979,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cerdo y pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -807,12 +993,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 17 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor=" cerdo pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7464.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7464.jpg" alt="Alimento de cerdo y pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -824,17 +1010,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cerdo y pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -843,12 +1024,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 18 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7465.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7465.jpg" alt="Alimento de chachorro de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -860,17 +1041,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de chachorro de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver espeficicaciones
 
                             </button>
 
@@ -879,12 +1055,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 19 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza=" mediana " data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7466.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7466.jpg" alt="Alimento de cachorro de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -896,17 +1072,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cachorro de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -915,12 +1086,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 20 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza=" mediana " data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7467.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7467.jpg" alt="Alimento para adulto de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -932,17 +1103,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento para adulto de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -951,12 +1117,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 21 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza=" mediana" data-sabor="cordero">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7468.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7468.jpg" alt="Alimento de codero"
                                 class="producto-imagen">
 
                         </div>
@@ -968,17 +1134,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de cordero
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -987,12 +1148,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 22 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7469.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7469.jpg" alt="Alimento de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -1004,17 +1165,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1023,12 +1179,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 23 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-raza="pequena" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7470.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7470.jpg" alt="Alimento de adulto mayor de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -1040,17 +1196,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de adulto mayor de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1059,12 +1210,12 @@
                     </article>
 
                     <!-- PRODUCTO PERRO 24 -->
-                    <article class="producto-card" data-mascota="perro" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para cachorro">
+                    <article class="producto-card" data-mascota="perro" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-raza="mediana" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosPerro/IMG_7471.jpg" alt="Alimento completo para cachorro"
+                            <img src="img/AlimentosPerro/IMG_7471.jpg" alt="Alimento de adulto mayor de pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -1076,17 +1227,632 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para cachorro
+                                Alimento de adulto mayor de pollo
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 25 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="duketas" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena mediana grande">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.57 (22).jpeg"
+                                alt="Alimento para Cachorro" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para cachorro
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 26 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="Purina" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.57 (23).jpeg"
+                                alt="Alimento de pollo para razaa mediana" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de pollo para raza mediana
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 27 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="duketas" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo res salmon cordero">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.57 (24).jpeg"
+                                alt="Alimento para adulto" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 28 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (1).jpeg"
+                                alt="Alimento de pavo para raza pequeña" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de pavo para raza pequeña
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 29 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (10).jpeg"
+                                alt="Alimento de pollo raza pequeña" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de pollo raza pequeña
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 30 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="salmon">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (11).jpeg"
+                                alt="Alimento de salmón para piel sensible" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de salmón para piel sensible
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 31 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="superperro" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (12).jpeg"
+                                alt="Alimento con higado de pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento con higado de pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 32 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="totalnutrition" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="cordero">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (13).jpeg"
+                                alt="Alimento de cordero y arroz" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de cordero y arroz
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 33 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="superperro" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="pollo res salmon cordero">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (14).jpeg"
+                                alt="Alimento para raza pequeña" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para raza pequeña
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 34 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="totalnutrition" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena mediana grande" data-sabor="cordero">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (15).jpeg"
+                                alt="Alimento de cordero y avena" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento de cordero y avena
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 35 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="maxidog" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena mediana grande" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (16).jpeg"
+                                alt="Alimento para cachorro sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para cachorro sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 36 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-raza=" mediana grande" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (2).jpeg"
+                                alt="Alimento para adulto mayor sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto mayor sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 37 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="1stchoice" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (3).jpeg"
+                                alt="Alimento para adulto sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 38 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena" data-sabor=" res pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (4).jpeg"
+                                alt="Alimento para cachorros con carne y pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para cachorros con carne y pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 39 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto" data-raza=" mediana grande" data-sabor="res pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (5).jpeg"
+                                alt="Alimento para adulto con carne y pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto con carne y pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 40 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="maxidog" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (6).jpeg"
+                                alt="Alimento para adulto sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 41 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="superperro" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="cordero">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (7).jpeg"
+                                alt="Alimento sabor cordero" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento sabor cordero
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 42 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto-mayor" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (8).jpeg"
+                                alt="Alimento para adulto mayor sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto mayor sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 43 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena" data-sabor="pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58 (9).jpeg"
+                                alt="Alimento para cachorro sabor a pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para cachorro sabor a pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PRODUCTO PERRO 44 -->
+                    <article class="producto-card" data-mascota="perro" data-marca="purina" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena" data-sabor=" res pollo">
+
+                        <div class="producto-imagen-contenedor">
+
+                            <img src="img/AlimentosPerro/WhatsApp Image 2026-08-06 at 12.10.58.jpeg"
+                                alt="Alimento para adulto con carne y pollo" class="producto-imagen">
+
+                        </div>
+
+                        <div class="producto-informacion">
+
+                            <span class="producto-etiqueta">
+                                Perro
+                            </span>
+
+                            <h2 class="producto-nombre">
+                                Alimento para adulto con carne y pollo
+                            </h2>
+
+                            <button type="button" class="producto-boton">
+
+                                Ver especificaciones
 
                             </button>
 
@@ -1099,12 +1865,12 @@
                     --------------------------------->
 
                     <!-- PRODUCTO GATO 1 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-a" data-etapa="cachorro"
-                        data-nombre="Alimento para gato cachorro">
+                    <article class="producto-card" data-mascota="gato" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="salmon">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7455.jpg" alt="Alimento para gato cachorro"
+                            <img src="img/AlimentosGato/IMG_7455.jpg" alt="Alimento de salmon y guisantes"
                                 class="producto-imagen">
 
                         </div>
@@ -1116,17 +1882,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para gato cachorro
+                                Alimento de salmón y guisantes
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1136,12 +1897,12 @@
 
 
                     <!-- PRODUCTO GATO 2 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-a" data-etapa="adulto"
-                        data-nombre="Alimento para gato adulto">
+                   <article class="producto-card" data-mascota="gato" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7456.jpg" alt="Alimento para gato adulto"
+                            <img src="img/AlimentosGato/IMG_7456.jpg" alt="Alimento de pollo y guisantes"
                                 class="producto-imagen">
 
                         </div>
@@ -1153,18 +1914,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para gato adulto
+                                Alimento de pollo y guisantes
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1174,12 +1929,12 @@
 
 
                     <!-- PRODUCTO GATO 3 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-b" data-etapa="adulto"
-                        data-nombre="Alimento premium para gato">
+                     <article class="producto-card" data-mascota="gato" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="salmon pollo ">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7457.jpg" alt="Alimento premium para gato"
+                            <img src="img/AlimentosGato/IMG_7457.jpg" alt="Alimento de pollo, salmón e higado"
                                 class="producto-imagen">
 
                         </div>
@@ -1191,17 +1946,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento premium para gato
+                                Alimento de pollo, salmón e higado
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1211,12 +1961,12 @@
 
 
                     <!-- PRODUCTO GATO 4 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-b" data-etapa="senior"
-                        data-nombre="Alimento para gato senior">
+                     <article class="producto-card" data-mascota="gato" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7458.jpg" alt="Alimento para gato senior"
+                            <img src="img/AlimentosGato/IMG_7458.jpg" alt="Alimento de pollo y arroz"
                                 class="producto-imagen">
 
                         </div>
@@ -1228,18 +1978,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento para gato senior
+                                Alimento de pollo y arroz
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1249,14 +1993,14 @@
 
 
                     <!-- PRODUCTO GATO 5 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="adulto"
-                        data-nombre="Alimento especial para gato">
+                    <article class="producto-card" data-mascota="gato" data-marca="nutrisource" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
 
 
-                            <img src="img/AlimentosGato/IMG_7459.jpg" alt="Alimento especial para gato"
+                            <img src="img/AlimentosGato/IMG_7459.jpg" alt="Alimento para control de peso"
                                 class="producto-imagen">
 
                         </div>
@@ -1268,18 +2012,12 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento especial para gato
+                                Alimento para control de peso
                             </h2>
-
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
-
 
                             <button type="button" class="producto-boton">
 
-                                Ver Producto
+                                Ver especificaciones
 
                             </button>
 
@@ -1289,12 +2027,12 @@
 
 
                     <!-- PRODUCTO GATO 6 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para gatito">
+                   <article class="producto-card" data-mascota="gato" data-marca="balance" data-tipo="pienso"
+                        data-etapa="cachorro" data-raza="pequena mediana grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7460.jpg" alt="Alimento completo para gatito"
+                            <img src="img/AlimentosGato/IMG_7460.jpg" alt="Alimento para gatito sabor a pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -1309,12 +2047,8 @@
                                 Alimento completo para gatito
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
                             <button type="button" class="producto-boton">
-                                Ver producto
+                                Ver especificaciones
                             </button>
 
                         </div>
@@ -1323,12 +2057,12 @@
 
 
                     <!-- PRODUCTO GATO 7 -->
-                    <article class="producto-card" data-mascota="gato" data-marca="marca-c" data-etapa="cachorro"
-                        data-nombre="Alimento completo para gatito">
+                    <article class="producto-card" data-mascota="gato" data-marca="balance" data-tipo="pienso"
+                        data-etapa="adulto" data-raza="pequena mediana grande" data-sabor="pollo">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/AlimentosGato/IMG_7462.jpg" alt="Alimento completo para gatito"
+                            <img src="img/AlimentosGato/IMG_7462.jpg" alt="Alimento sabor a pollo"
                                 class="producto-imagen">
 
                         </div>
@@ -1340,15 +2074,11 @@
                             </span>
 
                             <h2 class="producto-nombre">
-                                Alimento completo para gatito
+                                Alimento sabor a pollo
                             </h2>
 
-                            <p class="producto-descripcion">
-                                Agrega aquí una descripción breve del producto.
-                            </p>
-
                             <button type="button" class="producto-boton">
-                                Ver producto
+                                Ver especificaciones
                             </button>
 
                         </div>
@@ -1356,7 +2086,6 @@
                     </article>
 
                 </div>
-
 
 
                 <!-- Sin resultados -->
@@ -1373,7 +2102,6 @@
     </main>
 
 
-    <!-- JavaScript -->
     <script src="js/alimentos.js"></script>
 
 </body>

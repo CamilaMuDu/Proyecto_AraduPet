@@ -74,22 +74,31 @@
                 </div>
 
 
-                <!--------------------------------
-                       PANEL DE FILTROS
-                --------------------------------->
+                <!-- ================================
+        PANEL DE FILTROS
+================================= -->
 
                 <aside class="panel-filtros" id="panelFiltros">
 
                     <div class="panel-filtros-encabezado">
 
-                        <h2>
-                            Filtrar juguetes
-                        </h2>
+                        <div>
+
+                            <h2>
+                                Filtrar juguetes
+                            </h2>
+
+                            <p>
+                                Encuentra lo que necesitas
+                            </p>
+
+                        </div>
+
 
                         <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
-                            ×
+                            &times;
 
                         </button>
 
@@ -98,84 +107,104 @@
 
                     <div class="filtros-contenido">
 
-                        <!-- Tipo de juguete -->
+
+                        <!-- ==========================
+                MASCOTA
+        =========================== -->
+
                         <div class="grupo-filtro">
 
                             <h3>
-                                Tipo de juguete
+                                Mascota
                             </h3>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="mordedor" class="filtro-tipo">
+                                <input type="checkbox" value="perro" class="filtro-mascota">
 
-                                Mordedor
+                                <span>
+                                    Perro
+                                </span>
 
                             </label>
 
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="peluche" class="filtro-tipo">
-
-                                Peluche
-
-                            </label>
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="pelota" class="filtro-tipo">
+                                <input type="checkbox" value="gato" class="filtro-mascota">
 
-                                Pelota
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="interactivo" class="filtro-tipo">
-
-                                Interactivo
+                                <span>
+                                    Gato
+                                </span>
 
                             </label>
 
                         </div>
 
 
-                        <!-- Material -->
+                        <!-- ==========================
+             TIPO DE JUGUETE
+        =========================== -->
+
                         <div class="grupo-filtro">
 
                             <h3>
-                                Material
+                                Tipo de juguete
                             </h3>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="goma" class="filtro-material">
+                                <input type="checkbox" value="mordedor" class="filtro-tipo">
 
-                                Goma
+                                <span>
+                                    Mordedores
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="tela" class="filtro-material">
+                                <input type="checkbox" value="peluche" class="filtro-tipo">
 
-                                Tela
+                                <span>
+                                    Peluches
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="cuerda" class="filtro-material">
+                                <input type="checkbox" value="cuerda" class="filtro-tipo">
 
-                                Cuerda
+                                <span>
+                                    Juguetes con cuerda
+                                </span>
 
                             </label>
 
+
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="plastico" class="filtro-material">
+                                <input type="checkbox" value="rascador" class="filtro-tipo">
 
-                                Plástico
+                                <span>
+                                    Rascadores
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="otros" class="filtro-tipo">
+
+                                <span>
+                                    Otros juguetes
+                                </span>
 
                             </label>
 
@@ -184,16 +213,21 @@
                     </div>
 
 
-                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+                    <div class="filtros-acciones">
 
-                        Limpiar filtros
+                        <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
-                    </button>
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
 
                 </aside>
 
 
-                <!-- Fondo oscuro del panel -->
+                <!-- Fondo oscuro -->
+
                 <div class="fondo-filtros" id="fondoFiltros">
                 </div>
 

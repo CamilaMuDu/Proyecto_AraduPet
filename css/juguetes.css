@@ -56,48 +56,6 @@ body {
 }
 
 
-/* =================================
-        BOTONES PERRO Y GATO
-================================= */
-
-.filtros-mascota {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 28px;
-}
-
-.boton-mascota {
-    min-width: 130px;
-    padding: 11px 25px;
-
-    color: rgb(20, 156, 79);
-    background-color: #ffffff;
-
-    border: 2px solid rgb(20, 156, 79);
-    border-radius: 8px;
-
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.boton-mascota:hover {
-    color: #000000;
-    background-color: rgb(0, 217, 255);
-    border-color: rgb(0, 217, 255);
-    transform: translateY(-2px);
-}
-
-.boton-mascota.activo {
-    color: #ffffff;
-    background-color: rgb(20, 156, 79);
-    border-color: rgb(20, 156, 79);
-}
-
 
 /* =================================
             HERRAMIENTAS
@@ -258,9 +216,13 @@ body {
     cursor: pointer;
 }
 
+.filtros-acciones {
+    padding: 20px;
+}
+
 .boton-limpiar-filtros {
-    width: calc(100% - 40px);
-    margin: 20px;
+    width: 100%;
+    margin: 0;
     padding: 11px 15px;
 
     color: #ffffff;
@@ -276,6 +238,10 @@ body {
     transition: 0.3s;
 }
 
+.boton-limpiar-filtros:hover {
+    color: #000000;
+    background-color: rgb(0, 217, 255);
+}
 .boton-limpiar-filtros:hover {
     color: #000000;
     background-color: rgb(0, 217, 255);

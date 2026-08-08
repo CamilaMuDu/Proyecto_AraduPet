@@ -200,6 +200,11 @@ body {
 
     background-color: rgb(20, 156, 79);
 }
+.panel-filtros-encabezado p {
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 12px;
+}
 
 .panel-filtros-encabezado h2 {
     margin: 0;
@@ -258,8 +263,8 @@ body {
 }
 
 .boton-limpiar-filtros {
-    width: calc(100% - 40px);
-    margin: 20px;
+    width: 100%;
+    margin: 0;
     padding: 11px 15px;
 
     color: #ffffff;
@@ -270,6 +275,7 @@ body {
 
     font-size: 14px;
     font-weight: 700;
+
     cursor: pointer;
 
     transition: 0.3s;

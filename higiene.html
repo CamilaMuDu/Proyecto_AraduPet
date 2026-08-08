@@ -76,22 +76,30 @@
                 </div>
 
 
-                <!--------------------------------
-                       PANEL DE FILTROS
-                --------------------------------->
+                <!-- ================================
+        PANEL DE FILTROS
+================================= -->
 
                 <aside class="panel-filtros" id="panelFiltros">
 
                     <div class="panel-filtros-encabezado">
 
-                        <h2>
-                            Filtrar productos
-                        </h2>
+                        <div>
+
+                            <h2>
+                                Filtrar productos
+                            </h2>
+
+                            <p>
+                                Encuentra lo que necesitas
+                            </p>
+
+                        </div>
 
                         <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
-                            ×
+                            &times;
 
                         </button>
 
@@ -100,97 +108,144 @@
 
                     <div class="filtros-contenido">
 
+
+                        <!-- MASCOTA -->
+
+                        <div class="grupo-filtro">
+
+                            <h3>
+                                Mascota
+                            </h3>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="perro" class="filtro-mascota">
+
+                                <span>
+                                    Perro
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="gato" class="filtro-mascota">
+
+                                <span>
+                                    Gato
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- TIPO DE PRODUCTO -->
+
                         <div class="grupo-filtro">
 
                             <h3>
                                 Tipo de producto
                             </h3>
 
+
                             <label class="filtro-opcion">
 
                                 <input type="checkbox" value="shampoo" class="filtro-tipo">
 
-                                Shampoo
+                                <span>
+                                    Shampoo
+                                </span>
 
                             </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="oral" class="filtro-tipo">
+
+                                <span>
+                                    Higiene oral
+                                </span>
+
+                            </label>
+
 
                             <label class="filtro-opcion">
 
                                 <input type="checkbox" value="cepillo" class="filtro-tipo">
 
-                                Cepillo
+                                <span>
+                                    Cepillos
+                                </span>
 
                             </label>
+
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="toallas" class="filtro-tipo">
+                                <input type="checkbox" value="limpieza" class="filtro-tipo">
 
-                                Toallas
+                                <span>
+                                    Toallas y pads
+                                </span>
 
                             </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="unas" class="filtro-tipo">
+
+                                <span>
+                                    Uñas
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="arenero" class="filtro-tipo">
+
+                                <span>
+                                    Areneros
+                                </span>
+
+                            </label>
+
+
+                            <label class="filtro-opcion">
+
+                                <input type="checkbox" value="alimentacion" class="filtro-tipo">
+
+                                <span>
+                                    Comederos y fuentes
+                                </span>
+
+                            </label>
+
 
                             <label class="filtro-opcion">
 
                                 <input type="checkbox" value="colonia" class="filtro-tipo">
 
-                                Colonia
+                                <span>
+                                    Colonias
+                                </span>
 
                             </label>
 
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="higiene-oral" class="filtro-tipo">
-
-                                Higiene oral
-
-                            </label>
-
-                        </div>
-
-                        <div class="grupo-filtro">
-
-                            <h3>
-                                Uso
-                            </h3>
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="pelo" class="filtro-uso">
+                                <input type="checkbox" value="otros" class="filtro-tipo">
 
-                                Pelo
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="piel" class="filtro-uso">
-
-                                Piel
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="dientes" class="filtro-uso">
-
-                                Dientes
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="patas" class="filtro-uso">
-
-                                Patas
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="limpieza-general" class="filtro-uso">
-
-                                Limpieza general
+                                <span>
+                                    Otros productos
+                                </span>
 
                             </label>
 
@@ -199,16 +254,19 @@
                     </div>
 
 
-                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+                    <div class="filtros-acciones">
 
-                        Limpiar filtros
+                        <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
-                    </button>
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
 
                 </aside>
 
 
-                <!-- Fondo oscuro del panel -->
                 <div class="fondo-filtros" id="fondoFiltros">
                 </div>
 
@@ -803,7 +861,7 @@
                         </div>
                     </article>
 
-                    
+
 
 
 

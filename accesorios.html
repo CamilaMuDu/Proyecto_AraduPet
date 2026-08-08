@@ -76,145 +76,251 @@
 
 
                 <!--------------------------------
-                       PANEL DE FILTROS
+                     PANEL DE FILTROS
                 --------------------------------->
 
                 <aside class="panel-filtros" id="panelFiltros">
 
+
+                    <!----------------------------
+                       ENCABEZADO DEL PANEL
+                    ----------------------------->
+
                     <div class="panel-filtros-encabezado">
 
-                        <h2>
-                            Filtrar accesorios
-                        </h2>
+
+                        <div>
+
+                            <h2>
+                                Filtrar accesorios
+                            </h2>
+
+                            <p>
+                                Encuentra lo que necesitas
+                            </p>
+
+                        </div>
+
+
 
                         <button type="button" class="boton-cerrar-filtros" id="cerrarFiltros"
                             aria-label="Cerrar filtros">
 
-                            ×
+                            &times;
 
                         </button>
+
 
                     </div>
 
 
+
+                    <!----------------------------
+                         CONTENIDO FILTROS
+                    ----------------------------->
+
                     <div class="filtros-contenido">
 
-                        <!-- Tipo de accesorio -->
+
+                        <!-------------------------
+                               MASCOTA
+                        -------------------------->
+
                         <div class="grupo-filtro">
+
+
+                            <h3>
+                                Mascota
+                            </h3>
+
+
+
+                            <label class="filtro-opcion">
+
+
+                                <input type="checkbox" value="perro" class="filtro-mascota">
+
+
+                                <span>
+                                    Perro
+                                </span>
+
+
+                            </label>
+
+
+
+                            <label class="filtro-opcion">
+
+
+                                <input type="checkbox" value="gato" class="filtro-mascota">
+
+
+                                <span>
+                                    Gato
+                                </span>
+
+
+                            </label>
+
+
+                        </div>
+
+
+
+                        <!-------------------------
+                          TIPO DE ACCESORIO
+                        -------------------------->
+
+                        <div class="grupo-filtro">
+
 
                             <h3>
                                 Tipo de accesorio
                             </h3>
 
+
+
                             <label class="filtro-opcion">
+
 
                                 <input type="checkbox" value="collar" class="filtro-tipo">
 
-                                Collar
+
+                                <span>
+                                    Collares
+                                </span>
+
 
                             </label>
 
+
+
                             <label class="filtro-opcion">
+
 
                                 <input type="checkbox" value="correa" class="filtro-tipo">
 
-                                Correa
+
+                                <span>
+                                    Correas
+                                </span>
+
 
                             </label>
+
+
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="cama" class="filtro-tipo">
 
-                                Cama
+                                <input type="checkbox" value="pechera" class="filtro-tipo">
+
+
+                                <span>
+                                    Pecheras y arneses
+                                </span>
+
 
                             </label>
+
+
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="comedero" class="filtro-tipo">
 
-                                Comedero
+                                <input type="checkbox" value="ropa" class="filtro-tipo">
+
+
+                                <span>
+                                    Ropa y medias
+                                </span>
+
 
                             </label>
+
+
 
                             <label class="filtro-opcion">
 
-                                <input type="checkbox" value="transportadora" class="filtro-tipo">
 
-                                Transportadora
+                                <input type="checkbox" value="panuelo" class="filtro-tipo">
+
+
+                                <span>
+                                    Pañuelos
+                                </span>
+
 
                             </label>
+
+
+
+                            <label class="filtro-opcion">
+
+
+                                <input type="checkbox" value="bozal" class="filtro-tipo">
+
+
+                                <span>
+                                    Bozales
+                                </span>
+
+
+                            </label>
+
+
+
+                            <label class="filtro-opcion">
+
+
+                                <input type="checkbox" value="otros" class="filtro-tipo">
+
+
+                                <span>
+                                    Otros accesorios
+                                </span>
+
+
+                            </label>
+
 
                         </div>
 
-
-                        <!-- Material -->
-                        <div class="grupo-filtro">
-
-                            <h3>
-                                Material
-                            </h3>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="nylon" class="filtro-material">
-
-                                Nylon
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="tela" class="filtro-material">
-
-                                Tela
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="plastico" class="filtro-material">
-
-                                Plástico
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="metal" class="filtro-material">
-
-                                Metal
-
-                            </label>
-
-                            <label class="filtro-opcion">
-
-                                <input type="checkbox" value="cuero" class="filtro-material">
-
-                                Cuero
-
-                            </label>
-
-                        </div>
 
                     </div>
 
 
-                    <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
 
-                        Limpiar filtros
+                    <!----------------------------
+                         LIMPIAR FILTROS
+                    ----------------------------->
 
-                    </button>
+                    <div class="filtros-acciones">
+
+
+                        <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+
+                            Limpiar filtros
+
+                        </button>
+
+
+                    </div>
+
 
                 </aside>
-                <!--------------------------------
-                       FIN DE FILTROS
-                --------------------------------->
 
+
+
+                <!--------------------------------
+                       FONDO OSCURO
+                --------------------------------->
 
                 <div class="fondo-filtros" id="fondoFiltros">
                 </div>
+
+
 
 
                 <!--------------------------------
@@ -514,8 +620,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7514.jpg" alt="Correa retractil"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7514.jpg" alt="Correa retractil" class="producto-imagen">
 
                         </div>
 
@@ -542,8 +647,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7515.jpg" alt="Collar de colores"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7515.jpg" alt="Collar de colores" class="producto-imagen">
 
                         </div>
 
@@ -569,8 +673,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7517.jpg" alt="Collar rojo con negro"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7517.jpg" alt="Collar rojo con negro" class="producto-imagen">
 
                         </div>
 
@@ -597,8 +700,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7518.jpg" alt="Pechera pequeña"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7518.jpg" alt="Pechera pequeña" class="producto-imagen">
 
                         </div>
 
@@ -614,7 +716,7 @@
 
                             <button type="button" class="producto-boton">
 
-                                Ver especificaciones    
+                                Ver especificaciones
                             </button>
                         </div>
                     </article>
@@ -625,8 +727,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7519.jpg" alt="Pechera grande"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7519.jpg" alt="Pechera grande" class="producto-imagen">
 
                         </div>
 
@@ -642,7 +743,7 @@
 
                             <button type="button" class="producto-boton">
 
-                                Ver especificaciones    
+                                Ver especificaciones
                             </button>
                         </div>
                     </article>
@@ -653,8 +754,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7521.jpg" alt="Correa para perro"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7521.jpg" alt="Correa para perro" class="producto-imagen">
 
                         </div>
 
@@ -680,8 +780,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7522.jpg" alt="correa para perro"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7522.jpg" alt="correa para perro" class="producto-imagen">
 
                         </div>
 
@@ -707,8 +806,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7523.jpg" alt="Correa con pechera"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7523.jpg" alt="Correa con pechera" class="producto-imagen">
 
                         </div>
 
@@ -734,8 +832,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7524.jpg" alt="Correa con pechera"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7524.jpg" alt="Correa con pechera" class="producto-imagen">
 
                         </div>
 
@@ -788,8 +885,7 @@
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7526.jpg" alt="Medias para perro"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7526.jpg" alt="Medias para perro" class="producto-imagen">
 
                         </div>
 
@@ -808,15 +904,14 @@
                                 Ver especificaciones
                             </button>
                         </div>
-                    </article>                 
+                    </article>
 
                     <!-- ACCESORIO 23: PERRO -->
                     <article class="producto-card" data-mascota="perro">
 
                         <div class="producto-imagen-contenedor">
 
-                            <img src="img/Accesorios/IMG_7540.jpg" alt="Cono de tela"
-                                class="producto-imagen">
+                            <img src="img/Accesorios/IMG_7540.jpg" alt="Cono de tela" class="producto-imagen">
 
                         </div>
 
@@ -838,8 +933,25 @@
                     </article>
 
                 </div>
+                <!-- =================================
+                       MENSAJE SIN RESULTADOS
+                ================================== -->
+
+                <div class="productos-vacios" id="productosVacios">
+
+                    <p>
+                        No se encontraron productos con los
+                        filtros seleccionados.
+                    </p>
+
+                </div>
+
+
+            </div>
+            <!-- FIN catalogo-contenedor -->
 
         </section>
+
 
     </main>
 
