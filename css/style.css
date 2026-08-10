@@ -1,6 +1,7 @@
 /* =======================
         AJUSTES GENERALES
 ========================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ body {
 /* =======================
          EL LOGO
 ========================== */
+
 .logo {
     width: 140px;
     height: auto;
@@ -24,6 +26,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+
 
 /* =======================
         INICIO NAVBAR
@@ -59,7 +62,6 @@ body {
 
 .navbar .navbar-nav .nav-link.active:hover {
     color: rgb(0, 217, 255);
-    ;
 }
 
 .dropdown-menu {
@@ -127,23 +129,31 @@ body {
 .navbar-toggler-icon {
     filter: invert(1);
 }
+
 /* =======================
         FIN NAVBAR
 ========================== */
 
+
 /* =======================
         INICIO CAROUSEL
 ========================== */
+
+/*
+    MOBILE FIRST:
+    Estas son ahora las medidas para teléfono.
+*/
+
 .seccion-carousel {
     background-color: #f8f9fa;
-    padding: 25px 15px;
+    padding: 24px 22px;
 }
 
 .carousel-aradu {
     width: 100%;
-    max-width: 1150px;
+    max-width: 100%;
     margin: 0 auto;
-    border-radius: 18px;
+    border-radius: 12px;
     overflow: hidden;
     background-color: white;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
@@ -208,52 +218,47 @@ body {
 
 .carousel-aradu .carousel-control-prev-icon,
 .carousel-aradu .carousel-control-next-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .carousel-aradu .carousel-indicators {
     z-index: 3;
 }
 
-/*Mobile*/
 
-@media (max-width: 768px) {
+/* TABLET Y ESCRITORIO */
+
+@media screen and (min-width: 769px) {
 
     .seccion-carousel {
-        padding: 24px 22px;
+        padding: 25px 15px;
     }
 
     .carousel-aradu {
-        max-width: 100%;
-        border-radius: 12px;
-    }
-
-    .carousel-aradu .carousel-item {
-        aspect-ratio: 16 / 9;
-    }
-
-    .carousel-aradu .carousel-imagen {
-        object-fit: contain;
-        object-position: center;
+        max-width: 1150px;
+        border-radius: 18px;
     }
 
     .carousel-aradu .carousel-control-prev-icon,
     .carousel-aradu .carousel-control-next-icon {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
+
 /* =======================
       FIN DEL CAROUSEL
 ========================== */
 
+
 /* =================================
            INICIO HISTORIA
 ================================= */
+
 .historia {
     width: 100%;
-    padding: 60px 20px;
+    padding: 35px 15px;
     background-color: #f8f9fa;
 }
 
@@ -261,27 +266,26 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 45px;
+    padding: 28px 20px;
     background-color: #ffffff;
     border: 1px solid #e7e7e7;
-    border-radius: 22px;
+    border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
 }
 
 .historia-titulo {
-    margin-bottom: 40px;
-    color: #212529;
-    font-size: 36px;
+    margin-bottom: 30px;
+    color: #149c4f;
+    font-size: 27px;
     font-weight: 700;
     text-align: center;
-    color:#149c4f;
 }
 
 .historia-content {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .historia-imagen-contenedor {
@@ -290,10 +294,9 @@ body {
     justify-content: center;
 }
 
-
 .historia-img {
     width: 100%;
-    max-width: 350px;
+    max-width: 280px;
     aspect-ratio: 1 / 1;
     display: block;
     object-fit: cover;
@@ -309,15 +312,15 @@ body {
 .historia-texto {
     margin-bottom: 16px;
     color: #444444;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.7;
-    text-align: justify;
+    text-align: left;
 }
 
 .historia-objetivos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 35px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     margin-top: 30px;
 }
 
@@ -328,7 +331,9 @@ body {
     padding: 18px;
     background-color: #f8f9fa;
     border-radius: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .historia-item:hover {
@@ -348,7 +353,6 @@ body {
     font-size: 22px;
 }
 
-
 .historia-item h3 {
     margin: 0 0 7px;
     color: #212529;
@@ -363,43 +367,45 @@ body {
     line-height: 1.55;
 }
 
-/*Mobile*/
 
-@media screen and (max-width: 768px) {
+/* TABLET Y ESCRITORIO */
+
+@media screen and (min-width: 769px) {
 
     .historia {
-        padding: 35px 15px;
+        padding: 60px 20px;
     }
 
     .historia-card {
-        padding: 28px 20px;
-        border-radius: 18px;
+        padding: 45px;
+        border-radius: 22px;
     }
 
     .historia-titulo {
-        margin-bottom: 30px;
-        font-size: 27px;
+        margin-bottom: 40px;
+        font-size: 36px;
     }
 
     .historia-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 360px 1fr;
+        gap: 50px;
     }
 
     .historia-img {
-        max-width: 280px;
+        max-width: 350px;
     }
 
     .historia-texto {
-        font-size: 15px;
-        text-align: left;
+        font-size: 17px;
+        text-align: justify;
     }
 
     .historia-objetivos {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 35px;
     }
 }
+
 /* =================================
           FIN HISTORIA
 ================================= */
@@ -408,37 +414,42 @@ body {
 /* ============================
         SECCIÓN CATEGORÍAS
 ============================ */
+
+
 .seccion-categorias {
-    padding: 55px 0;
+    padding: 40px 12px;
     background-color: #ffffff;
+}
+
+.seccion-categorias .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .categorias-encabezado {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
 }
 
 .categorias-titulo {
     margin: 0;
     color: #161616;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
 }
 
-/*
-Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
-*/
 .categorias-controles {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .categoria-flecha {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
 
     display: flex;
     align-items: center;
@@ -452,7 +463,7 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
     color: #333333;
     background-color: #eeeeee;
 
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 
     transition:
@@ -482,11 +493,9 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 }
 
 .categorias-caja {
-    padding: 30px;
-
+    padding: 18px;
     border: 1px solid #dedede;
     border-radius: 6px;
-
     background-color: white;
     overflow: hidden;
 }
@@ -494,10 +503,11 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 .categorias-lista {
     display: flex;
     flex-wrap: nowrap;
-    gap: 28px;
+    gap: 16px;
 
     width: 100%;
-    overflow-x: auto;
+
+    overflow-x: hidden;
     overflow-y: hidden;
 
     scroll-behavior: auto;
@@ -512,7 +522,7 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 }
 
 .categoria-card {
-    flex: 0 0 calc((100% - 112px) / 5);
+    flex: 0 0 calc((100% - 16px) / 2);
     min-width: 0;
     scroll-snap-align: start;
 }
@@ -545,10 +555,10 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 }
 
 .categoria-nombre {
-    margin: 18px 0 8px;
+    margin: 13px 0 8px;
 
     color: #111111;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
 
     transition: color 0.3s ease;
@@ -560,68 +570,92 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 
 .categoria-cantidad {
     margin: 0;
-
     color: #555555;
     font-size: 14px;
     line-height: 1.4;
 }
 
-/*Mobile*/
 
-@media screen and (max-width: 768px) {
+/* TABLET Y ESCRITORIO */
+
+@media screen and (min-width: 769px) {
 
     .seccion-categorias {
-        padding: 40px 12px;
+        padding: 55px 0;
     }
 
     .seccion-categorias .container {
-        max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+        max-width: 720px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .categorias-encabezado {
-        margin-bottom: 16px;
+        margin-bottom: 22px;
     }
 
     .categorias-titulo {
-        font-size: 22px;
+        font-size: 25px;
     }
 
     .categorias-controles {
-        display: flex;
-        gap: 8px;
+        display: none;
+        gap: 10px;
     }
 
     .categoria-flecha {
-        width: 36px;
-        height: 36px;
-        font-size: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
     }
 
     .categorias-caja {
-        padding: 18px;
+        padding: 30px;
     }
 
     .categorias-lista {
-        gap: 16px;
-        overflow-x: hidden;
+        gap: 28px;
+        overflow-x: auto;
     }
 
     .categoria-card {
-        flex: 0 0 calc((100% - 16px) / 2);
+        flex: 0 0 calc((100% - 112px) / 5);
         min-width: 0;
     }
 
     .categoria-nombre {
-        margin-top: 13px;
-        font-size: 17px;
-    }
-
-    .categoria-cantidad {
-        font-size: 14px;
+        margin-top: 18px;
+        font-size: 18px;
     }
 }
+
+
+/*
+    Estos breakpoints mantienen exactamente
+    los tamaños del .container de Bootstrap.
+*/
+
+@media screen and (min-width: 992px) {
+
+    .seccion-categorias .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .seccion-categorias .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    .seccion-categorias .container {
+        max-width: 1320px;
+    }
+}
+
 /* ============================
        FIN SECCIÓN CATEGORÍAS
 ============================ */
@@ -630,6 +664,7 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 /* ============================
      INICIO MULTIMEDIA
 ============================ */
+
 .multimedia {
     background: #ffffff;
 }
@@ -638,14 +673,16 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
     color: #149c4f;
     font-weight: 700;
 }
+
 /* ============================
         FIN MULTIMEDIA
 ============================ */
 
 
-/*=============================
+/* =============================
         INICIO UBICACIÓN
-==============================*/
+============================== */
+
 .ubicacion h2 {
     color: #149c4f;
 }
@@ -653,13 +690,16 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
 .ubicacion iframe {
     border-radius: 15px;
 }
-/*=============================
-        FIN UBICACIÓN
-==============================*/
 
-/*=============================
-        INICIO ACERCA DE 
-==============================*/
+/* =============================
+        FIN UBICACIÓN
+============================== */
+
+
+/* =============================
+        INICIO ACERCA DE
+============================== */
+
 .acerca {
     background: #ffffff;
 }
@@ -678,14 +718,16 @@ Las flechas permanecen ocultas en computadora y solo aparecerán en teléfono.
     line-height: 1.8;
     text-align: justify;
 }
-/*=============================
+
+/* =============================
         FIN ACERCA DE
-==============================*/
+============================== */
 
 
 /* =======================
         INICIO FOOTER
 ========================== */
+
 footer a {
     transition: .3s;
 }
@@ -698,6 +740,7 @@ footer a:hover {
 footer p {
     color: #d6d6d6;
 }
+
 /* =======================
         FIN FOOTER
 ========================== */
@@ -706,599 +749,879 @@ footer p {
         INICIO BUSCADOR
 ================================= */
 
+
+/* =================================
+        CONTENEDOR PRINCIPAL
+================================= */
+
 .buscador-contenedor {
     position: relative;
+
     width: 100%;
-    max-width: 430px;
-    z-index: 1200;
+
+    margin-top: 18px;
+
+    z-index: 1500;
 }
+
+
+/* =================================
+        FORMULARIO
+================================= */
 
 .buscador-formulario {
     width: 100%;
+    margin: 0;
 }
 
-.buscador-formulario .form-control {
-    min-width: 220px;
-    height: 44px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    transition: .3s;
-}
 
-.buscador-formulario .form-control:focus {
-    border-color: rgb(0, 217, 255);
-    box-shadow: 0 0 0 .2rem rgba(0,217,255,.25);
-}
+/* =================================
+        CAJA DEL BUSCADOR
+================================= */
 
-/* ============================
-      SUGERENCIAS
-============================ */
+.buscador-caja {
+    width: 100%;
 
-.buscador-sugerencias {
+    display: flex;
+    align-items: center;
 
-    position: absolute;
+    background-color: #ffffff;
 
-    top: calc(100% + 8px);
-    left: 0;
-
-    width: calc(100% - 98px);
-
-    display: none;
-
-    background: white;
+    border:
+        2px solid rgba(255, 255, 255, 0.85);
 
     border-radius: 10px;
 
-    border: 1px solid #dddddd;
-
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
-
     overflow: hidden;
 
-    max-height: 340px;
-
-    overflow-y: auto;
-
-}
-
-.sugerencia-item{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:12px 15px;
-
-    background:white;
-
-    border:none;
-
-    border-bottom:1px solid #eeeeee;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-    text-align:left;
-
-}
-
-.sugerencia-item:last-child{
-
-    border-bottom:none;
-
-}
-
-.sugerencia-item:hover{
-
-    background:#f4fff8;
-
-}
-
-.sugerencia-icono{
-
-    width:38px;
-    height:38px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgb(20,156,79);
-
-    color:white;
-
-    border-radius:50%;
-
-    font-weight:bold;
-
-    flex-shrink:0;
-
-}
-
-.sugerencia-texto{
-
-    display:flex;
-    flex-direction:column;
-
-}
-
-.sugerencia-titulo{
-
-    font-size:15px;
-
-    font-weight:700;
-
-    color:#222;
-
-}
-
-.sugerencia-descripcion{
-
-    font-size:12px;
-
-    color:#777;
-
-}
-
-.sugerencia-vacia{
-
-    padding:15px;
-
-    text-align:center;
-
-    color:#666;
-
-    margin:0;
-
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
-/* ============================
-      RESULTADOS
-============================ */
+/* Cuando el input tiene el foco */
 
-.resultados-busqueda{
+.buscador-caja:focus-within {
+    border-color:
+        rgb(0, 217, 255);
 
-    display:none;
-
-    padding:55px 0;
-
-    background:#f8f9fa;
-
-}
-
-.resultados-busqueda.mostrar{
-
-    display:block;
-
-}
-
-.resultados-encabezado{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    margin-bottom:30px;
-
-}
-
-.resultados-titulo{
-
-    font-size:30px;
-
-    font-weight:700;
-
-    color:#149c4f;
-
-}
-
-.resultados-informacion{
-
-    color:#666;
-
-}
-
-.btn-limpiar-busqueda{
-
-    background:rgb(20,156,79);
-
-    color:white;
-
-    border:none;
-
-    border-radius:7px;
-
-    padding:10px 20px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.btn-limpiar-busqueda:hover{
-
-    background:rgb(0,217,255);
-
-    color:black;
-
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 217, 255, 0.20);
 }
 
 
-/* Grid */
+/* =================================
+        ICONO
+================================= */
 
-/* Contenedor general del historial */
-.resultados-lista{
+.buscador-icono {
+    flex-shrink: 0;
 
-    display:grid;
+    margin-left: 14px;
 
-    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-
-    gap:25px;
-
-    align-items:start;
-
-}
-
-/* Grupo correspondiente a una búsqueda */
-.grupo-busqueda {
-    padding: 25px;
-    background-color: #ffffff;
-    border: 1px solid #e4e4e4;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* Encabezado de cada búsqueda */
-.grupo-busqueda-encabezado {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.grupo-busqueda-titulo {
-    margin: 0;
-    color: #149c4f;
-    font-size: 21px;
-    font-weight: 700;
-}
-
-.grupo-busqueda-cantidad {
-    margin: 0;
     color: #777777;
+
+    font-size: 17px;
+}
+
+
+/* =================================
+        INPUT
+================================= */
+
+.buscador-input {
+    width: 100%;
+    min-width: 0;
+
+    height: 44px;
+
+    padding:
+        0 12px;
+
+    color: #252525;
+
+    background-color: transparent;
+
+    border: none;
+
+    outline: none;
+
     font-size: 14px;
 }
 
-/* Tarjetas encontradas dentro de cada búsqueda */
-.grupo-busqueda-resultados{
-
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:18px;
-
-}
-/* Búsqueda sin resultados */
-.grupo-busqueda .sin-resultados {
-    grid-column: 1 / -1;
+.buscador-input::placeholder {
+    color: #888888;
 }
 
 
-/* mobile*/
+/* Quita la X azul extra
+   que algunos navegadores agregan */
 
-@media screen and (max-width: 768px) {
+.buscador-input::-webkit-search-decoration {
+    display: none;
+}
 
-    .grupo-busqueda {
-        padding: 18px;
+
+/* =================================
+        INICIO BUSCADOR
+================================= */
+
+
+/* =================================
+        CONTENEDOR PRINCIPAL
+================================= */
+
+.buscador-contenedor {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    z-index: 1500;
+}
+
+
+/* =================================
+        FORMULARIO
+================================= */
+
+.buscador-formulario {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* =================================
+        CAJA DEL BUSCADOR
+================================= */
+
+.buscador-caja {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.85);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Cuando el usuario escribe */
+
+.buscador-caja:focus-within {
+    border-color:
+        rgb(0, 217, 255);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 217, 255, 0.20);
+}
+
+
+/* =================================
+        ICONO BUSCADOR
+================================= */
+
+.buscador-icono {
+    flex-shrink: 0;
+
+    margin-left: 14px;
+
+    color: #777777;
+
+    font-size: 17px;
+}
+
+
+/* =================================
+        INPUT
+================================= */
+
+.buscador-input {
+    width: 100%;
+    min-width: 0;
+
+    height: 44px;
+
+    padding:
+        0 10px;
+
+    color: #252525;
+
+    background-color: transparent;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.buscador-input::placeholder {
+    color: #888888;
+}
+
+
+/* Quitar decoración del input search */
+
+.buscador-input::-webkit-search-decoration {
+    display: none;
+}
+
+
+/* =================================
+        BOTÓN BUSCAR
+================================= */
+
+.buscador-boton {
+    flex-shrink: 0;
+
+    height: 44px;
+
+    padding:
+        0 12px;
+
+    color: #ffffff;
+
+    background-color:
+        rgb(20, 156, 79);
+
+    border: none;
+
+    border-left:
+        1px solid #eeeeee;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.buscador-boton:hover {
+    color: #000000;
+
+    background-color:
+        rgb(0, 217, 255);
+}
+
+.buscador-boton:focus {
+    outline: none;
+}
+
+
+/* =================================
+        SUGERENCIAS
+================================= */
+
+.buscador-sugerencias {
+    position: absolute;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    display: none;
+
+    max-height: 360px;
+
+    background-color: #ffffff;
+
+    border:
+        1px solid #dddddd;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.18);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    z-index: 1600;
+}
+
+
+/* =================================
+        SUGERENCIA INDIVIDUAL
+================================= */
+
+.sugerencia-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        11px 12px;
+
+    color: #252525;
+
+    background-color: #ffffff;
+
+    border: none;
+
+    border-bottom:
+        1px solid #eeeeee;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.sugerencia-item:last-child {
+    border-bottom: none;
+}
+
+.sugerencia-item:hover,
+.sugerencia-item.activa {
+    background-color:
+        #f1fff7;
+}
+
+
+/* =================================
+        ICONO DE SUGERENCIA
+================================= */
+
+.sugerencia-icono {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    background-color:
+        rgb(20, 156, 79);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =================================
+        TEXTO DE SUGERENCIA
+================================= */
+
+.sugerencia-texto {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.sugerencia-titulo {
+    color: #222222;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sugerencia-descripcion {
+    margin-top: 2px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =================================
+        FLECHA SUGERENCIA
+================================= */
+
+.sugerencia-flecha {
+    margin-left: auto;
+
+    color:
+        rgb(20, 156, 79);
+
+    font-size: 15px;
+
+    flex-shrink: 0;
+}
+
+
+/* =================================
+        SIN SUGERENCIAS
+================================= */
+
+.sugerencia-vacia {
+    margin: 0;
+
+    padding:
+        15px;
+
+    color: #666666;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+        BÚSQUEDAS RECIENTES
+================================= */
+
+/*
+    Esta sección conserva la estética
+    compacta que te gustó.
+*/
+
+.resultados-busqueda {
+    display: none;
+
+    width: 100%;
+
+    padding:
+        28px 0;
+
+    background-color:
+        #ffffff;
+}
+
+
+/* Se activa cuando JavaScript
+   encuentra historial */
+
+.resultados-busqueda.mostrar {
+    display: block;
+}
+
+
+/* =================================
+        ENCABEZADO HISTORIAL
+================================= */
+
+.resultados-encabezado {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Título */
+
+.resultados-titulo {
+    margin:
+        0 0 5px;
+
+    color: #212529;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* Texto informativo */
+
+.resultados-informacion {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =================================
+        BOTÓN LIMPIAR HISTORIAL
+================================= */
+
+.btn-limpiar-busqueda {
+    padding:
+        8px 14px;
+
+    color: #ffffff;
+
+    background-color:
+        rgb(20, 156, 79);
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-limpiar-busqueda:hover {
+    color: #000000;
+
+    background-color:
+        rgb(0, 217, 255);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =================================
+        CONTENEDOR HISTORIAL
+================================= */
+
+.historial-busquedas {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+/* =================================
+        BÚSQUEDA RECIENTE
+================================= */
+
+.busqueda-reciente {
+    max-width: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        8px 12px;
+
+    color: #333333;
+
+    background-color:
+        #f8f9fa;
+
+    border:
+        1px solid #dedede;
+
+    border-radius: 25px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.busqueda-reciente:hover {
+    background-color:
+        #f1fff7;
+
+    border-color:
+        rgb(20, 156, 79);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* =================================
+        ICONO HISTORIAL
+================================= */
+
+.busqueda-reciente i {
+    color:
+        rgb(20, 156, 79);
+
+    font-size: 13px;
+
+    flex-shrink: 0;
+}
+
+
+/* =================================
+        TEXTO HISTORIAL
+================================= */
+
+.busqueda-reciente-texto {
+    max-width: 130px;
+
+    color: #333333;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* Categoría correspondiente */
+
+.busqueda-reciente-tipo {
+    color: #888888;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* =================================================
+        MOBILE FIRST
+        TELÉFONOS DESDE 401px
+================================================= */
+
+@media screen and (min-width: 401px) {
+
+    .buscador-input {
+        padding:
+            0 12px;
+
+        font-size: 14px;
     }
 
-    .grupo-busqueda-encabezado {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-
-/* Tarjetas*/
-
-.resultado-card{
-
-    background:white;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    border:1px solid #e4e4e4;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.resultado-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.14);
-
-}
-
-.resultado-imagen{
-
-    width:100%;
-
-    height:190px;
-
-    object-fit:cover;
-
-}
-
-.resultado-contenido{
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    height:100%;
-
-}
-
-.resultado-tipo{
-
-    display:inline-block;
-
-    width:max-content;
-
-    padding:5px 12px;
-
-    background:rgba(20,156,79,.12);
-
-    color:rgb(20,156,79);
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-}
-
-.resultado-nombre{
-
-    font-size:22px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-}
-
-.resultado-descripcion{
-
-    color:#666;
-
-    line-height:1.6;
-
-    margin-bottom:20px;
-
-}
-
-.resultado-boton{
-
-    margin-top:auto;
-
-    border:none;
-
-    background:rgb(20,156,79);
-
-    color:white;
-
-    border-radius:6px;
-
-    padding:10px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.resultado-boton:hover{
-
-    background:rgb(0,217,255);
-
-    color:black;
-
-}
-
-
-/* Sin resultados */
-
-.sin-resultados{
-
-    grid-column:1/-1;
-
-    background:white;
-
-    border-radius:12px;
-
-    border:2px dashed #d7d7d7;
-
-    padding:40px;
-
-    text-align:center;
-
-}
-
-.sin-resultados h3{
-
-    margin-bottom:10px;
-
-}
-
-
-/* ============================
-     RESALTAR SECCIÓN
-============================ */
-
-.seccion-encontrada{
-
-    animation:destacarSeccion 1.8s ease;
-
-}
-
-@keyframes destacarSeccion{
-
-    0%{
-
-        box-shadow:inset 0 0 0 4px transparent;
-
+    .buscador-boton {
+        padding:
+            0 16px;
+
+        font-size: 14px;
     }
 
-    35%{
+    .sugerencia-item {
+        gap: 12px;
 
-        box-shadow:
-        inset 0 0 0 4px rgb(0,217,255),
-        inset 0 0 25px rgba(0,217,255,.25);
-
+        padding:
+            12px 14px;
     }
 
-    100%{
+    .sugerencia-icono {
+        width: 38px;
+        height: 38px;
 
-        box-shadow:inset 0 0 0 4px transparent;
+        font-size: 14px;
+    }
 
+    .sugerencia-descripcion {
+        font-size: 12px;
+    }
+
+    .busqueda-reciente {
+        padding:
+            9px 13px;
+
+        font-size: 13px;
+    }
+
+    .busqueda-reciente-texto {
+        max-width: 180px;
+    }
+
+    .busqueda-reciente-tipo {
+        font-size: 11px;
     }
 
 }
 
 
-/* RESPONSIVE*/
+/* =================================================
+        TABLET
+        Desde 769px
+================================================= */
 
-@media screen and (max-width:992px){
+@media screen and (min-width: 769px) {
 
-    .buscador-contenedor{
-
-        width:100%;
-
-        max-width:100%;
-
-        margin-top:18px;
-
+    .resultados-busqueda {
+        padding:
+            32px 0;
     }
 
-    .buscador-formulario{
 
-        width:100%;
+    .resultados-encabezado {
+        flex-direction: row;
 
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 25px;
     }
 
-    .buscador-formulario input{
 
-        flex:1;
-
-        min-width:0;
-
+    .resultados-titulo {
+        font-size: 27px;
     }
 
-    .buscador-sugerencias{
 
-        width:100%;
-
-    }
-
-    .resultados-lista{
-
-        grid-template-columns:repeat(2,1fr);
-
+    .historial-busquedas {
+        gap: 10px;
     }
 
 }
 
-@media screen and (max-width:768px){
 
-    .resultados-lista{
+/* =================================================
+        ESCRITORIO
+        Desde 993px
+================================================= */
 
-        grid-template-columns:1fr;
+@media screen and (min-width: 993px) {
 
+    .buscador-contenedor {
+        width: 100%;
+
+        max-width: 440px;
+
+        margin-top: 0;
+
+        margin-left: 18px;
     }
 
-    .resultados-encabezado{
 
-        flex-direction:column;
-
-        align-items:flex-start;
-
+    .buscador-input {
+        min-width: 180px;
     }
 
-    .btn-limpiar-busqueda{
 
-        width:100%;
+    .buscador-boton {
+        padding:
+            0 18px;
+    }
 
+
+    .resultados-busqueda {
+        padding:
+            35px 0;
+    }
+
+
+    .resultados-titulo {
+        font-size: 28px;
     }
 
 }
-/* ============================
-     FIN BUSCADOR
-============================ */
 
 
-/*==============================
-        MULTIMEDIA
-==============================*/
+/* =================================================
+        PANTALLAS GRANDES
+        Desde 1200px
+================================================= */
 
-.video-contenedor{
-    width:100%;
-    background:#000;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-     border: 1px solid #e9ecef;
+@media screen and (min-width: 1200px) {
+
+    .buscador-contenedor {
+        max-width: 470px;
+    }
+
 }
 
-.video-aradupet{
-    width:100%;
-    height:auto;
-    display:block;
+
+/* =================================
+        FIN BUSCADOR
+================================= */
+
+
+/* ==============================
+        MULTIMEDIA VIDEO
+============================== */
+
+.video-contenedor {
+    width: 100%;
+
+    background: #000;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
+
+    border: 1px solid #e9ecef;
 }
 
-/*==============================
-       FIN MULTIMEDIA
-==============================*/
+.video-aradupet {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==============================
+       FIN MULTIMEDIA VIDEO
+============================== */
 
 
 /* ==============================
         BOTÓN WHATSAPP
 ============================== */
 
+
 .whatsapp-flotante {
     position: fixed;
-    width: 60px;
-    height: 60px;
 
-    bottom: 25px;
-    right: 25px;
+    width: 52px;
+    height: 52px;
+
+    bottom: 20px;
+    right: 20px;
 
     background-color: #25D366;
     color: white;
@@ -1309,41 +1632,42 @@ footer p {
     justify-content: center;
     align-items: center;
 
-    font-size: 32px;
+    font-size: 27px;
 
     text-decoration: none;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3);
 
     z-index: 1000;
 
-    transition: transform 0.3s ease,
-                background-color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
 }
-
 
 .whatsapp-flotante:hover {
     background-color: #128C7E;
     color: white;
-
     transform: scale(1.1);
 }
 
 
-/* ==============================
-        RESPONSIVE
-============================== */
+/* TABLET Y ESCRITORIO */
 
-@media (max-width: 768px) {
+@media screen and (min-width: 769px) {
 
     .whatsapp-flotante {
-        width: 52px;
-        height: 52px;
+        width: 60px;
+        height: 60px;
 
-        font-size: 27px;
+        font-size: 32px;
 
-        bottom: 20px;
-        right: 20px;
+        bottom: 25px;
+        right: 25px;
     }
-
 }
+
+/* ==============================
+        FIN BOTÓN WHATSAPP
+============================== */

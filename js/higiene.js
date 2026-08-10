@@ -58,11 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("fondoFiltros");
 
 
-
-    /* ==========================================
-              VALIDAR CATÁLOGO
-    ========================================== */
-
     if (
         productos.length === 0 ||
         !productosGrid
@@ -75,12 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
 
     }
-
-
-
-    /* ==========================================
-             NORMALIZAR TEXTO
-    ========================================== */
 
     function normalizarTexto(texto) {
 
@@ -103,8 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const texto =
             normalizarTexto(nombre);
 
-
-        /* SHAMPOO */
 
         if (
             texto.includes("shampoo")
@@ -271,11 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         etiquetaMascota.textContent
                     );
 
-
-                /*
-                Si dice "Perro"
-                */
-
                 if (
                     textoMascota === "perro" ||
                     textoMascota === "perros"
@@ -286,11 +268,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-
-
-                /*
-                Si dice "Gato"
-                */
 
                 else if (
                     textoMascota === "gato" ||
@@ -451,8 +428,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         ? " producto"
                         : " productos"
                 );
-
-
         }
 
 
@@ -465,10 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cantidad === 0
                     ? "block"
                     : "none";
-
-
         }
-
 
     }
 
@@ -486,7 +458,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "change",
                 aplicarFiltros
             );
-
 
         }
     );

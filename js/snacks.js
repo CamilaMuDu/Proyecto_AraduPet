@@ -76,12 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-
-    /* ==========================================
-             NORMALIZAR TEXTO
-    ========================================== */
-
     function normalizarTexto(texto) {
 
         return texto

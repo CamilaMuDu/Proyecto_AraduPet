@@ -1,104 +1,22 @@
-/* ============================
-     CARRUSEL DE CATEGORÍAS
-============================ */
-console.log("logica.js está conectado correctamente");
-document.addEventListener("DOMContentLoaded", function () {
-
-    const listaCategorias = document.getElementById("listaCategorias");
-    const botonAnterior = document.getElementById("categoriaAnterior");
-    const botonSiguiente = document.getElementById("categoriaSiguiente");
-
-    if (!listaCategorias || !botonAnterior || !botonSiguiente) {
-        console.error("No se encontraron los elementos del carrusel.");
-        return;
-    }
-
-    /*
-    Obtiene el ancho de una tarjeta más el espacio
-    que existe entre las tarjetas.
-    */
-    function obtenerDesplazamiento() {
-
-        const tarjeta = listaCategorias.querySelector(".categoria-card");
-
-        if (!tarjeta) {
-            return 0;
-        }
-
-        const estilosLista = window.getComputedStyle(listaCategorias);
-        const espacio = parseFloat(estilosLista.columnGap) || 0;
-
-        return tarjeta.getBoundingClientRect().width + espacio;
-    }
-
-    /*
-    Activa o desactiva las flechas dependiendo
-    de la posición actual del carrusel.
-    */
-    function actualizarFlechas() {
-
-        const posicionActual = listaCategorias.scrollLeft;
-        const desplazamientoMaximo =
-            listaCategorias.scrollWidth - listaCategorias.clientWidth;
-
-        botonAnterior.disabled = posicionActual <= 1;
-
-        botonSiguiente.disabled =
-            posicionActual >= desplazamientoMaximo - 1;
-    }
-
-    botonSiguiente.addEventListener("click", function () {
-
-        const desplazamiento = obtenerDesplazamiento();
-
-        listaCategorias.scrollBy({
-            left: desplazamiento,
-            behavior: "smooth"
-        });
-    });
-
-    botonAnterior.addEventListener("click", function () {
-
-        const desplazamiento = obtenerDesplazamiento();
-
-        listaCategorias.scrollBy({
-            left: -desplazamiento,
-            behavior: "smooth"
-        });
-    });
-
-    /*
-    Actualiza los botones después de mover
-    manualmente o mediante las flechas.
-    */
-    listaCategorias.addEventListener("scroll", function () {
-        actualizarFlechas();
-    });
-
-    /*
-    Recalcula las posiciones cuando cambia
-    el tamaño de la pantalla.
-    */
-    window.addEventListener("resize", function () {
-        actualizarFlechas();
-    });
-
-    actualizarFlechas();
-});
+/* =========================================================
+        ARADU PET - LÓGICA PRINCIPAL
+========================================================= */
 
 console.log("logica.js está conectado correctamente");
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
     iniciarCarruselCategorias();
+
     iniciarBuscador();
 
 });
 
 
-/* ==========================================
-          CARRUSEL DE CATEGORÍAS
-========================================== */
+/* =========================================================
+        CARRUSEL DE CATEGORÍAS
+========================================================= */
 
 function iniciarCarruselCategorias() {
 
@@ -112,38 +30,47 @@ function iniciarCarruselCategorias() {
         document.getElementById("categoriaSiguiente");
 
 
-    /*
-    Si los elementos del carrusel no existen,
-    termina únicamente esta función.
-    El buscador puede seguir funcionando.
-    */
     if (
         !listaCategorias ||
         !botonAnterior ||
         !botonSiguiente
     ) {
+
         return;
+
     }
 
 
-    /*
-    Obtiene el ancho de una tarjeta y el espacio
-    entre las tarjetas.
-    */
+    /* =====================================================
+            OBTENER DISTANCIA DE DESPLAZAMIENTO
+    ===================================================== */
+
     function obtenerDesplazamiento() {
 
         const tarjeta =
-            listaCategorias.querySelector(".categoria-card");
+            listaCategorias.querySelector(
+                ".categoria-card"
+            );
+
 
         if (!tarjeta) {
+
             return 0;
+
         }
 
+
         const estilosLista =
-            window.getComputedStyle(listaCategorias);
+            window.getComputedStyle(
+                listaCategorias
+            );
+
 
         const espacio =
-            parseFloat(estilosLista.columnGap) || 0;
+            parseFloat(
+                estilosLista.columnGap
+            ) || 0;
+
 
         return (
             tarjeta.getBoundingClientRect().width +
@@ -153,27 +80,35 @@ function iniciarCarruselCategorias() {
     }
 
 
-    /*
-    Activa o desactiva las flechas dependiendo
-    de la posición actual del carrusel.
-    */
+    /* =====================================================
+            ACTUALIZAR ESTADO DE LAS FLECHAS
+    ===================================================== */
+
     function actualizarFlechas() {
 
         const posicionActual =
             listaCategorias.scrollLeft;
 
+
         const desplazamientoMaximo =
             listaCategorias.scrollWidth -
             listaCategorias.clientWidth;
 
+
         botonAnterior.disabled =
             posicionActual <= 1;
 
+
         botonSiguiente.disabled =
-            posicionActual >= desplazamientoMaximo - 1;
+            posicionActual >=
+            desplazamientoMaximo - 1;
 
     }
 
+
+    /* =====================================================
+            BOTÓN SIGUIENTE
+    ===================================================== */
 
     botonSiguiente.addEventListener(
         "click",
@@ -182,14 +117,24 @@ function iniciarCarruselCategorias() {
             const desplazamiento =
                 obtenerDesplazamiento();
 
+
             listaCategorias.scrollBy({
-                left: desplazamiento,
-                behavior: "smooth"
+
+                left:
+                    desplazamiento,
+
+                behavior:
+                    "smooth"
+
             });
 
         }
     );
 
+
+    /* =====================================================
+            BOTÓN ANTERIOR
+    ===================================================== */
 
     botonAnterior.addEventListener(
         "click",
@@ -198,20 +143,34 @@ function iniciarCarruselCategorias() {
             const desplazamiento =
                 obtenerDesplazamiento();
 
+
             listaCategorias.scrollBy({
-                left: -desplazamiento,
-                behavior: "smooth"
+
+                left:
+                    -desplazamiento,
+
+                behavior:
+                    "smooth"
+
             });
 
         }
     );
 
 
+    /* =====================================================
+            ACTUALIZAR AL MOVER EL CARRUSEL
+    ===================================================== */
+
     listaCategorias.addEventListener(
         "scroll",
         actualizarFlechas
     );
 
+
+    /* =====================================================
+            ACTUALIZAR AL CAMBIAR TAMAÑO
+    ===================================================== */
 
     window.addEventListener(
         "resize",
@@ -224,438 +183,855 @@ function iniciarCarruselCategorias() {
 }
 
 
-/* ==========================================
-             BUSCADOR ARADU PET
-========================================== */
+/* =========================================================
+        BUSCADOR ARADU PET
+========================================================= */
 
 function iniciarBuscador() {
 
     const formularioBusqueda =
-        document.getElementById("formularioBusqueda");
+        document.getElementById(
+            "formularioBusqueda"
+        );
+
 
     const campoBusqueda =
-        document.getElementById("campoBusqueda");
+        document.getElementById(
+            "campoBusqueda"
+        );
+
 
     const sugerenciasBusqueda =
-        document.getElementById("sugerenciasBusqueda");
+        document.getElementById(
+            "sugerenciasBusqueda"
+        );
+
+
+    /* =====================================================
+            ELEMENTOS DEL HISTORIAL
+    ===================================================== */
 
     const seccionResultados =
-        document.getElementById("resultadosBusqueda");
+        document.getElementById(
+            "resultadosBusqueda"
+        );
+
 
     const listaResultados =
-        document.getElementById("listaResultados");
+        document.getElementById(
+            "listaResultados"
+        );
+
 
     const informacionResultados =
-        document.getElementById("informacionResultados");
+        document.getElementById(
+            "informacionResultados"
+        );
+
 
     const botonLimpiar =
-        document.getElementById("limpiarBusqueda");
+        document.getElementById(
+            "limpiarBusqueda"
+        );
 
 
-    /*
-    Si el buscador todavía no está en el HTML,
-    no genera errores.
-    */
     if (
         !formularioBusqueda ||
         !campoBusqueda ||
         !sugerenciasBusqueda
     ) {
+
         return;
+
     }
 
 
-    /* ==========================================
-         INFORMACIÓN DE LAS SECCIONES
-    ========================================== */
+    /* =====================================================
+            VARIABLES
+    ===================================================== */
+
+    let indiceSeleccionado = -1;
+
+    let resultadosActuales = [];
+
+
+    /* =====================================================
+            CONFIGURACIÓN DEL HISTORIAL
+    ===================================================== */
+
+    const CLAVE_HISTORIAL =
+        "aradupet_busquedas_recientes";
+
+
+    const LIMITE_HISTORIAL = 6;
+
+
+    /* =====================================================
+            SECCIONES DEL INDEX
+    ===================================================== */
 
     const secciones = [
 
         {
-            titulo: "Inicio",
+
+            titulo:
+                "Inicio",
+
             descripcion:
-                "Página principal y presentación de Aradu Pet",
+                "Página principal de Aradu Pet",
 
             palabras:
-                "inicio principal portada carrusel comienzo",
+                "inicio principal portada carrusel comienzo home pagina página principal",
 
-            destino: "carouselAraduPet",
-            tipo: "Sección"
+            destino:
+                "carouselAraduPet",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Historia",
+
+            titulo:
+                "Historia",
+
             descripcion:
-                "Conoce la historia del emprendimiento Aradu Pet",
+                "Conoce nuestro emprendimiento familiar",
 
             palabras:
-                "historia emprendimiento familia veterinaria nosotros",
+                "historia emprendimiento familia veterinaria nosotros quienes somos origen negocio aradu pet",
 
-            destino: "historia",
-            tipo: "Sección"
+            destino:
+                "historia",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Categorías",
+
+            titulo:
+                "Categorías",
+
             descripcion:
-                "Consulta las categorías generales de productos",
+                "Consulta todos nuestros productos",
 
             palabras:
-                "categorías productos alimentos accesorios juguetes snacks higiene",
+                "categorias categorías productos catalogo catálogo alimentos accesorios juguetes snacks higiene tienda",
 
-            destino: "categorias",
-            tipo: "Sección"
+            destino:
+                "categorias",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Multimedia",
+
+            titulo:
+                "Multimedia",
+
             descripcion:
-                "Video y contenido multimedia de Aradu Pet",
+                "Video y contenido de Aradu Pet",
 
             palabras:
-                "multimedia video presentación contenido promoción",
+                "multimedia video videos presentación presentacion promocion promoción publicidad contenido",
 
-            destino: "multimedia",
-            tipo: "Sección"
+            destino:
+                "multimedia",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Ubicación",
+
+            titulo:
+                "Ubicación",
+
             descripcion:
-                "Dirección, horario y ubicación de la tienda",
+                "Dirección, mapa y horario de la tienda",
 
             palabras:
-                "ubicación dirección mapa tienda horario alajuela villa bonita",
+                "ubicacion ubicación direccion dirección mapa tienda horario alajuela villa bonita donde estamos local llegar ruta google maps",
 
-            destino: "ubicacion",
-            tipo: "Sección"
+            destino:
+                "ubicacion",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Acerca de",
+
+            titulo:
+                "Acerca de",
+
             descripcion:
-                "Información sobre los valores y servicios de Aradu Pet",
+                "Información sobre Aradu Pet",
 
             palabras:
-                "acerca nosotros información valores servicios veterinaria",
+                "acerca nosotros informacion información valores servicios veterinaria quienes somos negocio aradu pet",
 
-            destino: "acerca",
-            tipo: "Sección"
+            destino:
+                "acerca",
+
+            tipo:
+                "Sección"
+
         },
 
+
         {
-            titulo: "Contacto",
+
+            titulo:
+                "Contacto",
+
             descripcion:
-                "Información para contactar a Aradu Pet",
+                "Comunícate con Aradu Pet",
 
             palabras:
-                "contacto teléfono correo instagram dirección whatsapp",
+                "contacto contactanos contáctanos telefono teléfono correo instagram whatsapp redes sociales comunicar mensaje",
 
-            destino: "footer",
-            tipo: "Sección"
+            destino:
+                "footer",
+
+            tipo:
+                "Sección"
+
         }
 
     ];
 
 
-    /* ==========================================
-       CATEGORÍAS PREDETERMINADAS
-    ========================================== */
+    /* =====================================================
+            CATEGORÍAS DE PRODUCTOS
+    ===================================================== */
 
-    /*
-    Esta lista permite que el buscador funcione
-    incluso en páginas donde las tarjetas no estén
-    visibles en el HTML.
-    */
-    const categoriasPredeterminadas = [
+    const categorias = [
 
         {
-            titulo: "Alimentos",
+
+            titulo:
+                "Alimentos",
+
             descripcion:
-                "Productos alimenticios para perros y gatos",
+                "Alimentos para perros y gatos",
 
             palabras:
-                "alimentos comida concentrado nutrición perro gato alimento",
+                "alimentos alimento comida comidas concentrado concentrados nutricion nutrición perro perros gato gatos croquetas alimento seco alimento humedo alimento húmedo comida perro comida gato",
 
-            url: "alimentos.html",
-            imagen: "img/categoria-alimentos.jpg",
-            tipo: "Categoría"
+            url:
+                "alimentos.html",
+
+            tipo:
+                "Categoría"
+
         },
 
+
         {
-            titulo: "Accesorios",
+
+            titulo:
+                "Accesorios",
+
             descripcion:
-                "Collares, correas, camas y accesorios para mascotas",
+                "Accesorios para perros y gatos",
 
             palabras:
-                "accesorios collar collares correas cama camas perro gato",
+                "accesorios accesorio collar collares correa correas cama camas pechera pecheras plato platos comedero comederos bebedero bebederos perro perros gato gatos ropa transportadora",
 
-            url: "accesorios.html",
-            imagen: "img/categoria-accesorios.jpg",
-            tipo: "Categoría"
+            url:
+                "accesorios.html",
+
+            tipo:
+                "Categoría"
+
         },
 
+
         {
-            titulo: "Juguetes",
+
+            titulo:
+                "Juguetes",
+
             descripcion:
                 "Juguetes y entretenimiento para mascotas",
 
             palabras:
-                "juguetes diversión entretenimiento pelotas perro gato jugar",
+                "juguete juguetes jugar diversion diversión entretenimiento pelota pelotas mordedor mordedores cuerda cuerdas perro perros gato gatos diversión mascota",
 
-            url: "juguetes.html",
-            imagen: "img/categoria-juguetes.jpg",
-            tipo: "Categoría"
+            url:
+                "juguetes.html",
+
+            tipo:
+                "Categoría"
+
         },
 
+
         {
-            titulo: "Snacks",
+
+            titulo:
+                "Snacks",
+
             descripcion:
                 "Premios y golosinas para mascotas",
 
             palabras:
-                "snacks premios golosinas bocadillos perro gato alimento",
+                "snack snacks premio premios golosina golosinas bocadillo bocadillos galleta galletas hueso huesos recompensa recompensas perro perros gato gatos premios mascota",
 
-            url: "snacks.html",
-            imagen: "img/categoria-snacks.jpg",
-            tipo: "Categoría"
+            url:
+                "snacks.html",
+
+            tipo:
+                "Categoría"
+
         },
 
+
         {
-            titulo: "Higiene y bienestar",
+
+            titulo:
+                "Higiene y Bienestar",
+
             descripcion:
-                "Productos para la limpieza y cuidado de mascotas",
+                "Higiene, limpieza y bienestar",
 
             palabras:
-                "higiene limpieza champú shampoo bienestar cuidado mascota baño",
+                "higiene bienestar limpieza limpiar champu champú shampoo baño banar bañar cepillo cepillos cuidado cuidados dental dientes pelo pelaje perro perros gato gatos aseo mascota",
 
-            url: "higiene.html",
-            imagen: "img/categoria-higiene.jpg",
-            tipo: "Categoría"
+            url:
+                "higiene.html",
+
+            tipo:
+                "Categoría"
+
         }
 
     ];
 
 
-    /* ==========================================
-       OBTENER CATEGORÍAS DEL HTML
-    ========================================== */
-
-    function obtenerCategoriasDelHTML() {
-
-        const elementos =
-            document.querySelectorAll(".elemento-buscable");
-
-        return Array.from(elementos).map(
-            function (elemento) {
-
-                return {
-
-                    titulo:
-                        elemento.dataset.titulo || "",
-
-                    descripcion:
-                        elemento.dataset.descripcion || "",
-
-                    palabras:
-                        elemento.dataset.palabras || "",
-
-                    url:
-                        elemento.dataset.url || "",
-
-                    imagen:
-                        elemento.dataset.imagen || "",
-
-                    tipo: "Categoría"
-
-                };
-
-            }
-        );
-
-    }
-
-
-    /* ==========================================
-          OBTENER TODOS LOS DATOS
-    ========================================== */
+    /* =====================================================
+            OBTENER TODOS LOS DATOS
+    ===================================================== */
 
     function obtenerDatosBusqueda() {
 
-        const categoriasHTML =
-            obtenerCategoriasDelHTML();
-
-        /*
-        Si existen categorías en el HTML,
-        utiliza esas.
-
-        Si no existen, utiliza las predeterminadas.
-        */
-        const categorias =
-            categoriasHTML.length > 0
-                ? categoriasHTML
-                : categoriasPredeterminadas;
-
         return [
-            ...secciones,
-            ...categorias
+
+            ...categorias,
+
+            ...secciones
+
         ];
 
     }
 
 
-    /* ==========================================
-             NORMALIZAR TEXTO
-    ========================================== */
+    /* =====================================================
+            NORMALIZAR TEXTO
+    ===================================================== */
 
-    /*
-    Convierte el texto a minúsculas y elimina
-    las tildes para facilitar la búsqueda.
-    */
     function normalizarTexto(texto) {
 
-        return texto
+        return String(texto || "")
+
             .toLowerCase()
+
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
+
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            )
+
             .trim();
 
     }
 
 
-    /* ==========================================
-            FILTRAR RESULTADOS
-    ========================================== */
+    /* =====================================================
+            CALCULAR PUNTUACIÓN
+    ===================================================== */
 
-    function filtrarResultados(termino) {
+    function calcularPuntuacion(
+        elemento,
+        termino
+    ) {
 
-        const textoBuscado =
-            normalizarTexto(termino);
+        const busqueda =
+            normalizarTexto(
+                termino
+            );
 
-        if (textoBuscado === "") {
-            return [];
+
+        const titulo =
+            normalizarTexto(
+                elemento.titulo
+            );
+
+
+        const descripcion =
+            normalizarTexto(
+                elemento.descripcion
+            );
+
+
+        const palabras =
+            normalizarTexto(
+                elemento.palabras
+            );
+
+
+        let puntos = 0;
+
+
+        /* =================================================
+                COINCIDENCIA EXACTA
+        ================================================= */
+
+        if (
+            titulo === busqueda
+        ) {
+
+            puntos += 1000;
+
         }
 
+
+        /* =================================================
+                TÍTULO COMIENZA IGUAL
+        ================================================= */
+
+        if (
+            titulo.startsWith(
+                busqueda
+            )
+        ) {
+
+            puntos += 300;
+
+        }
+
+
+        /* =================================================
+                TÍTULO CONTIENE BÚSQUEDA
+        ================================================= */
+
+        if (
+            titulo.includes(
+                busqueda
+            )
+        ) {
+
+            puntos += 150;
+
+        }
+
+
+        /* =================================================
+                PALABRAS CLAVE
+        ================================================= */
+
+        if (
+            palabras.includes(
+                busqueda
+            )
+        ) {
+
+            puntos += 100;
+
+        }
+
+
+        /* =================================================
+                DESCRIPCIÓN
+        ================================================= */
+
+        if (
+            descripcion.includes(
+                busqueda
+            )
+        ) {
+
+            puntos += 50;
+
+        }
+
+
+        /* =================================================
+                REVISAR PALABRA POR PALABRA
+        ================================================= */
+
         const palabrasBuscadas =
-            textoBuscado.split(/\s+/);
+            busqueda.split(/\s+/);
 
-        return obtenerDatosBusqueda().filter(
-            function (elemento) {
 
-                const contenido =
-                    normalizarTexto(
-                        elemento.titulo + " " +
-                        elemento.descripcion + " " +
-                        elemento.palabras
-                    );
+        palabrasBuscadas.forEach(
+            function (palabra) {
 
-                /*
-                Todas las palabras escritas deben
-                aparecer en el contenido.
-                */
-                return palabrasBuscadas.every(
-                    function (palabra) {
+                if (
+                    palabra.length < 2
+                ) {
 
-                        return contenido.includes(palabra);
+                    return;
 
-                    }
-                );
+                }
+
+
+                if (
+                    titulo === palabra
+                ) {
+
+                    puntos += 200;
+
+                }
+
+
+                if (
+                    titulo.startsWith(
+                        palabra
+                    )
+                ) {
+
+                    puntos += 80;
+
+                }
+
+
+                if (
+                    titulo.includes(
+                        palabra
+                    )
+                ) {
+
+                    puntos += 50;
+
+                }
+
+
+                if (
+                    palabras.includes(
+                        palabra
+                    )
+                ) {
+
+                    puntos += 30;
+
+                }
+
+
+                if (
+                    descripcion.includes(
+                        palabra
+                    )
+                ) {
+
+                    puntos += 15;
+
+                }
 
             }
         );
 
+
+        return puntos;
+
     }
 
 
-    /* ==========================================
-          MOSTRAR SUGERENCIAS
-    ========================================== */
+    /* =====================================================
+            FILTRAR Y ORDENAR RESULTADOS
+    ===================================================== */
+
+    function filtrarResultados(
+        termino
+    ) {
+
+        const busqueda =
+            normalizarTexto(
+                termino
+            );
+
+
+        if (
+            busqueda === ""
+        ) {
+
+            return [];
+
+        }
+
+
+        return obtenerDatosBusqueda()
+
+            .map(
+                function (elemento) {
+
+                    return {
+
+                        ...elemento,
+
+                        puntuacion:
+                            calcularPuntuacion(
+                                elemento,
+                                termino
+                            )
+
+                    };
+
+                }
+            )
+
+            .filter(
+                function (elemento) {
+
+                    return (
+                        elemento.puntuacion > 0
+                    );
+
+                }
+            )
+
+            .sort(
+                function (a, b) {
+
+                    return (
+                        b.puntuacion -
+                        a.puntuacion
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* =====================================================
+            MOSTRAR SUGERENCIAS
+    ===================================================== */
 
     function mostrarSugerencias() {
 
         const termino =
             campoBusqueda.value.trim();
 
-        sugerenciasBusqueda.innerHTML = "";
 
-        if (termino.length === 0) {
+        sugerenciasBusqueda.innerHTML =
+            "";
+
+
+        indiceSeleccionado =
+            -1;
+
+
+        if (
+            termino === ""
+        ) {
+
+            resultadosActuales =
+                [];
+
 
             ocultarSugerencias();
+
+
             return;
 
         }
 
-        const resultados =
-            filtrarResultados(termino).slice(0, 6);
+
+        resultadosActuales =
+            filtrarResultados(
+                termino
+            ).slice(
+                0,
+                6
+            );
+
 
         sugerenciasBusqueda.style.display =
             "block";
 
 
-        if (resultados.length === 0) {
+        /* =================================================
+                SIN RESULTADOS
+        ================================================= */
+
+        if (
+            resultadosActuales.length === 0
+        ) {
 
             sugerenciasBusqueda.innerHTML = `
+
                 <p class="sugerencia-vacia">
-                    No se encontraron sugerencias.
+
+                    No encontramos coincidencias.
+
                 </p>
+
             `;
+
 
             return;
 
         }
 
 
-        resultados.forEach(
-            function (resultado) {
+        /* =================================================
+                CREAR SUGERENCIAS
+        ================================================= */
+
+        resultadosActuales.forEach(
+            function (
+                resultado,
+                indice
+            ) {
 
                 const boton =
-                    document.createElement("button");
+                    document.createElement(
+                        "button"
+                    );
 
-                boton.type = "button";
-                boton.className = "sugerencia-item";
 
-                const inicial =
-                    resultado.titulo
-                        .charAt(0)
-                        .toUpperCase();
+                boton.type =
+                    "button";
+
+
+                boton.className =
+                    "sugerencia-item";
+
+
+                boton.dataset.indice =
+                    indice;
+
+
+                /* =========================================
+                        ICONO
+                ========================================= */
+
+                let icono =
+                    "bi-search";
+
+
+                if (
+                    resultado.tipo ===
+                    "Categoría"
+                ) {
+
+                    icono =
+                        "bi-bag-heart";
+
+                }
+
+
+                if (
+                    resultado.tipo ===
+                    "Sección"
+                ) {
+
+                    icono =
+                        "bi-arrow-down-circle";
+
+                }
+
 
                 boton.innerHTML = `
+
                     <span class="sugerencia-icono">
-                        ${inicial}
+
+                        <i class="bi ${icono}"></i>
+
                     </span>
+
 
                     <span class="sugerencia-texto">
 
                         <span class="sugerencia-titulo">
+
                             ${resultado.titulo}
+
                         </span>
 
+
                         <span class="sugerencia-descripcion">
-                            ${resultado.tipo}
+
+                            ${resultado.descripcion}
+
                         </span>
 
                     </span>
+
+
+                    <i class="
+                        bi
+                        bi-chevron-right
+                        sugerencia-flecha
+                    "></i>
+
                 `;
 
+
+                /* =========================================
+                        CLICK EN SUGERENCIA
+                ========================================= */
 
                 boton.addEventListener(
                     "click",
                     function () {
 
+                        const terminoBuscado =
+                            campoBusqueda.value.trim();
+
+
                         campoBusqueda.value =
                             resultado.titulo;
 
+
+                        /* Guardar en historial */
+
+                        guardarBusquedaReciente(
+                            terminoBuscado ||
+                            resultado.titulo,
+                            resultado
+                        );
+
+
                         ocultarSugerencias();
 
-                        /*
-                        Al seleccionar una sugerencia,
-                        se muestra dentro de la sección
-                        de resultados.
-                        */
-                        mostrarResultados(
-                            resultado.titulo,
-                            [resultado]
+
+                        abrirResultado(
+                            resultado
                         );
+
+                    }
+                );
+
+
+                /* =========================================
+                        MOUSE ENCIMA
+                ========================================= */
+
+                boton.addEventListener(
+                    "mouseenter",
+                    function () {
+
+                        indiceSeleccionado =
+                            indice;
+
+
+                        actualizarSeleccion();
 
                     }
                 );
@@ -671,231 +1047,452 @@ function iniciarBuscador() {
     }
 
 
-    /* ==========================================
-          OCULTAR SUGERENCIAS
-    ========================================== */
+    /* =====================================================
+            ACTUALIZAR SELECCIÓN CON TECLADO
+    ===================================================== */
+
+    function actualizarSeleccion() {
+
+        const sugerencias =
+            sugerenciasBusqueda
+                .querySelectorAll(
+                    ".sugerencia-item"
+                );
+
+
+        sugerencias.forEach(
+            function (
+                sugerencia,
+                indice
+            ) {
+
+                sugerencia.classList.toggle(
+
+                    "activa",
+
+                    indice ===
+                        indiceSeleccionado
+
+                );
+
+            }
+        );
+
+
+        if (
+            indiceSeleccionado >= 0 &&
+            sugerencias[
+                indiceSeleccionado
+            ]
+        ) {
+
+            sugerencias[
+                indiceSeleccionado
+            ].scrollIntoView({
+
+                block:
+                    "nearest"
+
+            });
+
+        }
+
+    }
+
+
+    /* =====================================================
+            OCULTAR SUGERENCIAS
+    ===================================================== */
 
     function ocultarSugerencias() {
 
         sugerenciasBusqueda.style.display =
             "none";
 
-        sugerenciasBusqueda.innerHTML = "";
+
+        sugerenciasBusqueda.innerHTML =
+            "";
+
+
+        indiceSeleccionado =
+            -1;
 
     }
 
 
-  /* ==========================================
-       MOSTRAR HISTORIAL DE RESULTADOS
-========================================== */
+    /* =====================================================
+            HISTORIAL
+    ===================================================== */
 
-function mostrarResultados(termino, resultados) {
 
-    /*
-    Si la página actual no contiene la sección
-    de resultados, abre directamente el primer
-    resultado encontrado.
-    */
-    if (
-        !seccionResultados ||
-        !listaResultados ||
-        !informacionResultados
-    ) {
+    /* =====================================================
+            OBTENER HISTORIAL
+    ===================================================== */
 
-        if (resultados.length > 0) {
-            abrirResultado(resultados[0]);
+    function obtenerHistorial() {
+
+        const historialGuardado =
+            localStorage.getItem(
+                CLAVE_HISTORIAL
+            );
+
+
+        if (
+            !historialGuardado
+        ) {
+
+            return [];
+
         }
 
-        return;
-    }
+
+        try {
+
+            const historial =
+                JSON.parse(
+                    historialGuardado
+                );
 
 
-    /*
-    IMPORTANTE:
-    Ya no utilizamos:
-
-    listaResultados.innerHTML = "";
-
-    porque esa línea eliminaba las búsquedas
-    realizadas anteriormente.
-    */
-
-    seccionResultados.classList.add("mostrar");
+            return Array.isArray(
+                historial
+            )
+                ? historial
+                : [];
 
 
-    /* Crear un grupo para la nueva búsqueda */
-    const grupoBusqueda =
-        document.createElement("section");
+        } catch (error) {
 
-    grupoBusqueda.className = "grupo-busqueda";
-
-
-    /* Crear el encabezado de la búsqueda */
-    const encabezadoBusqueda =
-        document.createElement("div");
-
-    encabezadoBusqueda.className =
-        "grupo-busqueda-encabezado";
+            console.error(
+                "No se pudo leer el historial:",
+                error
+            );
 
 
-    const tituloBusqueda =
-        document.createElement("h3");
+            return [];
 
-    tituloBusqueda.className =
-        "grupo-busqueda-titulo";
-
-    tituloBusqueda.textContent =
-        `Búsqueda: "${termino}"`;
-
-
-    const cantidadBusqueda =
-        document.createElement("p");
-
-    cantidadBusqueda.className =
-        "grupo-busqueda-cantidad";
-
-
-    if (resultados.length === 0) {
-
-        cantidadBusqueda.textContent =
-            "No se encontraron resultados";
-
-    } else {
-
-        cantidadBusqueda.textContent =
-            `${resultados.length} resultado` +
-            `${resultados.length === 1 ? "" : "s"}`;
+        }
 
     }
 
 
-    encabezadoBusqueda.appendChild(
-        tituloBusqueda
-    );
+    /* =====================================================
+            GUARDAR HISTORIAL
+    ===================================================== */
 
-    encabezadoBusqueda.appendChild(
-        cantidadBusqueda
-    );
+    function guardarHistorial(
+        historial
+    ) {
+
+        try {
+
+            localStorage.setItem(
+
+                CLAVE_HISTORIAL,
+
+                JSON.stringify(
+                    historial
+                )
+
+            );
 
 
-    /* Contenedor de las tarjetas */
-    const contenedorTarjetas =
-        document.createElement("div");
+        } catch (error) {
 
-    contenedorTarjetas.className =
-        "grupo-busqueda-resultados";
+            console.error(
+                "No se pudo guardar el historial:",
+                error
+            );
+
+        }
+
+    }
 
 
-    /* Cuando no se encontraron resultados */
-    if (resultados.length === 0) {
+    /* =====================================================
+            GUARDAR UNA BÚSQUEDA
+    ===================================================== */
 
-        const mensajeSinResultados =
-            document.createElement("div");
+    function guardarBusquedaReciente(
+        termino,
+        resultado
+    ) {
 
-        mensajeSinResultados.className =
-            "sin-resultados";
+        if (
+            !resultado
+        ) {
 
-        mensajeSinResultados.innerHTML = `
-            <h3>
-                No se encontraron coincidencias
-            </h3>
+            return;
 
-            <p>
-                Prueba con palabras como alimentos,
-                accesorios, juguetes, snacks, higiene,
-                historia, ubicación o contacto.
-            </p>
-        `;
+        }
 
-        contenedorTarjetas.appendChild(
-            mensajeSinResultados
-        );
 
-    } else {
+        const terminoLimpio =
+            String(
+                termino ||
+                resultado.titulo ||
+                ""
+            ).trim();
+
+
+        if (
+            terminoLimpio === ""
+        ) {
+
+            return;
+
+        }
+
+
+        let historial =
+            obtenerHistorial();
+
 
         /*
-        Crear una tarjeta por cada resultado
-        encontrado.
+            Creamos una llave única.
+
+            Esto evita guardar repetidamente
+            la misma categoría o sección.
         */
-        resultados.forEach(
-            function (resultado) {
 
-                const tarjeta =
-                    document.createElement("article");
-
-                tarjeta.className =
-                    resultado.tipo === "Sección"
-                        ? "resultado-card resultado-card-seccion"
-                        : "resultado-card";
+        const claveNueva =
+            resultado.url
+                ? `url:${resultado.url}`
+                : `destino:${resultado.destino}`;
 
 
-                let imagenHTML = "";
+        historial =
+            historial.filter(
+                function (busqueda) {
 
-                if (resultado.imagen) {
+                    const claveAnterior =
+                        busqueda.url
+                            ? `url:${busqueda.url}`
+                            : `destino:${busqueda.destino}`;
 
-                    imagenHTML = `
-                        <img
-                            src="${resultado.imagen}"
-                            alt="${resultado.titulo}"
-                            class="resultado-imagen">
-                    `;
+
+                    return (
+                        claveAnterior !==
+                        claveNueva
+                    );
+
+                }
+            );
+
+
+        /* Nueva búsqueda al principio */
+
+        historial.unshift({
+
+            termino:
+                terminoLimpio,
+
+            titulo:
+                resultado.titulo,
+
+            tipo:
+                resultado.tipo,
+
+            url:
+                resultado.url || "",
+
+            destino:
+                resultado.destino || ""
+
+        });
+
+
+        /* Conservar únicamente las últimas 6 */
+
+        historial =
+            historial.slice(
+                0,
+                LIMITE_HISTORIAL
+            );
+
+
+        guardarHistorial(
+            historial
+        );
+
+
+        mostrarHistorial();
+
+    }
+
+
+    /* =====================================================
+            MOSTRAR HISTORIAL
+    ===================================================== */
+
+    function mostrarHistorial() {
+
+        if (
+            !seccionResultados ||
+            !listaResultados
+        ) {
+
+            return;
+
+        }
+
+
+        const historial =
+            obtenerHistorial();
+
+
+        listaResultados.innerHTML =
+            "";
+
+
+        /* =================================================
+                SIN BÚSQUEDAS
+        ================================================= */
+
+        if (
+            historial.length === 0
+        ) {
+
+            seccionResultados.classList.remove(
+                "mostrar"
+            );
+
+
+            return;
+
+        }
+
+
+        /* Mostrar sección */
+
+        seccionResultados.classList.add(
+            "mostrar"
+        );
+
+
+        /* =================================================
+                INFORMACIÓN
+        ================================================= */
+
+        if (
+            informacionResultados
+        ) {
+
+            if (
+                historial.length === 1
+            ) {
+
+                informacionResultados.textContent =
+                    "Tienes 1 búsqueda reciente.";
+
+            } else {
+
+                informacionResultados.textContent =
+                    `Tienes ${historial.length} búsquedas recientes.`;
+
+            }
+
+        }
+
+
+        /* =================================================
+                CREAR BOTONES DEL HISTORIAL
+        ================================================= */
+
+        historial.forEach(
+            function (busqueda) {
+
+                const boton =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                boton.type =
+                    "button";
+
+
+                boton.className =
+                    "busqueda-reciente";
+
+
+                let icono =
+                    "bi-search";
+
+
+                if (
+                    busqueda.tipo ===
+                    "Categoría"
+                ) {
+
+                    icono =
+                        "bi-bag-heart";
 
                 }
 
 
-                const textoBoton =
-                    resultado.tipo === "Categoría"
-                        ? "Abrir categoría"
-                        : "Ir a la sección";
+                if (
+                    busqueda.tipo ===
+                    "Sección"
+                ) {
+
+                    icono =
+                        "bi-clock-history";
+
+                }
 
 
-                tarjeta.innerHTML = `
-                    ${imagenHTML}
+                boton.innerHTML = `
 
-                    <div class="resultado-contenido">
+                    <i class="bi ${icono}"></i>
 
-                        <span class="resultado-tipo">
-                            ${resultado.tipo}
-                        </span>
 
-                        <h3 class="resultado-nombre">
-                            ${resultado.titulo}
-                        </h3>
+                    <span class="busqueda-reciente-texto">
 
-                        <p class="resultado-descripcion">
-                            ${resultado.descripcion}
-                        </p>
+                        ${busqueda.termino}
 
-                        <button
-                            type="button"
-                            class="resultado-boton">
+                    </span>
 
-                            ${textoBoton}
 
-                        </button>
+                    <span class="busqueda-reciente-tipo">
 
-                    </div>
+                        ${busqueda.titulo}
+
+                    </span>
+
                 `;
 
 
-                const botonResultado =
-                    tarjeta.querySelector(
-                        ".resultado-boton"
-                    );
+                /* =========================================
+                        VOLVER A LA BÚSQUEDA
+                ========================================= */
 
-
-                botonResultado.addEventListener(
+                boton.addEventListener(
                     "click",
                     function () {
 
-                        abrirResultado(resultado);
+                        abrirResultado({
+
+                            titulo:
+                                busqueda.titulo,
+
+                            tipo:
+                                busqueda.tipo,
+
+                            url:
+                                busqueda.url,
+
+                            destino:
+                                busqueda.destino
+
+                        });
 
                     }
                 );
 
 
-                contenedorTarjetas.appendChild(
-                    tarjeta
+                listaResultados.appendChild(
+                    boton
                 );
 
             }
@@ -904,74 +1501,49 @@ function mostrarResultados(termino, resultados) {
     }
 
 
-    /* Construir el grupo completo */
-    grupoBusqueda.appendChild(
-        encabezadoBusqueda
-    );
+    /* =====================================================
+            ABRIR RESULTADO
+    ===================================================== */
 
-    grupoBusqueda.appendChild(
-        contenedorTarjetas
-    );
+    function abrirResultado(
+        resultado
+    ) {
 
-
-    /*
-    Agrega la nueva búsqueda al principio
-    del historial.
-
-    Así la búsqueda más reciente aparece arriba.
-    */
-    listaResultados.prepend(
-        grupoBusqueda
-    );
-
-
-    /*
-    Mostrar la cantidad total de búsquedas
-    almacenadas en el historial.
-    */
-    const cantidadBusquedas =
-        listaResultados.querySelectorAll(
-            ".grupo-busqueda"
-        ).length;
-
-    informacionResultados.textContent =
-        `${cantidadBusquedas} búsqueda` +
-        `${cantidadBusquedas === 1 ? "" : "s"} ` +
-        `guardada${cantidadBusquedas === 1 ? "" : "s"} en el historial.`;
-
-
-    desplazarAResultados();
-
-}
-
-
-    /* ==========================================
-             ABRIR RESULTADO
-    ========================================== */
-
-    function abrirResultado(resultado) {
-
-        /*
-        Si el resultado es una categoría,
-        abre su página HTML.
-        */
         if (
-            resultado.tipo === "Categoría" &&
-            resultado.url
+            !resultado
         ) {
-
-            window.location.href =
-                resultado.url;
 
             return;
 
         }
 
 
-        /*
-        Si es una sección, desplaza la página.
-        */
-        if (resultado.destino) {
+        /* =================================================
+                ABRIR PÁGINA DE CATEGORÍA
+        ================================================= */
+
+        if (
+            resultado.tipo ===
+                "Categoría" &&
+            resultado.url
+        ) {
+
+            window.location.href =
+                resultado.url;
+
+
+            return;
+
+        }
+
+
+        /* =================================================
+                IR A SECCIÓN DEL INDEX
+        ================================================= */
+
+        if (
+            resultado.destino
+        ) {
 
             irASeccion(
                 resultado.destino
@@ -982,24 +1554,32 @@ function mostrarResultados(termino, resultados) {
     }
 
 
-    /* ==========================================
-          IR A UNA SECCIÓN
-    ========================================== */
+    /* =====================================================
+            IR A UNA SECCIÓN
+    ===================================================== */
 
-    function irASeccion(idSeccion) {
+    function irASeccion(
+        idSeccion
+    ) {
 
         const seccion =
-            document.getElementById(idSeccion);
+            document.getElementById(
+                idSeccion
+            );
 
 
         /*
-        Si la sección no existe en la página actual,
-        regresa al index.
+            Si esta función algún día se utiliza
+            desde otra página, vuelve al index.
         */
-        if (!seccion) {
+
+        if (
+            !seccion
+        ) {
 
             window.location.href =
                 `index.html#${idSeccion}`;
+
 
             return;
 
@@ -1007,15 +1587,18 @@ function mostrarResultados(termino, resultados) {
 
 
         seccion.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+
+            behavior:
+                "smooth",
+
+            block:
+                "start"
+
         });
 
 
-        /*
-        Agrega una animación temporal
-        a la sección encontrada.
-        */
+        /* Resaltar temporalmente */
+
         seccion.classList.add(
             "seccion-encontrada"
         );
@@ -1029,159 +1612,245 @@ function mostrarResultados(termino, resultados) {
                 );
 
             },
+
             1800
         );
 
     }
 
 
-    /* ==========================================
-        IR A RESULTADOS DE BÚSQUEDA
-    ========================================== */
+    /* =====================================================
+            BUSCAR Y ABRIR
+    ===================================================== */
 
-    function desplazarAResultados() {
+    function buscarYAbrir() {
 
-        if (!seccionResultados) {
+        const termino =
+            campoBusqueda.value.trim();
+
+
+        /* =================================================
+                CAMPO VACÍO
+        ================================================= */
+
+        if (
+            termino === ""
+        ) {
+
+            campoBusqueda.focus();
+
+
             return;
+
         }
 
-        seccionResultados.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+
+        const resultados =
+            filtrarResultados(
+                termino
+            );
+
+
+        /* =================================================
+                SIN RESULTADOS
+        ================================================= */
+
+        if (
+            resultados.length === 0
+        ) {
+
+            mostrarSugerencias();
+
+
+            campoBusqueda.focus();
+
+
+            return;
+
+        }
+
+
+        /* =================================================
+                RESULTADO SELECCIONADO CON FLECHAS
+        ================================================= */
+
+        if (
+            indiceSeleccionado >= 0 &&
+            resultadosActuales[
+                indiceSeleccionado
+            ]
+        ) {
+
+            const resultadoSeleccionado =
+                resultadosActuales[
+                    indiceSeleccionado
+                ];
+
+
+            guardarBusquedaReciente(
+                termino,
+                resultadoSeleccionado
+            );
+
+
+            abrirResultado(
+                resultadoSeleccionado
+            );
+
+
+            return;
+
+        }
+
+
+        /* =================================================
+                MEJOR RESULTADO AUTOMÁTICO
+        ================================================= */
+
+        const mejorResultado =
+            resultados[0];
+
+
+        guardarBusquedaReciente(
+            termino,
+            mejorResultado
+        );
+
+
+        abrirResultado(
+            mejorResultado
+        );
 
     }
 
 
-    /* ==========================================
-                EVENTOS
-    ========================================== */
+    /* =====================================================
+            EVENTO AL ESCRIBIR
+    ===================================================== */
 
-
-    /*
-    Muestra sugerencias mientras el usuario
-    escribe.
-    */
     campoBusqueda.addEventListener(
         "input",
         mostrarSugerencias
     );
 
 
-    /*
-    Ejecuta la búsqueda al presionar el botón
-    o la tecla Enter.
-    */
+    /* =====================================================
+            ENTER O BOTÓN BUSCAR
+    ===================================================== */
+
     formularioBusqueda.addEventListener(
         "submit",
         function (evento) {
 
             evento.preventDefault();
 
-            const termino =
-                campoBusqueda.value.trim();
 
-            ocultarSugerencias();
-
-
-            if (termino === "") {
-
-                campoBusqueda.focus();
-                return;
-
-            }
-
-
-            const resultados =
-                filtrarResultados(termino);
-
-            mostrarResultados(
-                termino,
-                resultados
-            );
+            buscarYAbrir();
 
         }
     );
 
 
-    /*
-    Limpia los resultados.
-    */
-    if (botonLimpiar) {
+    /* =====================================================
+            CONTROL CON TECLADO
+    ===================================================== */
 
-        botonLimpiar.addEventListener(
-            "click",
-            function () {
-
-                campoBusqueda.value = "";
-
-                if (listaResultados) {
-
-                    listaResultados.innerHTML = "";
-
-                }
-
-                if (informacionResultados) {
-
-                    informacionResultados.textContent =
-                        "Busca productos o secciones de Aradu Pet.";
-
-                }
-
-                if (seccionResultados) {
-
-                    seccionResultados.classList.remove(
-                        "mostrar"
-                    );
-
-                }
-
-                ocultarSugerencias();
-
-                campoBusqueda.focus();
-
-            }
-        );
-
-    }
-
-
-    /*
-    Cierra las sugerencias al hacer clic
-    fuera del buscador.
-    */
-    document.addEventListener(
-        "click",
-        function (evento) {
-
-            const clicDentroBuscador =
-                formularioBusqueda.contains(
-                    evento.target
-                ) ||
-                sugerenciasBusqueda.contains(
-                    evento.target
-                );
-
-            if (!clicDentroBuscador) {
-
-                ocultarSugerencias();
-
-            }
-
-        }
-    );
-
-
-    /*
-    Cierra las sugerencias con Escape.
-    */
     campoBusqueda.addEventListener(
         "keydown",
         function (evento) {
 
-            if (evento.key === "Escape") {
+
+            /* =================================================
+                    FLECHA ABAJO
+            ================================================= */
+
+            if (
+                evento.key ===
+                "ArrowDown"
+            ) {
+
+                if (
+                    resultadosActuales.length === 0
+                ) {
+
+                    return;
+
+                }
+
+
+                evento.preventDefault();
+
+
+                indiceSeleccionado++;
+
+
+                if (
+                    indiceSeleccionado >=
+                    resultadosActuales.length
+                ) {
+
+                    indiceSeleccionado =
+                        0;
+
+                }
+
+
+                actualizarSeleccion();
+
+            }
+
+
+            /* =================================================
+                    FLECHA ARRIBA
+            ================================================= */
+
+            if (
+                evento.key ===
+                "ArrowUp"
+            ) {
+
+                if (
+                    resultadosActuales.length === 0
+                ) {
+
+                    return;
+
+                }
+
+
+                evento.preventDefault();
+
+
+                indiceSeleccionado--;
+
+
+                if (
+                    indiceSeleccionado < 0
+                ) {
+
+                    indiceSeleccionado =
+                        resultadosActuales.length - 1;
+
+                }
+
+
+                actualizarSeleccion();
+
+            }
+
+
+            /* =================================================
+                    ESCAPE
+            ================================================= */
+
+            if (
+                evento.key ===
+                "Escape"
+            ) {
 
                 ocultarSugerencias();
+
+
                 campoBusqueda.blur();
 
             }
@@ -1189,8 +1858,93 @@ function mostrarResultados(termino, resultados) {
         }
     );
 
-}
 
-/* ==========================================
-             FIN BUSCADOR ARADU PET
-========================================== */
+    /* =====================================================
+            MOSTRAR SUGERENCIAS AL VOLVER AL INPUT
+    ===================================================== */
+
+    campoBusqueda.addEventListener(
+        "focus",
+        function () {
+
+            if (
+                campoBusqueda.value.trim() !==
+                ""
+            ) {
+
+                mostrarSugerencias();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+            OCULTAR AL HACER CLICK FUERA
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (evento) {
+
+            const clicDentro =
+
+                formularioBusqueda.contains(
+                    evento.target
+                )
+
+                ||
+
+                sugerenciasBusqueda.contains(
+                    evento.target
+                );
+
+
+            if (
+                !clicDentro
+            ) {
+
+                ocultarSugerencias();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+            LIMPIAR HISTORIAL
+    ===================================================== */
+
+    if (
+        botonLimpiar
+    ) {
+
+        botonLimpiar.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    CLAVE_HISTORIAL
+                );
+
+
+                mostrarHistorial();
+
+
+                campoBusqueda.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+            CARGAR HISTORIAL AL ABRIR EL INDEX
+    ===================================================== */
+
+    mostrarHistorial();
+
+}

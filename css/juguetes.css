@@ -1,5 +1,5 @@
 /* =================================
-          AJUSTES GENERALES
+        AJUSTES GENERALES
 ================================= */
 
 * {
@@ -17,12 +17,17 @@ body {
 
 
 /* =================================
-             CATÁLOGO
+        CATÁLOGO
 ================================= */
+
+/*
+    MOBILE FIRST:
+    El diseño base corresponde al teléfono.
+*/
 
 .catalogo-juguetes {
     min-height: 100vh;
-    padding: 45px 30px 70px;
+    padding: 32px 14px 50px;
     background-color: #ffffff;
 }
 
@@ -34,7 +39,7 @@ body {
 
 
 /* =================================
-            ENCABEZADO
+        ENCABEZADO
 ================================= */
 
 .catalogo-encabezado {
@@ -45,25 +50,25 @@ body {
 .catalogo-titulo {
     margin-bottom: 10px;
     color: rgb(20, 156, 79);
-    font-size: 38px;
+    font-size: 29px;
     font-weight: 700;
 }
 
 .catalogo-subtitulo {
     margin: 0;
     color: #555555;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
-
 /* =================================
-            HERRAMIENTAS
+        HERRAMIENTAS
 ================================= */
 
 .catalogo-herramientas {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 25px;
@@ -71,7 +76,8 @@ body {
 
 .herramientas-derecha {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 18px;
 }
 
@@ -83,6 +89,7 @@ body {
 }
 
 .boton-abrir-filtros {
+    width: 100%;
     padding: 10px 24px;
 
     color: #ffffff;
@@ -104,6 +111,7 @@ body {
 }
 
 .ordenar-productos {
+    width: 100%;
     min-width: 220px;
     padding: 10px 14px;
 
@@ -124,13 +132,29 @@ body {
 
 
 /* =================================
-          PANEL DE FILTROS
+        FILTROS DE MASCOTA
+================================= */
+
+.filtros-mascota {
+    width: 100%;
+}
+
+.boton-mascota {
+    width: 50%;
+    min-width: 0;
+}
+
+
+/* =================================
+        PANEL DE FILTROS
 ================================= */
 
 .panel-filtros {
     position: fixed;
+
     top: 0;
     left: -340px;
+
     z-index: 2100;
 
     width: 320px;
@@ -139,6 +163,7 @@ body {
     padding-bottom: 25px;
 
     background-color: #ffffff;
+
     box-shadow: 8px 0 25px rgba(0, 0, 0, 0.18);
 
     overflow-y: auto;
@@ -162,7 +187,9 @@ body {
 
 .panel-filtros-encabezado h2 {
     margin: 0;
+
     color: #ffffff;
+
     font-size: 21px;
     font-weight: 700;
 }
@@ -170,10 +197,12 @@ body {
 .boton-cerrar-filtros {
     color: #ffffff;
     background-color: transparent;
+
     border: none;
 
     font-size: 31px;
     line-height: 1;
+
     cursor: pointer;
 }
 
@@ -188,7 +217,9 @@ body {
 
 .grupo-filtro h3 {
     margin-bottom: 15px;
+
     color: #333333;
+
     font-size: 17px;
     font-weight: 700;
 }
@@ -196,12 +227,15 @@ body {
 .filtro-opcion {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 12px;
 
     color: #555555;
+
     font-size: 14px;
+
     cursor: pointer;
 }
 
@@ -212,7 +246,9 @@ body {
 .filtro-opcion input {
     width: 17px;
     height: 17px;
+
     accent-color: rgb(20, 156, 79);
+
     cursor: pointer;
 }
 
@@ -222,7 +258,9 @@ body {
 
 .boton-limpiar-filtros {
     width: 100%;
+
     margin: 0;
+
     padding: 11px 15px;
 
     color: #ffffff;
@@ -233,6 +271,7 @@ body {
 
     font-size: 14px;
     font-weight: 700;
+
     cursor: pointer;
 
     transition: 0.3s;
@@ -242,17 +281,17 @@ body {
     color: #000000;
     background-color: rgb(0, 217, 255);
 }
-.boton-limpiar-filtros:hover {
-    color: #000000;
-    background-color: rgb(0, 217, 255);
-}
 
 
-/* Fondo oscuro */
+/* =================================
+        FONDO OSCURO
+================================= */
 
 .fondo-filtros {
     position: fixed;
+
     inset: 0;
+
     z-index: 2000;
 
     display: none;
@@ -266,34 +305,43 @@ body {
 
 
 /* =================================
-          GRID DE JUGUETES
+        GRID DE JUGUETES
 ================================= */
 
+/*
+    MOBILE FIRST:
+    En teléfono las tarjetas aparecen
+    una debajo de otra.
+*/
+
 .productos-grid {
-    display: grid;
-
-    /* Cinco tarjetas por fila */
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-
-    gap: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 
 /* =================================
-          TARJETA DE JUGUETE
+        TARJETA DE JUGUETE
 ================================= */
 
 .producto-card {
     min-width: 0;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
+    grid-template-columns:
+        150px minmax(0, 1fr);
+
+    align-items: stretch;
 
     background-color: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 18px;
 
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.10);
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.10);
 
     overflow: hidden;
 
@@ -304,7 +352,9 @@ body {
 
 .producto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .producto-card.oculto {
@@ -312,17 +362,23 @@ body {
 }
 
 
-/* Imagen */
+/* =================================
+        IMAGEN
+================================= */
 
 .producto-imagen-contenedor {
     width: 100%;
-    aspect-ratio: 1 / 1;
+
+    min-height: 220px;
+
+    aspect-ratio: auto;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 20px;
+    padding: 12px;
+
     background-color: #ffffff;
 }
 
@@ -337,7 +393,9 @@ body {
 }
 
 
-/* Información */
+/* =================================
+        INFORMACIÓN
+================================= */
 
 .producto-informacion {
     height: 100%;
@@ -345,7 +403,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    padding: 17px;
+    padding: 18px 15px;
 }
 
 .producto-etiqueta {
@@ -355,7 +413,10 @@ body {
     padding: 4px 9px;
 
     color: rgb(20, 156, 79);
-    background-color: rgba(20, 156, 79, 0.12);
+
+    background-color:
+        rgba(20, 156, 79, 0.12);
+
     border-radius: 20px;
 
     font-size: 11px;
@@ -366,8 +427,10 @@ body {
     margin: 0 0 10px;
 
     color: #252525;
-    font-size: 15px;
+
+    font-size: 16px;
     font-weight: 700;
+
     line-height: 1.4;
 }
 
@@ -377,19 +440,23 @@ body {
     margin: 0 0 16px;
 
     color: #666666;
-    font-size: 12px;
+
+    font-size: 13px;
     line-height: 1.55;
 
     overflow: hidden;
 
-    line-clamp: 3;
+    line-clamp: 4;
+
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
 }
 
 .producto-boton {
     width: 100%;
+
     margin-top: auto;
+
     padding: 9px 12px;
 
     color: #ffffff;
@@ -400,6 +467,7 @@ body {
 
     font-size: 13px;
     font-weight: 700;
+
     cursor: pointer;
 
     transition: 0.3s;
@@ -412,7 +480,7 @@ body {
 
 
 /* =================================
-           SIN RESULTADOS
+        SIN RESULTADOS
 ================================= */
 
 .productos-vacios {
@@ -431,128 +499,109 @@ body {
 }
 
 
-/* =================================
-              TABLET
-================================= */
-
-@media screen and (max-width: 1250px) {
-
-    .productos-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-}
-
-@media screen and (max-width: 992px) {
-
-    .productos-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
+/* =================================================
+        RESPONSIVE - MOBILE FIRST
+================================================= */
 
 
-/* =================================
-             TELÉFONO
-================================= */
+/* =================================================
+        TABLET
+        Desde 769px
+================================================= */
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 769px) {
 
     .catalogo-juguetes {
-        padding: 32px 14px 50px;
+        padding: 45px 30px 70px;
     }
 
     .catalogo-titulo {
-        font-size: 29px;
+        font-size: 38px;
     }
 
     .catalogo-subtitulo {
-        font-size: 15px;
-    }
-
-    .filtros-mascota {
-        width: 100%;
-    }
-
-    .boton-mascota {
-        width: 50%;
-        min-width: 0;
-    }
-
-    .catalogo-herramientas {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .herramientas-derecha {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .boton-abrir-filtros,
-    .ordenar-productos {
-        width: 100%;
-    }
-
-    .productos-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .producto-card {
-        display: grid;
-        grid-template-columns: 150px minmax(0, 1fr);
-        align-items: stretch;
-        border-radius: 12px;
-    }
-
-    .producto-imagen-contenedor {
-        min-height: 220px;
-        aspect-ratio: auto;
-        padding: 12px;
-    }
-
-    .producto-informacion {
-        padding: 18px 15px;
-    }
-
-    .producto-nombre {
         font-size: 16px;
     }
 
-    .producto-descripcion {
-        font-size: 13px;
 
-        line-clamp: 4;
-        -webkit-line-clamp: 4;
+    /* HERRAMIENTAS */
+
+    .catalogo-herramientas {
+        flex-direction: row;
+        align-items: center;
     }
-}
 
-
-/* =================================
-          TELÉFONO PEQUEÑO
-================================= */
-
-@media screen and (max-width: 480px) {
-
-    .catalogo-titulo {
-        font-size: 25px;
+    .herramientas-derecha {
+        flex-direction: row;
+        align-items: center;
     }
+
+    .boton-abrir-filtros {
+        width: auto;
+    }
+
+    .ordenar-productos {
+        width: auto;
+    }
+
+
+    /* FILTROS DE MASCOTA */
+
+    .filtros-mascota {
+        width: auto;
+    }
+
+    .boton-mascota {
+        width: auto;
+        min-width: initial;
+    }
+
+
+    /* GRID */
+
+    .productos-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+
+    /* TARJETA */
 
     .producto-card {
-        grid-template-columns: 115px minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
+
+        align-items: initial;
+
+        border-radius: 18px;
     }
+
+
+    /* IMAGEN */
 
     .producto-imagen-contenedor {
-        min-height: 190px;
-        padding: 8px;
+        width: 100%;
+
+        min-height: initial;
+
+        aspect-ratio: 1 / 1;
+
+        padding: 20px;
     }
 
+
+    /* INFORMACIÓN */
+
     .producto-informacion {
-        padding: 13px 11px;
+        padding: 17px;
     }
 
     .producto-nombre {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .producto-descripcion {
@@ -561,8 +610,32 @@ body {
         line-clamp: 3;
         -webkit-line-clamp: 3;
     }
+}
 
-    .producto-boton {
-        font-size: 12px;
+
+/* =================================================
+        LAPTOP
+        Desde 993px
+================================================= */
+
+@media screen and (min-width: 993px) {
+
+    .productos-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+}
+
+
+/* =================================================
+        ESCRITORIO
+        Desde 1251px
+================================================= */
+
+@media screen and (min-width: 1251px) {
+
+    .productos-grid {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
     }
 }

@@ -9,14 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================================== */
 
 
-    /* Botones superiores Perro / Gato */
-
     const botonesMascota =
         document.querySelectorAll(".boton-mascota");
 
-
-
-    /* Todos los productos */
 
     const productos =
         Array.from(
@@ -24,29 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-
-    /* Grid */
-
     const productosGrid =
         document.getElementById("productosGrid");
 
 
-
-    /* Contador */
 
     const cantidadProductos =
         document.getElementById("cantidadProductos");
 
 
 
-    /* Mensaje sin resultados */
-
     const productosVacios =
         document.getElementById("productosVacios");
 
 
 
-    /* Ordenar */
 
     const ordenarProductos =
         document.getElementById("ordenarProductos");
@@ -58,35 +45,25 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================================== */
 
 
-    /* Marca */
-
     const filtrosMarca =
         document.querySelectorAll(".filtro-marca");
 
 
-
-    /* Tipo de alimento */
 
     const filtrosTipo =
         document.querySelectorAll(".filtro-tipo");
 
 
 
-    /* Etapa */
-
     const filtrosEtapa =
         document.querySelectorAll(".filtro-etapa");
 
 
 
-    /* Raza / tamaño */
-
     const filtrosRaza =
         document.querySelectorAll(".filtro-raza");
 
 
-
-    /* Sabor */
 
     const filtrosSabor =
         document.querySelectorAll(".filtro-sabor");
@@ -141,10 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
          MASCOTA SELECCIONADA INICIALMENTE
     ========================================== */
 
-    /*
-    Al abrir la página se muestran
-    solamente los alimentos para perro.
-    */
 
     let mascotaSeleccionada =
         "perro";
@@ -213,15 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     : "";
 
 
-
-            /*
-            Guardamos automáticamente
-            el nombre.
-
-            Así no necesitas poner
-            data-nombre manualmente.
-            */
-
             producto.dataset.nombre =
                 nombreProducto;
 
@@ -265,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             );
 
-
     }
 
 
@@ -278,21 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
         producto,
         atributo
     ) {
-
-
-        /*
-        Ejemplo:
-
-        data-raza="pequena mediana grande"
-
-        Se convierte en:
-
-        [
-            "pequena",
-            "mediana",
-            "grande"
-        ]
-        */
 
 
         const valor =
@@ -330,11 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
 
 
-        /*
-        Si no seleccionamos nada en
-        este grupo, cualquier producto
-        puede pasar.
-        */
 
         if (
             valoresSeleccionados.length === 0
@@ -345,14 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-
-        /*
-        Si seleccionamos un filtro,
-        pero el producto no tiene ese
-        data correspondiente,
-        el producto no coincide.
-        */
-
         if (
             valoresProducto.length === 0
         ) {
@@ -361,17 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-
-        /*
-        Si seleccionamos varias opciones
-        del mismo grupo, basta con que
-        coincida una.
-
-        Ejemplo:
-
-        Pollo O Cordero
-        */
 
         return valoresSeleccionados.some(
 
@@ -622,10 +546,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         );
 
-
-
-        /* Actualizar contador */
-
         actualizarCantidad(
             cantidadVisible
         );
@@ -699,63 +619,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 function () {
 
 
-                    /* ==========================
-                      CAMBIAR MASCOTA
-                    ========================== */
-
                     mascotaSeleccionada =
                         normalizarTexto(
                             boton.dataset.filtro
                         );
 
 
-
-                    /* ==========================
-                      QUITAR ACTIVO
-                    ========================== */
-
                     botonesMascota.forEach(
-
                         function (
                             otroBoton
                         ) {
-
-
                             otroBoton.classList.remove(
                                 "activo"
                             );
-
-
                         }
-
                     );
-
-
-
-                    /* ==========================
-                       ACTIVAR SELECCIONADO
-                    ========================== */
 
                     boton.classList.add(
                         "activo"
                     );
 
-
-
-                    /* ==========================
-                        VOLVER A FILTRAR
-                    ========================== */
-
                     aplicarFiltros();
 
-
                 }
-
             );
-
-
         }
-
     );
 
 
@@ -1085,21 +973,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-
-                /*
-                IMPORTANTE:
-
-                Limpiar filtros NO cambia
-                Perro/Gato.
-
-                Si estabas viendo Gato,
-                seguirá mostrando Gato.
-
-                Si estabas viendo Perro,
-                seguirá mostrando Perro.
-                */
-
-
                 aplicarFiltros();
 
 
@@ -1140,10 +1013,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         }
-
-
-
-        /* Evitar scroll del fondo */
 
         document.body.style.overflow =
             "hidden";
@@ -1247,7 +1116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         );
 
-
     }
 
 
@@ -1284,11 +1152,6 @@ document.addEventListener("DOMContentLoaded", function () {
                CARGA INICIAL
     ========================================== */
 
-    /*
-    Como mascotaSeleccionada = "perro",
-    al entrar solamente aparecen
-    productos para perro.
-    */
 
     aplicarFiltros();
 
@@ -1306,13 +1169,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         boton.addEventListener("click", function () {
 
-            /* Buscar la tarjeta del producto */
-
             const tarjeta =
                 boton.closest(".producto-card");
-
-
-            /* Obtener el nombre del producto */
 
             const nombreProducto =
                 tarjeta
@@ -1320,21 +1178,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     .textContent
                     .trim();
 
-
-            /* Número de WhatsApp de Aradu Pet */
-
             const numeroWhatsApp =
                 "50688043411";
-
-
-            /* Crear el mensaje */
 
             const mensaje =
                 "Hola, quisiera obtener información sobre el producto: "
                 + nombreProducto;
-
-
-            /* Crear dirección de WhatsApp */
 
             const enlaceWhatsApp =
                 "https://wa.me/"
@@ -1342,16 +1191,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 + "?text="
                 + encodeURIComponent(mensaje);
 
-
-            /* Abrir WhatsApp */
-
             window.open(
                 enlaceWhatsApp,
                 "_blank"
             );
-
         });
-
     });
 
 

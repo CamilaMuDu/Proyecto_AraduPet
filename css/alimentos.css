@@ -1,5 +1,5 @@
 /* =================================
-          AJUSTES GENERALES
+        AJUSTES GENERALES
 ================================= */
 
 * {
@@ -22,14 +22,14 @@ body {
 
 
 /* =================================
-             CATÁLOGO
+        CATÁLOGO
 ================================= */
 
 .catalogo-alimentos {
     min-height: 100vh;
 
     padding:
-        45px 30px 70px;
+        28px 10px 45px;
 
     background-color: #ffffff;
 }
@@ -44,7 +44,7 @@ body {
 
 
 /* =================================
-            ENCABEZADO
+        ENCABEZADO
 ================================= */
 
 .catalogo-encabezado {
@@ -59,7 +59,7 @@ body {
     color:
         rgb(20, 156, 79);
 
-    font-size: 38px;
+    font-size: 25px;
     font-weight: 700;
 }
 
@@ -68,30 +68,136 @@ body {
 
     color: #555555;
 
-    font-size: 16px;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   BOTÓN FLOTANTE - REGRESAR AL INICIO
+========================================== */
+
+.boton-volver-flotante {
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #16bde3;
+    color: #000000;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.22);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*ICONO DE LA FLECHA*/
+
+.boton-volver-flotante svg {
+
+    width: 34px;
+    height: 34px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* EFECTO HOVER*/
+
+.boton-volver-flotante:hover {
+
+    background-color: transparent;
+
+    color: #16bde3;
+
+    border-color: #16bde3;
+
+    transform: scale(1.10);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.boton-volver-flotante:hover svg {
+
+    transform: translateX(-3px);
+}
+
+
+/*AL PRESIONAR*/
+
+.boton-volver-flotante:active {
+
+    transform: scale(0.93);
+}
+
+
+/*TELÉFONO*/
+
+@media screen and (max-width: 768px) {
+
+    .boton-volver-flotante {
+
+        top: 15px;
+        left: 15px;
+
+        width: 56px;
+        height: 56px;
+    }
+
+    .boton-volver-flotante svg {
+
+        width: 31px;
+        height: 31px;
+    }
+
 }
 
 
 /* =================================
-       BOTONES PERRO Y GATO
+        BOTONES PERRO Y GATO
 ================================= */
 
 .filtros-mascota {
+    width: 100%;
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 8px;
 
     margin-bottom: 28px;
 }
 
 .boton-mascota {
-    min-width: 130px;
+    width: 50%;
+
+    min-width: 0;
 
     padding:
-        11px 25px;
+        10px 15px;
 
     color:
         rgb(20, 156, 79);
@@ -100,12 +206,11 @@ body {
         #ffffff;
 
     border:
-        2px solid
-        rgb(20, 156, 79);
+        2px solid rgb(20, 156, 79);
 
     border-radius: 8px;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 
     cursor: pointer;
@@ -116,9 +221,6 @@ body {
         border-color 0.3s ease,
         transform 0.3s ease;
 }
-
-
-/* Hover */
 
 .boton-mascota:hover {
     color: #000000;
@@ -133,9 +235,6 @@ body {
         translateY(-2px);
 }
 
-
-/* Botón seleccionado */
-
 .boton-mascota.activo {
     color: #ffffff;
 
@@ -148,13 +247,16 @@ body {
 
 
 /* =================================
-            HERRAMIENTAS
+        HERRAMIENTAS
 ================================= */
 
 .catalogo-herramientas {
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
+
+    align-items: stretch;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -165,13 +267,12 @@ body {
 .herramientas-derecha {
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
+
+    align-items: stretch;
 
     gap: 18px;
 }
-
-
-/* Cantidad */
 
 .cantidad-productos {
     margin: 0;
@@ -184,10 +285,12 @@ body {
 
 
 /* =================================
-          BOTÓN FILTROS
+        BOTÓN FILTROS
 ================================= */
 
 .boton-abrir-filtros {
+    width: 100%;
+
     padding:
         10px 24px;
 
@@ -217,10 +320,12 @@ body {
 
 
 /* =================================
-          ORDENAR PRODUCTOS
+        ORDENAR PRODUCTOS
 ================================= */
 
 .ordenar-productos {
+    width: 100%;
+
     min-width: 220px;
 
     padding:
@@ -246,25 +351,25 @@ body {
         rgb(20, 156, 79);
 
     box-shadow:
-        0 0 0 3px
-        rgba(20, 156, 79, 0.15);
+        0 0 0 3px rgba(20, 156, 79, 0.15);
 }
 
 
 /* =================================
-          PANEL DE FILTROS
+        PANEL DE FILTROS
 ================================= */
 
 .panel-filtros {
     position: fixed;
 
     top: 0;
+
     left: -380px;
 
     z-index: 2100;
 
-    width: 350px;
-    max-width: 90%;
+    width: 300px;
+    max-width: 92%;
 
     height: 100vh;
 
@@ -272,8 +377,7 @@ body {
         #ffffff;
 
     box-shadow:
-        10px 0 35px
-        rgba(0, 0, 0, 0.20);
+        10px 0 35px rgba(0, 0, 0, 0.20);
 
     overflow-y: auto;
 
@@ -281,16 +385,13 @@ body {
         left 0.35s ease;
 }
 
-
-/* Mostrar panel */
-
 .panel-filtros.mostrar {
     left: 0;
 }
 
 
 /* =================================
-       ENCABEZADO DEL PANEL
+        ENCABEZADO DEL PANEL
 ================================= */
 
 .panel-filtros-encabezado {
@@ -312,9 +413,6 @@ body {
         rgb(20, 156, 79);
 }
 
-
-/* Filtrar alimentos */
-
 .panel-filtros-encabezado h2 {
     margin: 0;
 
@@ -323,9 +421,6 @@ body {
     font-size: 21px;
     font-weight: 700;
 }
-
-
-/* Encuentra lo que necesitas */
 
 .panel-filtros-encabezado p {
     margin:
@@ -339,7 +434,7 @@ body {
 
 
 /* =================================
-            BOTÓN CERRAR
+        BOTÓN CERRAR
 ================================= */
 
 .boton-cerrar-filtros {
@@ -389,7 +484,7 @@ body {
 
 
 /* =================================
-          GRUPO DE FILTRO
+        GRUPO DE FILTRO
 ================================= */
 
 .grupo-filtro {
@@ -399,13 +494,6 @@ body {
     border-bottom:
         1px solid #eeeeee;
 }
-
-
-/* Marca,
-   Tipo de alimento,
-   Etapa de vida,
-   Tamaño / raza,
-   Sabor */
 
 .grupo-filtro h3 {
     margin-bottom: 17px;
@@ -418,7 +506,7 @@ body {
 
 
 /* =================================
-          OPCIÓN DE FILTRO
+        OPCIÓN DE FILTRO
 ================================= */
 
 .filtro-opcion {
@@ -447,15 +535,9 @@ body {
     margin-bottom: 0;
 }
 
-
-/* Texto siempre negro */
-
 .filtro-opcion span {
     color: #000000;
 }
-
-
-/* Hover */
 
 .filtro-opcion:hover {
     color: #000000;
@@ -464,9 +546,6 @@ body {
 .filtro-opcion:hover span {
     color: #000000;
 }
-
-
-/* Checkbox */
 
 .filtro-opcion input {
     width: 18px;
@@ -491,7 +570,7 @@ body {
 
 
 /* =================================
-         LIMPIAR FILTROS
+        LIMPIAR FILTROS
 ================================= */
 
 .boton-limpiar-filtros {
@@ -528,7 +607,7 @@ body {
 
 
 /* =================================
-           FONDO OSCURO
+        FONDO OSCURO
 ================================= */
 
 .fondo-filtros {
@@ -561,30 +640,31 @@ body {
 
 
 /* =================================
-           GRID PRODUCTOS
+        GRID PRODUCTOS
 ================================= */
 
 .productos-grid {
-    display: grid;
+    display: flex;
 
-    /* Cinco columnas */
-    grid-template-columns:
-        repeat(5, minmax(0, 1fr));
+    flex-direction: column;
 
-    gap: 22px;
+    gap: 18px;
 }
 
 
 /* =================================
-          TARJETA PRODUCTO
+        TARJETA PRODUCTO
 ================================= */
 
 .producto-card {
     min-width: 0;
 
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns:
+        115px minmax(0, 1fr);
+
+    align-items: stretch;
 
     background-color:
         #ffffff;
@@ -592,11 +672,10 @@ body {
     border:
         1px solid #eeeeee;
 
-    border-radius: 18px;
+    border-radius: 12px;
 
     box-shadow:
-        0 7px 20px
-        rgba(0, 0, 0, 0.10);
+        0 7px 20px rgba(0, 0, 0, 0.10);
 
     overflow: hidden;
 
@@ -610,13 +689,12 @@ body {
         translateY(-5px);
 
     box-shadow:
-        0 12px 28px
-        rgba(0, 0, 0, 0.16);
+        0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 
 /* =================================
-       PRODUCTO OCULTO POR JS
+        PRODUCTO OCULTO POR JS
 ================================= */
 
 .producto-card.oculto {
@@ -625,7 +703,7 @@ body {
 
 
 /* =================================
-         IMAGEN DEL PRODUCTO
+        IMAGEN DEL PRODUCTO
 ================================= */
 
 .producto-imagen-contenedor {
@@ -633,15 +711,16 @@ body {
 
     width: 100%;
 
-    aspect-ratio:
-        1 / 1;
+    min-height: 190px;
+
+    aspect-ratio: auto;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    padding: 20px;
+    padding: 8px;
 
     background-color:
         #ffffff;
@@ -660,7 +739,7 @@ body {
 
 
 /* =================================
-       INFORMACIÓN DEL PRODUCTO
+        INFORMACIÓN DEL PRODUCTO
 ================================= */
 
 .producto-informacion {
@@ -670,12 +749,13 @@ body {
 
     flex-direction: column;
 
-    padding: 17px;
+    padding:
+        13px 11px;
 }
 
 
 /* =================================
-         ETIQUETA PERRO/GATO
+        ETIQUETA PERRO/GATO
 ================================= */
 
 .producto-etiqueta {
@@ -700,7 +780,7 @@ body {
 
 
 /* =================================
-         NOMBRE DEL PRODUCTO
+        NOMBRE DEL PRODUCTO
 ================================= */
 
 .producto-nombre {
@@ -709,7 +789,7 @@ body {
 
     color: #252525;
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
 
     line-height: 1.4;
@@ -717,7 +797,7 @@ body {
 
 
 /* =================================
-          DESCRIPCIÓN
+        DESCRIPCIÓN DEL PRODUCTO
 ================================= */
 
 .producto-descripcion {
@@ -746,7 +826,7 @@ body {
 
 
 /* =================================
-      BOTÓN VER ESPECIFICACIONES
+        BOTÓN VER ESPECIFICACIONES
 ================================= */
 
 .producto-boton {
@@ -766,7 +846,7 @@ body {
 
     border-radius: 7px;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
 
     cursor: pointer;
@@ -783,7 +863,7 @@ body {
 
 
 /* =================================
-          SIN RESULTADOS
+        SIN RESULTADOS
 ================================= */
 
 .productos-vacios {
@@ -824,54 +904,17 @@ body {
 }
 
 
-/* =================================
-       PANTALLAS INTERMEDIAS
-================================= */
-
-@media screen and (max-width: 1500px) {
-
-    .productos-grid {
-        grid-template-columns:
-            repeat(5, minmax(0, 1fr));
-    }
-
-}
+/* =================================================
+        RESPONSIVE - MOBILE FIRST
+================================================= */
 
 
-/* =================================
-          CUATRO COLUMNAS
-================================= */
+/* =================================================
+        TELÉFONOS GRANDES
+        Desde 481px
+================================================= */
 
-@media screen and (max-width: 1250px) {
-
-    .productos-grid {
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
-    }
-
-}
-
-
-/* =================================
-           TRES COLUMNAS
-================================= */
-
-@media screen and (max-width: 992px) {
-
-    .productos-grid {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-}
-
-
-/* =================================
-              TELÉFONO
-================================= */
-
-@media screen and (max-width: 768px) {
-
+@media screen and (min-width: 481px) {
 
     .catalogo-alimentos {
         padding:
@@ -879,102 +922,52 @@ body {
     }
 
 
-    /* Título */
+    /* ENCABEZADO */
 
     .catalogo-titulo {
         font-size: 29px;
     }
-
 
     .catalogo-subtitulo {
         font-size: 15px;
     }
 
 
-    /* =================================
-           PERRO Y GATO
-    ================================= */
+    /* PERRO Y GATO */
 
     .filtros-mascota {
-        width: 100%;
+        gap: 12px;
     }
-
 
     .boton-mascota {
-        width: 50%;
+        padding:
+            11px 25px;
 
-        min-width: 0;
+        font-size: 16px;
     }
 
 
-    /* =================================
-            HERRAMIENTAS
-    ================================= */
-
-    .catalogo-herramientas {
-        align-items: stretch;
-
-        flex-direction: column;
-    }
-
-
-    .herramientas-derecha {
-        align-items: stretch;
-
-        flex-direction: column;
-    }
-
-
-    .boton-abrir-filtros,
-    .ordenar-productos {
-        width: 100%;
-    }
-
-
-    /* =================================
-              PRODUCTOS
-    ================================= */
-
-    .productos-grid {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 18px;
-    }
-
+    /* TARJETAS */
 
     .producto-card {
-        display: grid;
-
         grid-template-columns:
             150px minmax(0, 1fr);
-
-        align-items: stretch;
-
-        border-radius: 12px;
     }
-
 
     .producto-imagen-contenedor {
         min-height: 220px;
 
-        aspect-ratio: auto;
-
         padding: 12px;
     }
-
 
     .producto-informacion {
         padding:
             18px 15px;
     }
 
-
     .producto-nombre {
         font-size: 16px;
     }
-
 
     .producto-descripcion {
         font-size: 13px;
@@ -984,83 +977,155 @@ body {
         -webkit-line-clamp: 4;
     }
 
+    .producto-boton {
+        font-size: 13px;
+    }
 
-    /* =================================
-            PANEL DE FILTROS
-    ================================= */
+
+    /* PANEL DE FILTROS */
 
     .panel-filtros {
         width: 330px;
 
         max-width: 90%;
     }
-
 }
 
 
-/* =================================
-         TELÉFONO PEQUEÑO
-================================= */
+/* =================================================
+        TABLET
+        Desde 769px
+================================================= */
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 769px) {
 
+    /* =================================
+            CATÁLOGO
+    ================================= */
 
     .catalogo-alimentos {
         padding:
-            28px 10px 45px;
+            45px 30px 70px;
     }
 
+
+    /* =================================
+            ENCABEZADO
+    ================================= */
 
     .catalogo-titulo {
-        font-size: 25px;
+        font-size: 38px;
     }
-
 
     .catalogo-subtitulo {
-        font-size: 14px;
+        font-size: 16px;
     }
 
-
-    /* Perro / Gato */
+    /* =================================
+            PERRO Y GATO
+    ================================= */
 
     .filtros-mascota {
-        gap: 8px;
+        width: auto;
     }
-
 
     .boton-mascota {
-        padding:
-            10px 15px;
+        width: auto;
 
-        font-size: 14px;
+        min-width: 130px;
     }
 
 
-    /* Producto */
+    /* =================================
+            HERRAMIENTAS
+    ================================= */
+
+    .catalogo-herramientas {
+        flex-direction: row;
+
+        align-items: center;
+    }
+
+    .herramientas-derecha {
+        flex-direction: row;
+
+        align-items: center;
+    }
+
+    .boton-abrir-filtros {
+        width: auto;
+    }
+
+    .ordenar-productos {
+        width: auto;
+    }
+
+
+    /* =================================
+            PANEL DE FILTROS
+    ================================= */
+
+    .panel-filtros {
+        width: 350px;
+
+        max-width: 90%;
+    }
+
+
+    /* =================================
+            GRID PRODUCTOS
+    ================================= */
+
+    .productos-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+
+    /* =================================
+            TARJETA PRODUCTO
+    ================================= */
 
     .producto-card {
-        grid-template-columns:
-            115px minmax(0, 1fr);
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: initial;
+
+        border-radius: 18px;
     }
 
+
+    /* =================================
+            IMAGEN PRODUCTO
+    ================================= */
 
     .producto-imagen-contenedor {
-        min-height: 190px;
+        min-height: initial;
 
-        padding: 8px;
+        aspect-ratio:
+            1 / 1;
+
+        padding: 20px;
     }
 
+
+    /* =================================
+            INFORMACIÓN
+    ================================= */
 
     .producto-informacion {
-        padding:
-            13px 11px;
+        padding: 17px;
     }
-
 
     .producto-nombre {
-        font-size: 14px;
+        font-size: 15px;
     }
-
 
     .producto-descripcion {
         font-size: 12px;
@@ -1070,18 +1135,35 @@ body {
         -webkit-line-clamp: 3;
     }
 
-
     .producto-boton {
-        font-size: 12px;
+        font-size: 13px;
     }
+}
 
 
-    /* Panel filtros */
+/* =================================================
+        LAPTOP
+        Desde 993px
+================================================= */
 
-    .panel-filtros {
-        width: 300px;
+@media screen and (min-width: 993px) {
 
-        max-width: 92%;
+    .productos-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
     }
+}
 
+
+/* =================================================
+        ESCRITORIO
+        Desde 1251px
+================================================= */
+
+@media screen and (min-width: 1251px) {
+
+    .productos-grid {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+    }
 }

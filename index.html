@@ -75,25 +75,39 @@
                             </a>
                         </li>
                     </ul>
+ <!-- ===============================
+        INICIO BUSCADOR
+================================ -->
+
                     <div class="buscador-contenedor">
 
-                        <form class="d-flex buscador-formulario" id="formularioBusqueda" role="search">
+                        <form class="buscador-formulario" id="formularioBusqueda" role="search">
 
-                            <input class="form-control me-2" id="campoBusqueda" type="search" placeholder="Buscar"
-                                aria-label="Buscar productos o secciones" autocomplete="off">
+                            <div class="buscador-caja">
 
-                            <button class="btn btn-outline-success" type="submit">
+                                <i class="bi bi-search buscador-icono"></i>
 
-                                Buscar
+                                <input class="buscador-input" id="campoBusqueda" type="search"
+                                    placeholder="¿Qué estás buscando?" aria-label="Buscar productos o secciones"
+                                    autocomplete="off">
 
-                            </button>
+                                <button class="buscador-boton" type="submit" aria-label="Buscar">
+                                    Buscar
+                                </button>
+
+                            </div>
 
                         </form>
 
+                        <!-- Sugerencias automáticas -->
                         <div class="buscador-sugerencias" id="sugerenciasBusqueda">
                         </div>
 
                     </div>
+
+ <!-- ===============================
+        FIN BUSCADOR
+================================ -->
                 </div>
             </div>
         </nav>
@@ -615,48 +629,58 @@
         FIN HIPERVINCULO CONTACTO
     -------------------------------->
 
-    <!-------------------------------
-          INICIO RESULTADOS
-    -------------------------------->
-    <section id="resultadosBusqueda" class="resultados-busqueda">
+   <!-------------------------------
+      INICIO BÚSQUEDAS RECIENTES
+-------------------------------->
 
-        <div class="container">
+<section
+    id="resultadosBusqueda"
+    class="resultados-busqueda"
+>
 
-            <div class="resultados-encabezado">
+    <div class="container">
 
-                <div>
+        <div class="resultados-encabezado">
 
-                    <h2 class="resultados-titulo">
+            <div>
 
-                        Resultados de búsqueda
+                <h2 class="resultados-titulo">
+                    Búsquedas recientes
+                </h2>
 
-                    </h2>
+                <p
+                    class="resultados-informacion"
+                    id="informacionResultados"
+                >
+                    Aquí aparecerán tus búsquedas recientes.
+                </p>
 
-                    <p class="resultados-informacion" id="informacionResultados">
+            </div>
 
-                        Busca productos o secciones de Aradu Pet.
+            <button
+                type="button"
+                class="btn-limpiar-busqueda"
+                id="limpiarBusqueda"
+            >
+                Limpiar historial
+            </button>
 
-                    </p>
+        </div>
 
-                </div>
 
-                <button type="button" class="btn-limpiar-busqueda" id="limpiarBusqueda">
+        <div
+            class="historial-busquedas"
+            id="listaResultados"
+        >
+        </div>
 
-                    Limpiar resultados
+    </div>
 
-                </button>
+</section>
 
-                <div>
-
-                    <div class="resultados-lista" id="listaResultados">
-                    </div>
-
-                </div>
-
-    </section>
-    <!-------------------------------
-           FIN RESULTADOS
-    -------------------------------->
+<!-------------------------------
+       FIN BÚSQUEDAS RECIENTES
+-------------------------------->
 
     <!-------------------------------
          INICIO BOTON WHATSAPP

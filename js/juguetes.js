@@ -433,8 +433,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-
         /* ==================================
               SIN RESULTADOS
         ================================== */

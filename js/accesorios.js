@@ -104,19 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
             normalizarTexto(nombre);
 
 
-        /*
-        IMPORTANTE:
-        Pechera y arnés se revisan antes
-        que correa.
-
-        Así por ejemplo:
-        "Correa con pechera"
-
-        queda dentro de:
-        Pecheras y arneses
-        */
-
-
         if (
             texto.includes("pechera") ||
             texto.includes("arnes")
@@ -172,12 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-        /*
-        Llaveros, stickers, conos,
-        y cualquier producto que no
-        coincida con los anteriores.
-        */
 
         return "otros";
 
