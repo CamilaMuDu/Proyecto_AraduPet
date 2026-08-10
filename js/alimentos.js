@@ -1293,4 +1293,66 @@ document.addEventListener("DOMContentLoaded", function () {
     aplicarFiltros();
 
 
+
+    /* =========================================
+        CONSULTAR PRODUCTO POR WHATSAPP
+========================================= */
+
+    const botonesWhatsApp =
+        document.querySelectorAll(".boton-whatsapp");
+
+
+    botonesWhatsApp.forEach(function (boton) {
+
+        boton.addEventListener("click", function () {
+
+            /* Buscar la tarjeta del producto */
+
+            const tarjeta =
+                boton.closest(".producto-card");
+
+
+            /* Obtener el nombre del producto */
+
+            const nombreProducto =
+                tarjeta
+                    .querySelector(".producto-nombre")
+                    .textContent
+                    .trim();
+
+
+            /* Número de WhatsApp de Aradu Pet */
+
+            const numeroWhatsApp =
+                "50688043411";
+
+
+            /* Crear el mensaje */
+
+            const mensaje =
+                "Hola, quisiera obtener información sobre el producto: "
+                + nombreProducto;
+
+
+            /* Crear dirección de WhatsApp */
+
+            const enlaceWhatsApp =
+                "https://wa.me/"
+                + numeroWhatsApp
+                + "?text="
+                + encodeURIComponent(mensaje);
+
+
+            /* Abrir WhatsApp */
+
+            window.open(
+                enlaceWhatsApp,
+                "_blank"
+            );
+
+        });
+
+    });
+
+
 });

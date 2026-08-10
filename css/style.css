@@ -1286,3 +1286,64 @@ footer p {
 /*==============================
        FIN MULTIMEDIA
 ==============================*/
+
+
+/* ==============================
+        BOTÓN WHATSAPP
+============================== */
+
+.whatsapp-flotante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+
+    bottom: 25px;
+    right: 25px;
+
+    background-color: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+
+.whatsapp-flotante:hover {
+    background-color: #128C7E;
+    color: white;
+
+    transform: scale(1.1);
+}
+
+
+/* ==============================
+        RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+
+    .whatsapp-flotante {
+        width: 52px;
+        height: 52px;
+
+        font-size: 27px;
+
+        bottom: 20px;
+        right: 20px;
+    }
+
+}

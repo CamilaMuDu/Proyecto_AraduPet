@@ -980,4 +980,47 @@ document.addEventListener("DOMContentLoaded", function () {
     aplicarFiltros();
 
 
+    /* =========================================
+    CONSULTAR PRODUCTO POR WHATSAPP
+========================================= */
+
+    const botonesWhatsApp =
+        document.querySelectorAll(".boton-whatsapp");
+
+    botonesWhatsApp.forEach(function (boton) {
+
+        boton.addEventListener("click", function () {
+
+            const tarjeta =
+                boton.closest(".producto-card");
+
+            const nombreProducto =
+                tarjeta
+                    .querySelector(".producto-nombre")
+                    .textContent
+                    .trim();
+
+            const numeroWhatsApp =
+                "50688043411";
+
+            const mensaje =
+                "Hola, quisiera obtener información sobre el juguete: "
+                + nombreProducto;
+
+            const enlaceWhatsApp =
+                "https://wa.me/"
+                + numeroWhatsApp
+                + "?text="
+                + encodeURIComponent(mensaje);
+
+            window.open(
+                enlaceWhatsApp,
+                "_blank"
+            );
+
+        });
+
+    });
+
+
 });
