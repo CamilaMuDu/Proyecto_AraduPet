@@ -110,8 +110,6 @@ body {
 }
 
 
-/*ICONO DE LA FLECHA*/
-
 .boton-volver-flotante svg {
 
     width: 34px;
@@ -120,9 +118,6 @@ body {
     transition:
         transform 0.3s ease;
 }
-
-
-/* EFECTO HOVER*/
 
 .boton-volver-flotante:hover {
 
@@ -144,7 +139,6 @@ body {
 }
 
 
-/*AL PRESIONAR*/
 
 .boton-volver-flotante:active {
 
@@ -910,8 +904,7 @@ body {
 
 
 /* =================================================
-        TELÉFONOS GRANDES
-        Desde 481px
+        TELÉFONOS 
 ================================================= */
 
 @media screen and (min-width: 481px) {
@@ -921,9 +914,6 @@ body {
             32px 14px 50px;
     }
 
-
-    /* ENCABEZADO */
-
     .catalogo-titulo {
         font-size: 29px;
     }
@@ -932,8 +922,6 @@ body {
         font-size: 15px;
     }
 
-
-    /* PERRO Y GATO */
 
     .filtros-mascota {
         gap: 12px;
@@ -946,8 +934,6 @@ body {
         font-size: 16px;
     }
 
-
-    /* TARJETAS */
 
     .producto-card {
         grid-template-columns:
@@ -982,8 +968,6 @@ body {
     }
 
 
-    /* PANEL DE FILTROS */
-
     .panel-filtros {
         width: 330px;
 
@@ -994,7 +978,6 @@ body {
 
 /* =================================================
         TABLET
-        Desde 769px
 ================================================= */
 
 @media screen and (min-width: 769px) {
@@ -1143,7 +1126,6 @@ body {
 
 /* =================================================
         LAPTOP
-        Desde 993px
 ================================================= */
 
 @media screen and (min-width: 993px) {
@@ -1157,7 +1139,6 @@ body {
 
 /* =================================================
         ESCRITORIO
-        Desde 1251px
 ================================================= */
 
 @media screen and (min-width: 1251px) {

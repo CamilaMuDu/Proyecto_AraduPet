@@ -62,8 +62,105 @@ body {
 }
 
 
+/* ==========================================
+   BOTÓN FLOTANTE - REGRESAR AL INICIO
+========================================== */
+
+.boton-volver-flotante {
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #16bde3;
+    color: #000000;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.22);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.boton-volver-flotante svg {
+
+    width: 34px;
+    height: 34px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.boton-volver-flotante:hover {
+
+    background-color: transparent;
+
+    color: #16bde3;
+
+    border-color: #16bde3;
+
+    transform: scale(1.10);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.boton-volver-flotante:hover svg {
+
+    transform: translateX(-3px);
+}
+
+
+.boton-volver-flotante:active {
+
+    transform: scale(0.93);
+}
+
+
+/*TELÉFONO*/
+
+@media screen and (max-width: 768px) {
+
+    .boton-volver-flotante {
+
+        top: 15px;
+        left: 15px;
+
+        width: 56px;
+        height: 56px;
+    }
+
+    .boton-volver-flotante svg {
+
+        width: 31px;
+        height: 31px;
+    }
+
+}
+
+
+
 /* =================================
-        BOTONES PERRO Y GATO
+        FILTRO PERRO Y GATO
 ================================= */
 
 .filtros-mascota {
@@ -379,11 +476,6 @@ body {
         GRID DE HIGIENE
 ================================= */
 
-/*
-    MOBILE FIRST:
-    En teléfonos los productos aparecen
-    uno debajo de otro.
-*/
 
 .productos-grid {
     display: flex;
@@ -638,8 +730,6 @@ body {
     }
 
 
-    /* ENCABEZADO */
-
     .catalogo-titulo {
         font-size: 38px;
     }
@@ -649,7 +739,6 @@ body {
     }
 
 
-    /* BOTONES PERRO Y GATO */
 
     .filtros-mascota {
         width: auto;
@@ -660,8 +749,6 @@ body {
         min-width: 130px;
     }
 
-
-    /* HERRAMIENTAS */
 
     .catalogo-herramientas {
         flex-direction: row;

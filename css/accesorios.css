@@ -20,12 +20,6 @@ body {
         CATÁLOGO
 ================================= */
 
-/*
-    MOBILE FIRST:
-    La configuración base corresponde
-    a teléfonos.
-*/
-
 .catalogo-accesorios {
     min-height: 100vh;
     padding: 32px 14px 50px;
@@ -60,6 +54,101 @@ body {
     color: #555555;
     font-size: 15px;
 }
+
+
+/* ==========================================
+   BOTÓN FLOTANTE - REGRESAR AL INICIO
+========================================== */
+
+.boton-volver-flotante {
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #16bde3;
+    color: #000000;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.22);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.boton-volver-flotante svg {
+
+    width: 34px;
+    height: 34px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.boton-volver-flotante:hover {
+
+    background-color: transparent;
+
+    color: #16bde3;
+
+    border-color: #16bde3;
+
+    transform: scale(1.10);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.boton-volver-flotante:hover svg {
+
+    transform: translateX(-3px);
+}
+
+
+.boton-volver-flotante:active {
+
+    transform: scale(0.93);
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .boton-volver-flotante {
+
+        top: 15px;
+        left: 15px;
+
+        width: 56px;
+        height: 56px;
+    }
+
+    .boton-volver-flotante svg {
+
+        width: 31px;
+        height: 31px;
+    }
+
+}
+
 
 
 /* =================================
@@ -177,10 +266,7 @@ body {
 
     z-index: 2100;
 
-    /*
-        Tamaño que utilizabas
-        para teléfono.
-    */
+
     width: 330px;
     max-width: 90%;
 
@@ -234,8 +320,6 @@ body {
     font-weight: 700;
 }
 
-
-/* Subtítulo: Encuentra lo que necesitas */
 
 .panel-filtros-encabezado p {
     margin: 2px 0 0;
@@ -347,9 +431,6 @@ body {
 }
 
 
-/* Mantiene letras negras
-   al pasar el mouse */
-
 .filtro-opcion:hover {
     color: #000000;
 }
@@ -358,8 +439,6 @@ body {
     color: #000000;
 }
 
-
-/* Checkbox */
 
 .filtro-opcion input {
     width: 18px;
@@ -455,11 +534,6 @@ body {
         GRID DE ACCESORIOS
 ================================= */
 
-/*
-    MOBILE FIRST:
-    En teléfono los productos aparecen
-    verticalmente, uno debajo de otro.
-*/
 
 .productos-grid {
     display: flex;
@@ -588,10 +662,6 @@ body {
 }
 
 
-/* =================================
-        NOMBRE
-================================= */
-
 .producto-nombre {
     margin: 0 0 10px;
 
@@ -703,30 +773,16 @@ body {
 
 
 /* =================================================
-        RESPONSIVE - MOBILE FIRST
-================================================= */
-
-
-/* =================================================
         TABLET
-        Desde 769px
 ================================================= */
 
 @media screen and (min-width: 769px) {
-
-    /* =================================
-            CATÁLOGO
-    ================================= */
 
     .catalogo-accesorios {
         padding:
             45px 30px 70px;
     }
 
-
-    /* =================================
-            ENCABEZADO
-    ================================= */
 
     .catalogo-titulo {
         font-size: 38px;
@@ -840,7 +896,6 @@ body {
 
 /* =================================================
         LAPTOP
-        Desde 993px
 ================================================= */
 
 @media screen and (min-width: 993px) {
@@ -848,19 +903,5 @@ body {
     .productos-grid {
         grid-template-columns:
             repeat(4, minmax(0, 1fr));
-    }
-}
-
-
-/* =================================================
-        ESCRITORIO GRANDE
-        Desde 1251px
-================================================= */
-
-@media screen and (min-width: 1251px) {
-
-    .productos-grid {
-        grid-template-columns:
-            repeat(5, minmax(0, 1fr));
     }
 }

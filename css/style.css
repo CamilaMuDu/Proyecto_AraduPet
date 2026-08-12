@@ -412,256 +412,6 @@ body {
 
 
 /* ============================
-        SECCIÓN CATEGORÍAS
-============================ */
-
-
-.seccion-categorias {
-    padding: 40px 12px;
-    background-color: #ffffff;
-}
-
-.seccion-categorias .container {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.categorias-encabezado {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-}
-
-.categorias-titulo {
-    margin: 0;
-    color: #161616;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.categorias-controles {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.categoria-flecha {
-    width: 36px;
-    height: 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border: none;
-    border-radius: 50%;
-
-    color: #333333;
-    background-color: #eeeeee;
-
-    font-size: 15px;
-    cursor: pointer;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.categoria-flecha:hover {
-    color: white;
-    background-color: rgb(0, 217, 255);
-    transform: scale(1.08);
-}
-
-.categoria-flecha:disabled {
-    color: #999999;
-    background-color: #eeeeee;
-    cursor: default;
-    opacity: 0.55;
-    transform: none;
-}
-
-.categoria-flecha:disabled:hover {
-    color: #999999;
-    background-color: #eeeeee;
-    transform: none;
-}
-
-.categorias-caja {
-    padding: 18px;
-    border: 1px solid #dedede;
-    border-radius: 6px;
-    background-color: white;
-    overflow: hidden;
-}
-
-.categorias-lista {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 16px;
-
-    width: 100%;
-
-    overflow-x: hidden;
-    overflow-y: hidden;
-
-    scroll-behavior: auto;
-    scroll-snap-type: x proximity;
-
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.categorias-lista::-webkit-scrollbar {
-    display: none;
-}
-
-.categoria-card {
-    flex: 0 0 calc((100% - 16px) / 2);
-    min-width: 0;
-    scroll-snap-align: start;
-}
-
-.categoria-enlace {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-.categoria-imagen {
-    display: block;
-
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    border-radius: 6px;
-
-    object-fit: cover;
-    object-position: center;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.categoria-enlace:hover .categoria-imagen {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
-}
-
-.categoria-nombre {
-    margin: 13px 0 8px;
-
-    color: #111111;
-    font-size: 17px;
-    font-weight: 700;
-
-    transition: color 0.3s ease;
-}
-
-.categoria-enlace:hover .categoria-nombre {
-    color: rgb(0, 217, 255);
-}
-
-.categoria-cantidad {
-    margin: 0;
-    color: #555555;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-
-/* TABLET Y ESCRITORIO */
-
-@media screen and (min-width: 769px) {
-
-    .seccion-categorias {
-        padding: 55px 0;
-    }
-
-    .seccion-categorias .container {
-        max-width: 720px;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .categorias-encabezado {
-        margin-bottom: 22px;
-    }
-
-    .categorias-titulo {
-        font-size: 25px;
-    }
-
-    .categorias-controles {
-        display: none;
-        gap: 10px;
-    }
-
-    .categoria-flecha {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-    .categorias-caja {
-        padding: 30px;
-    }
-
-    .categorias-lista {
-        gap: 28px;
-        overflow-x: auto;
-    }
-
-    .categoria-card {
-        flex: 0 0 calc((100% - 112px) / 5);
-        min-width: 0;
-    }
-
-    .categoria-nombre {
-        margin-top: 18px;
-        font-size: 18px;
-    }
-}
-
-
-/*
-    Estos breakpoints mantienen exactamente
-    los tamaños del .container de Bootstrap.
-*/
-
-@media screen and (min-width: 992px) {
-
-    .seccion-categorias .container {
-        max-width: 960px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-
-    .seccion-categorias .container {
-        max-width: 1140px;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-
-    .seccion-categorias .container {
-        max-width: 1320px;
-    }
-}
-
-/* ============================
-       FIN SECCIÓN CATEGORÍAS
-============================ */
-
-
-/* ============================
      INICIO MULTIMEDIA
 ============================ */
 
@@ -855,10 +605,6 @@ footer p {
     color: #888888;
 }
 
-
-/* Quita la X azul extra
-   que algunos navegadores agregan */
-
 .buscador-input::-webkit-search-decoration {
     display: none;
 }
@@ -919,7 +665,6 @@ footer p {
 }
 
 
-/* Cuando el usuario escribe */
 
 .buscador-caja:focus-within {
     border-color:
@@ -1201,10 +946,6 @@ footer p {
         BÚSQUEDAS RECIENTES
 ================================= */
 
-/*
-    Esta sección conserva la estética
-    compacta que te gustó.
-*/
 
 .resultados-busqueda {
     display: none;
@@ -1652,6 +1393,405 @@ footer p {
     transform: scale(1.1);
 }
 
+/* =====================================
+        INSTAGRAM DEL FOOTER
+===================================== */
+
+.instagram-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f8f9fa;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+
+/* Icono de Instagram */
+.instagram-footer i {
+    color: #e1306c;
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Al pasar el mouse */
+.instagram-footer:hover {
+    color: #e1306c;
+}
+
+
+.instagram-footer:hover i {
+    transform: scale(1.15);
+}
+
+/* ==================================================
+        SECCIÓN CREADORES DEL SITIO
+================================================== */
+
+.creadores {
+    padding: 60px 0;
+    background-color: #f4f8f5;
+}
+
+
+/* ==============================
+        ENCABEZADO
+============================== */
+
+.creadores-encabezado {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+
+.creadores-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+    padding: 7px 16px;
+
+    background-color: rgba(0, 127, 61, 0.1);
+
+    color: #007f3d;
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+.creadores-titulo {
+    margin-bottom: 12px;
+
+    color:  rgb(20, 156, 79);
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+.creadores-descripcion {
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: #66757c;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+        CONTENEDOR TARJETAS
+============================== */
+
+.creadores-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+/* ==============================
+            TARJETA
+============================== */
+
+.creador-card {
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.creador-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.13);
+}
+
+
+/* ==============================
+            IMAGEN
+============================== */
+
+.creador-imagen-contenedor {
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+
+    background-color: #e9efeb;
+}
+
+
+.creador-imagen {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+
+.creador-card:hover .creador-imagen {
+    transform: scale(1.04);
+}
+
+
+/* Línea decorativa */
+
+.creador-imagen-contenedor::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: #16bde3;
+}
+
+
+/* ==============================
+        INFORMACIÓN
+============================== */
+
+.creador-info {
+    padding: 25px;
+}
+
+
+.creador-nombre {
+    margin-bottom: 6px;
+
+    color: #263238;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.creador-carrera {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: #007f3d;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+/* ==============================
+            DATOS
+============================== */
+
+.creador-datos {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+.creador-dato {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.creador-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    background-color: rgba(22, 189, 227, 0.12);
+
+    color: #16bde3;
+
+    border-radius: 50%;
+
+    font-size: 1.1rem;
+}
+
+
+.creador-label {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #76858a;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.creador-dato p {
+    margin: 0;
+
+    color: #263238;
+
+    font-size: 0.95rem;
+}
+
+
+.creador-dato a {
+    color: #263238;
+
+    text-decoration: none;
+
+    word-break: break-word;
+
+    transition: color 0.2s ease;
+}
+
+
+.creador-dato a:hover {
+    color: #007f3d;
+}
+
+
+/* ==============================
+        FUNCIÓN EN EL PROYECTO
+============================== */
+
+.creador-funcion {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    background-color: #f4f8f5;
+
+    border-left: 4px solid #007f3d;
+
+    border-radius: 10px;
+}
+
+
+.creador-funcion i {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #007f3d;
+
+    font-size: 1.2rem;
+}
+
+
+.creador-funcion p {
+    margin: 0;
+
+    color: #536166;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+
+/* ==================================================
+                TABLET
+================================================== */
+
+@media (min-width: 768px) {
+
+    .creadores {
+        padding: 75px 0;
+    }
+
+
+    .creadores-titulo {
+        font-size: 2.3rem;
+    }
+
+
+    .creadores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .creador-imagen-contenedor {
+        height: 320px;
+    }
+
+}
+
+
+
+/* ==================================================
+                COMPUTADORA
+================================================== */
+
+@media (min-width: 992px) {
+
+    .creadores {
+        padding: 85px 0;
+    }
+
+
+    .creadores-grid {
+        gap: 35px;
+    }
+
+
+    .creador-info {
+        padding: 28px;
+    }
+
+
+    .creador-imagen-contenedor {
+        height: 350px;
+    }
+
+}
 
 /* TABLET Y ESCRITORIO */
 
@@ -1671,3 +1811,35 @@ footer p {
 /* ==============================
         FIN BOTÓN WHATSAPP
 ============================== */
+
+/* ===========================
+        INICIO UBICACIÓN
+=========================== */
+
+#mapa {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#btnRuta {
+    background-color: #007f3d;
+    border: none;
+    padding: 12px 22px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+#btnRuta:hover {
+    background-color: #006c34;
+}
+
+#informacionRuta {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ===========================
+    FIN UBICACIÓN
+=========================== */

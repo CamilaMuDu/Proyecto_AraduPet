@@ -75,7 +75,7 @@
                             </a>
                         </li>
                     </ul>
- <!-- ===============================
+                    <!-- ===============================
         INICIO BUSCADOR
 ================================ -->
 
@@ -104,8 +104,7 @@
                         </div>
 
                     </div>
-
- <!-- ===============================
+                    <!-- ===============================
         FIN BUSCADOR
 ================================ -->
                 </div>
@@ -318,151 +317,6 @@
 -------------------------------->
 
 
-    <!-------------------------------
-        INICIO PRODUCTOS GENERALES
-    -------------------------------->
-    <section id="categorias" class="seccion-categorias">
-
-        <div class="container">
-
-            <div class="categorias-encabezado">
-
-                <h2 class="categorias-titulo">
-                    Productos Generales
-                </h2>
-
-                <div class="categorias-controles">
-
-                    <button type="button" class="categoria-flecha" id="categoriaAnterior"
-                        aria-label="Categoría anterior">
-
-                        &#10094;
-
-                    </button>
-
-                    <button type="button" class="categoria-flecha" id="categoriaSiguiente"
-                        aria-label="Categoría siguiente">
-
-                        &#10095;
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="categorias-caja">
-
-                <div class="categorias-lista" id="listaCategorias">
-
-                    <!-- Categoría 1 -->
-                    <article class="categoria-card">
-
-                        <a href="#" class="categoria-enlace">
-
-                            <img src="img/categoria-alimentos.jpg" alt="Alimentos para perros y gatos"
-                                class="categoria-imagen">
-
-                            <h3 class="categoria-nombre">
-                                Alimentos
-                            </h3>
-
-                            <p class="categoria-cantidad">
-                                Productos para perros y gatos
-                            </p>
-
-                        </a>
-
-                    </article>
-
-                    <!-- Categoría 2 -->
-                    <article class="categoria-card">
-
-                        <a href="#" class="categoria-enlace">
-
-                            <img src="img/categoria-accesorios.jpg" alt="Accesorios para mascotas"
-                                class="categoria-imagen">
-
-                            <h3 class="categoria-nombre">
-                                Accesorios
-                            </h3>
-
-                            <p class="categoria-cantidad">
-                                Collares, correas y camas
-                            </p>
-
-                        </a>
-
-                    </article>
-
-                    <!-- Categoría 3 -->
-                    <article class="categoria-card">
-
-                        <a href="#" class="categoria-enlace">
-
-                            <img src="img/categoria-juguetes.jpg" alt="Juguetes para mascotas" class="categoria-imagen">
-
-                            <h3 class="categoria-nombre">
-                                Juguetes
-                            </h3>
-
-                            <p class="categoria-cantidad">
-                                Diversión para tu mascota
-                            </p>
-
-                        </a>
-
-                    </article>
-
-                    <!-- Categoría 4 -->
-                    <article class="categoria-card">
-
-                        <a href="#" class="categoria-enlace">
-
-                            <img src="img/categoria-snacks.jpg" alt="Snacks para mascotas" class="categoria-imagen">
-
-                            <h3 class="categoria-nombre">
-                                Snacks
-                            </h3>
-
-                            <p class="categoria-cantidad">
-                                Premios y golosinas
-                            </p>
-
-                        </a>
-
-                    </article>
-
-                    <!-- Categoría 5 -->
-                    <article class="categoria-card">
-
-                        <a href="#" class="categoria-enlace">
-
-                            <img src="img/categoria-higiene.jpg" alt="Productos de higiene para mascotas"
-                                class="categoria-imagen">
-
-                            <h3 class="categoria-nombre">
-                                Higiene
-                            </h3>
-
-                            <p class="categoria-cantidad">
-                                Limpieza y bienestar
-                            </p>
-
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <!-------------------------------
-        FIN PRODUCTOS GENERALES
-    -------------------------------->
 
     <!-------------------------------
         INICIO MULTIMEDIA
@@ -548,13 +402,24 @@
 
                 <div class="col-lg-7">
 
-                    <div class="ratio ratio-16x9 shadow rounded">
+                    <!-- Mapa de Google -->
+                    <div id="mapa" class="shadow rounded"></div>
 
-                        <!-- Sustituir por el iframe de Google Maps -->
-                        <iframe src="" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
+                    <!-- Botón para obtener la ubicación del usuario -->
+                    <div class="text-center mt-3">
+
+                        <button type="button" id="btnRuta" class="btn btn-success">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                            Cómo llegar desde mi ubicación
+
+                        </button>
 
                     </div>
+
+                    <!-- distancia y duración -->
+                    <div id="informacionRuta" class="mt-3 text-center"></div>
 
                 </div>
 
@@ -621,64 +486,44 @@
             FIN ACERCA DE
 -------------------------------->
 
-    <!-------------------------------
-        INICIO HIPERVINCULO CONTACTO
-    -------------------------------->
 
     <!-------------------------------
-        FIN HIPERVINCULO CONTACTO
-    -------------------------------->
-
-   <!-------------------------------
       INICIO BÚSQUEDAS RECIENTES
 -------------------------------->
 
-<section
-    id="resultadosBusqueda"
-    class="resultados-busqueda"
->
+    <section id="resultadosBusqueda" class="resultados-busqueda">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="resultados-encabezado">
+            <div class="resultados-encabezado">
 
-            <div>
+                <div>
 
-                <h2 class="resultados-titulo">
-                    Búsquedas recientes
-                </h2>
+                    <h2 class="resultados-titulo">
+                        Búsquedas recientes
+                    </h2>
 
-                <p
-                    class="resultados-informacion"
-                    id="informacionResultados"
-                >
-                    Aquí aparecerán tus búsquedas recientes.
-                </p>
+                    <p class="resultados-informacion" id="informacionResultados">
+                        Aquí aparecerán tus búsquedas recientes.
+                    </p>
+
+                </div>
+
+                <button type="button" class="btn-limpiar-busqueda" id="limpiarBusqueda">
+                    Limpiar historial
+                </button>
 
             </div>
 
-            <button
-                type="button"
-                class="btn-limpiar-busqueda"
-                id="limpiarBusqueda"
-            >
-                Limpiar historial
-            </button>
+
+            <div class="historial-busquedas" id="listaResultados">
+            </div>
 
         </div>
 
+    </section>
 
-        <div
-            class="historial-busquedas"
-            id="listaResultados"
-        >
-        </div>
-
-    </div>
-
-</section>
-
-<!-------------------------------
+    <!-------------------------------
        FIN BÚSQUEDAS RECIENTES
 -------------------------------->
 
@@ -699,6 +544,210 @@
     <!-------------------------------
            FIN BOTON WHATSAPP
     -------------------------------->
+
+    <!-------------------------------
+        INICIO CREADORES
+-------------------------------->
+
+    <section id="creadores" class="creadores">
+
+        <div class="container">
+
+            <!-- Encabezado -->
+            <div class="creadores-encabezado">
+
+                <h2 class="creadores-titulo">
+                    Creadores del sitio
+                </h2>
+
+                <p class="creadores-descripcion">
+                    Conoce a los estudiantes encargados del desarrollo,
+                    programación y diseño del sitio web de AraduPet.
+                </p>
+
+            </div>
+
+
+            <!-- Tarjetas -->
+            <div class="creadores-grid">
+
+
+                <!-- ==========================
+                    SEBASTIAN MORA
+            =========================== -->
+                <article class="creador-card">
+
+                    <div class="creador-imagen-contenedor">
+
+                        <img src="imgCreators/Sebas.JPG" alt="Sebastian Mora" class="creador-imagen">
+
+                    </div>
+
+                    <div class="creador-info">
+
+                        <h3 class="creador-nombre">
+                            Sebastian Mora
+                        </h3>
+
+                        <span class="creador-carrera">
+                            Ingeniería del Software
+                        </span>
+
+
+                        <div class="creador-datos">
+
+                            <div class="creador-dato">
+
+                                <span class="creador-icono">
+                                    <i class="bi bi-person-vcard"></i>
+                                </span>
+
+                                <div>
+                                    <span class="creador-label">
+                                        Cédula
+                                    </span>
+
+                                    <p>
+                                        208550839
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="creador-dato">
+
+                                <span class="creador-icono">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+
+                                <div>
+                                    <span class="creador-label">
+                                        Correo
+                                    </span>
+
+                                    <p>
+                                        <a href="mailto:smoram2907@gmail.com">
+                                            smoram2907@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="creador-funcion">
+
+                            <i class="bi bi-laptop"></i>
+
+                            <p>
+                                Estudiante de Ingeniería del Software.
+                                Programador y diseñador del sitio web
+                                de AraduPet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==========================
+                    CAMILA MUÑOZ
+            =========================== -->
+                <article class="creador-card">
+
+                    <div class="creador-imagen-contenedor">
+
+                        <img src="imgCreators/Cami.JPG" alt="Camila Muñoz" class="creador-imagen">
+
+                    </div>
+
+                    <div class="creador-info">
+
+                        <h3 class="creador-nombre">
+                            Camila Muñoz
+                        </h3>
+
+                        <span class="creador-carrera">
+                            Ingeniería del Software
+                        </span>
+
+
+                        <div class="creador-datos">
+
+                            <div class="creador-dato">
+
+                                <span class="creador-icono">
+                                    <i class="bi bi-person-vcard"></i>
+                                </span>
+
+                                <div>
+                                    <span class="creador-label">
+                                        Cédula
+                                    </span>
+
+                                    <p>
+                                        208610532
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="creador-dato">
+
+                                <span class="creador-icono">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+
+                                <div>
+                                    <span class="creador-label">
+                                        Correo
+                                    </span>
+
+                                    <p>
+                                        <a href="mailto:cami.keilyn@gmail.com">
+                                            cami.keilyn@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="creador-funcion">
+
+                            <i class="bi bi-laptop"></i>
+
+                            <p>
+                                Estudiante de Ingeniería del Software.
+                                Programadora y diseñadora del sitio web
+                                de AraduPet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-------------------------------
+          FIN CREADORES
+-------------------------------->
 
     <!-------------------------------
         INICIO FOOTER
@@ -745,13 +794,17 @@
                         📞 +506 8804-3411
                     </p>
                     <p class="mb-2">
-                        📸 Instagram, @aradupet
-                    </p>
 
-                    <p class="mb-2">
-                        📨 AraudPet@gmail.com
-                    </p>
+                        <a href="https://www.instagram.com/aradupet/" class="instagram-footer" target="_blank"
+                            rel="noopener noreferrer">
 
+                            <i class="bi bi-instagram"></i>
+
+                            <span>Instagram, @aradupet</span>
+
+                        </a>
+
+                    </p>
                 </div>
 
             </div>
@@ -781,7 +834,13 @@
 
     <!-- JavaScript personalizado -->
     <script src="./js/logica.js"></script>
-    <script src="js/alimentos.js"></script>
+    <script src="js/mapa.js"></script>
+
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPaz07bD7qi4hLy84OIZBTbCrPqWnB28&callback=initMap" async defer>
+
+    </script>
 </body>
 
 </html>
