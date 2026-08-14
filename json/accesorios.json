@@ -1,0 +1,156 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ropa de diferentes tallas para perro",
+        "imagen": "img/Accesorios/0d0fca63-557e-453b-aa19-ba9166e1450e.JPG",
+        "mascota": "perro",
+        "tipo": "ropa"
+    },
+    {
+        "id": 2,
+        "nombre": "Llaveros y stickers de diferentes diseños",
+        "imagen": "img/Accesorios/IMG_7483.jpg",
+        "mascota": "perro",
+        "tipo": "otros"
+    },
+    {
+        "id": 3,
+        "nombre": "Pañuelos de diferentes diseños",
+        "imagen": "img/Accesorios/IMG_7505.jpg",
+        "mascota": "perro",
+        "tipo": "panuelo"
+    },
+    {
+        "id": 4,
+        "nombre": "Pecheras con reflectivos",
+        "imagen": "img/Accesorios/IMG_7506.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 5,
+        "nombre": "Collares con diseño de corazón",
+        "imagen": "img/Accesorios/IMG_7509.jpg",
+        "mascota": "gato",
+        "tipo": "collar"
+    },
+    {
+        "id": 6,
+        "nombre": "Collares con diferentes estilos",
+        "imagen": "img/Accesorios/IMG_7510.jpg",
+        "mascota": "gato",
+        "tipo": "collar"
+    },
+    {
+        "id": 7,
+        "nombre": "Collares con diferentes tallas",
+        "imagen": "img/Accesorios/IMG_7512.jpg",
+        "mascota": "perro",
+        "tipo": "collar"
+    },
+    {
+        "id": 8,
+        "nombre": "Collar y correa a juego",
+        "imagen": "img/Accesorios/IMG_7511.jpg",
+        "mascota": "perro",
+        "tipo": "collar"
+    },
+    {
+        "id": 9,
+        "nombre": "Pecheras para gato",
+        "imagen": "img/Accesorios/accesorioGato1.jpg",
+        "mascota": "gato",
+        "tipo": "pechera"
+    },
+    {
+        "id": 10,
+        "nombre": "Bozal para perro pequeño",
+        "imagen": "img/Accesorios/IMG_7513.jpg",
+        "mascota": "perro",
+        "tipo": "bozal"
+    },
+    {
+        "id": 11,
+        "nombre": "Correa retráctil",
+        "imagen": "img/Accesorios/IMG_7514.jpg",
+        "mascota": "perro",
+        "tipo": "correa"
+    },
+    {
+        "id": 12,
+        "nombre": "Collar de colores",
+        "imagen": "img/Accesorios/IMG_7515.jpg",
+        "mascota": "perro",
+        "tipo": "collar"
+    },
+    {
+        "id": 13,
+        "nombre": "Collar rojo con negro",
+        "imagen": "img/Accesorios/IMG_7517.jpg",
+        "mascota": "perro",
+        "tipo": "collar"
+    },
+    {
+        "id": 14,
+        "nombre": "Pechera pequeña",
+        "imagen": "img/Accesorios/IMG_7518.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 15,
+        "nombre": "Pechera grande",
+        "imagen": "img/Accesorios/IMG_7519.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 16,
+        "nombre": "Correa para perro",
+        "imagen": "img/Accesorios/IMG_7521.jpg",
+        "mascota": "perro",
+        "tipo": "correa"
+    },
+    {
+        "id": 17,
+        "nombre": "Correa para perro",
+        "imagen": "img/Accesorios/IMG_7522.jpg",
+        "mascota": "perro",
+        "tipo": "correa"
+    },
+    {
+        "id": 18,
+        "nombre": "Correa con pechera",
+        "imagen": "img/Accesorios/IMG_7523.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 19,
+        "nombre": "Correa con pechera",
+        "imagen": "img/Accesorios/IMG_7524.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 20,
+        "nombre": "Correa con arnes a la cintura",
+        "imagen": "img/Accesorios/IMG_7525.jpg",
+        "mascota": "perro",
+        "tipo": "pechera"
+    },
+    {
+        "id": 21,
+        "nombre": "Medias para perro",
+        "imagen": "img/Accesorios/IMG_7526.jpg",
+        "mascota": "perro",
+        "tipo": "ropa"
+    },
+    {
+        "id": 22,
+        "nombre": "Cono de tela",
+        "imagen": "img/Accesorios/IMG_7540.jpg",
+        "mascota": "perro",
+        "tipo": "otros"
+    }
+]

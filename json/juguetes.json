@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mordedor verde",
+        "imagen": "img/Juguetes/IMG_7497.jpg",
+        "mascota": "perro",
+        "tipo": "mordedor"
+    },
+    {
+        "id": 2,
+        "nombre": "Mordedor naranja",
+        "imagen": "img/Juguetes/IMG_7498.jpg",
+        "mascota": "perro",
+        "tipo": "mordedor"
+    },
+    {
+        "id": 3,
+        "nombre": "Peluche de cactus",
+        "imagen": "img/Juguetes/IMG_7499.jpg",
+        "mascota": "perro",
+        "tipo": "peluche"
+    },
+    {
+        "id": 4,
+        "nombre": "Conejo con cuerda",
+        "imagen": "img/Juguetes/IMG_7500.jpg",
+        "mascota": "perro",
+        "tipo": "cuerda"
+    },
+    {
+        "id": 5,
+        "nombre": "Cascabel con cuerda",
+        "imagen": "img/Juguetes/IMG_7501.jpg",
+        "mascota": "gato",
+        "tipo": "cuerda"
+    },
+    {
+        "id": 6,
+        "nombre": "Ratón de peluche",
+        "imagen": "img/Juguetes/IMG_7502.jpg",
+        "mascota": "gato",
+        "tipo": "peluche"
+    },
+    {
+        "id": 7,
+        "nombre": "Conejo con cuerda",
+        "imagen": "img/Juguetes/IMG_7503.jpg",
+        "mascota": "gato",
+        "tipo": "cuerda"
+    },
+    {
+        "id": 8,
+        "nombre": "Peluches de comida",
+        "imagen": "img/Juguetes/IMG_7504.jpg",
+        "mascota": "perro",
+        "tipo": "peluche"
+    },
+    {
+        "id": 9,
+        "nombre": "Rascador",
+        "imagen": "img/Juguetes/IMG_7489.jpg",
+        "mascota": "gato",
+        "tipo": "rascador"
+    }
+]

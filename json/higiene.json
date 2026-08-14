@@ -1,0 +1,149 @@
+[
+    {
+        "id": 1,
+        "nombre": "Comedero de silicona con textura",
+        "imagen": "img/HigieneBienestar/IMG_7494.jpg",
+        "mascota": "perro",
+        "tipo": "alimentacion"
+    },
+    {
+        "id": 2,
+        "nombre": "Arenero de plástico con pala",
+        "imagen": "img/HigieneBienestar/IMG_7490.jpg",
+        "mascota": "gato",
+        "tipo": "arenero"
+    },
+    {
+        "id": 3,
+        "nombre": "Fuente eléctrica y filtro",
+        "imagen": "img/HigieneBienestar/IMG_7491.jpg",
+        "mascota": "perro",
+        "tipo": "alimentacion"
+    },
+    {
+        "id": 4,
+        "nombre": "Arenero de plástico con pala",
+        "imagen": "img/HigieneBienestar/IMG_7492.jpg",
+        "mascota": "gato",
+        "tipo": "arenero"
+    },
+    {
+        "id": 5,
+        "nombre": "Cobijas de colores",
+        "imagen": "img/HigieneBienestar/IMG_7493.jpg",
+        "mascota": "perro",
+        "tipo": "otros"
+    },
+    {
+        "id": 6,
+        "nombre": "Comederos de plástico con estimulación",
+        "imagen": "img/HigieneBienestar/IMG_7537.jpg",
+        "mascota": "perro",
+        "tipo": "alimentacion"
+    },
+    {
+        "id": 7,
+        "nombre": "Pañales para mascota talla S",
+        "imagen": "img/HigieneBienestar/IMG_7495.jpg",
+        "mascota": "perro",
+        "tipo": "limpieza"
+    },
+    {
+        "id": 8,
+        "nombre": "Pads absorbentes",
+        "imagen": "img/HigieneBienestar/IMG_7496.jpg",
+        "mascota": "perro",
+        "tipo": "limpieza"
+    },
+    {
+        "id": 9,
+        "nombre": "Comederos de metal de diferentes tamaños",
+        "imagen": "img/HigieneBienestar/IMG_7538.jpg",
+        "mascota": "perro",
+        "tipo": "alimentacion"
+    },
+    {
+        "id": 10,
+        "nombre": "Pasta dental y cepillo",
+        "imagen": "img/HigieneBienestar/IMG_7541.jpg",
+        "mascota": "perro",
+        "tipo": "oral"
+    },
+    {
+        "id": 11,
+        "nombre": "Limpiador nazal",
+        "imagen": "img/HigieneBienestar/IMG_7542.jpg",
+        "mascota": "perro",
+        "tipo": "otros"
+    },
+    {
+        "id": 12,
+        "nombre": "Cortadores de uñas de diferentes estilos",
+        "imagen": "img/HigieneBienestar/IMG_7543.jpg",
+        "mascota": "perro",
+        "tipo": "unas"
+    },
+    {
+        "id": 13,
+        "nombre": "Cepillos para pelo",
+        "imagen": "img/HigieneBienestar/IMG_7544.jpg",
+        "mascota": "perro",
+        "tipo": "cepillo"
+    },
+    {
+        "id": 14,
+        "nombre": "Toallas humedas",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (1).jpeg",
+        "mascota": "perro",
+        "tipo": "limpieza"
+    },
+    {
+        "id": 15,
+        "nombre": "Diferentes clases de shampoo",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (3).jpeg",
+        "mascota": "perro",
+        "tipo": "shampoo"
+    },
+    {
+        "id": 16,
+        "nombre": "Toallas humedas",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (4).jpeg",
+        "mascota": "perro",
+        "tipo": "limpieza"
+    },
+    {
+        "id": 17,
+        "nombre": "Shampoo antipulgas",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (5).jpeg",
+        "mascota": "perro",
+        "tipo": "shampoo"
+    },
+    {
+        "id": 18,
+        "nombre": "Shampoo fragancia duradera",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (6).jpeg",
+        "mascota": "perro",
+        "tipo": "shampoo"
+    },
+    {
+        "id": 19,
+        "nombre": "Shampoo para perros y gatos",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (8).jpeg",
+        "mascota": "perro",
+        "tipo": "shampoo"
+    },
+    {
+        "id": 20,
+        "nombre": "Diferentes clases de shampoo",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57 (9).jpeg",
+        "mascota": "perro",
+        "tipo": "shampoo"
+    },
+    {
+        "id": 21,
+        "nombre": "Colonias de diferentes aromas",
+        "imagen": "img/HigieneBienestar/WhatsApp Image 2026-08-06 at 12.10.57.jpeg",
+        "mascota": "perro",
+        "tipo": "colonia"
+    }
+]

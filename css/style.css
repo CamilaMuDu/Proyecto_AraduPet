@@ -139,11 +139,6 @@ body {
         INICIO CAROUSEL
 ========================== */
 
-/*
-    MOBILE FIRST:
-    Estas son ahora las medidas para teléfono.
-*/
-
 .seccion-carousel {
     background-color: #f8f9fa;
     padding: 24px 22px;
@@ -549,9 +544,6 @@ footer p {
         box-shadow 0.3s ease;
 }
 
-
-/* Cuando el input tiene el foco */
-
 .buscador-caja:focus-within {
     border-color:
         rgb(0, 217, 255);
@@ -718,9 +710,6 @@ footer p {
 .buscador-input::placeholder {
     color: #888888;
 }
-
-
-/* Quitar decoración del input search */
 
 .buscador-input::-webkit-search-decoration {
     display: none;
@@ -959,10 +948,6 @@ footer p {
         #ffffff;
 }
 
-
-/* Se activa cuando JavaScript
-   encuentra historial */
-
 .resultados-busqueda.mostrar {
     display: block;
 }
@@ -1104,9 +1089,6 @@ footer p {
         box-shadow 0.25s ease;
 }
 
-
-/* Hover */
-
 .busqueda-reciente:hover {
     background-color:
         #f1fff7;
@@ -1155,9 +1137,6 @@ footer p {
     text-overflow: ellipsis;
 }
 
-
-/* Categoría correspondiente */
-
 .busqueda-reciente-tipo {
     color: #888888;
 
@@ -1169,7 +1148,7 @@ footer p {
 
 /* =================================================
         MOBILE FIRST
-        TELÉFONOS DESDE 401px
+        TELÉFONOS
 ================================================= */
 
 @media screen and (min-width: 401px) {
@@ -1226,7 +1205,6 @@ footer p {
 
 /* =================================================
         TABLET
-        Desde 769px
 ================================================= */
 
 @media screen and (min-width: 769px) {
@@ -1262,7 +1240,6 @@ footer p {
 
 /* =================================================
         ESCRITORIO
-        Desde 993px
 ================================================= */
 
 @media screen and (min-width: 993px) {
@@ -1300,21 +1277,6 @@ footer p {
     }
 
 }
-
-
-/* =================================================
-        PANTALLAS GRANDES
-        Desde 1200px
-================================================= */
-
-@media screen and (min-width: 1200px) {
-
-    .buscador-contenedor {
-        max-width: 470px;
-    }
-
-}
-
 
 /* =================================
         FIN BUSCADOR
@@ -1408,8 +1370,6 @@ footer p {
     transition: color 0.25s ease;
 }
 
-
-/* Icono de Instagram */
 .instagram-footer i {
     color: #e1306c;
     font-size: 1.1rem;
@@ -1419,8 +1379,6 @@ footer p {
         color 0.25s ease;
 }
 
-
-/* Al pasar el mouse */
 .instagram-footer:hover {
     color: #e1306c;
 }
@@ -1565,8 +1523,6 @@ footer p {
     transform: scale(1.04);
 }
 
-
-/* Línea decorativa */
 
 .creador-imagen-contenedor::after {
     content: "";
@@ -1843,3 +1799,667 @@ footer p {
 /* ===========================
     FIN UBICACIÓN
 =========================== */
+
+/* =========================================================
+        REGISTRO ARADU PET
+========================================================= */
+
+.registro-aradupet {
+    width: 100%;
+    padding: 50px 15px;
+    background-color: #f8f9fa;
+}
+
+
+/* =========================================================
+        ENCABEZADO
+========================================================= */
+
+.registro-encabezado {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.registro-icono-principal {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    color: #ffffff;
+    background-color: rgb(20, 156, 79);
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+.registro-titulo {
+    margin-bottom: 12px;
+
+    color: rgb(20, 156, 79);
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.registro-descripcion {
+    margin: 0;
+
+    color: #555555;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+        TARJETA DEL FORMULARIO
+========================================================= */
+
+.registro-card {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 25px 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e7e7e7;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+        FORMULARIO
+========================================================= */
+
+.registro-formulario {
+    width: 100%;
+}
+
+
+/* =========================================================
+        SECCIONES
+========================================================= */
+
+.registro-seccion {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.registro-seccion:first-child {
+    padding-top: 0;
+}
+
+.registro-seccion:last-of-type {
+    border-bottom: none;
+}
+
+.registro-seccion-titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.registro-seccion-titulo i {
+    color: rgb(20, 156, 79);
+
+    font-size: 22px;
+}
+
+.registro-seccion-titulo h3 {
+    margin: 0;
+
+    color: #252525;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+        GRID DE CAMPOS
+========================================================= */
+
+.registro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+        CAMPOS
+========================================================= */
+
+.registro-campo {
+    width: 100%;
+}
+
+.registro-campo-completo {
+    margin-top: 22px;
+}
+
+.registro-campo label,
+.registro-campo legend {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333333;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.registro-campo fieldset,
+fieldset.registro-campo {
+    border: none;
+
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.campo-obligatorio {
+    color: #dc3545;
+}
+
+
+/* =========================================================
+        INPUT CON ICONO
+========================================================= */
+
+.registro-input-contenedor {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #cccccc;
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.registro-input-contenedor:focus-within {
+    border-color: rgb(20, 156, 79);
+
+    box-shadow:
+        0 0 0 3px rgba(20, 156, 79, 0.13);
+}
+
+.registro-input-contenedor i {
+    margin-left: 14px;
+
+    color: rgb(20, 156, 79);
+
+    font-size: 17px;
+}
+
+.registro-input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    color: #252525;
+
+    background-color: transparent;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+        SELECT
+========================================================= */
+
+.registro-select {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    color: #333333;
+
+    background-color: #ffffff;
+
+    border: 1px solid #cccccc;
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.registro-select:focus {
+    border-color: rgb(20, 156, 79);
+
+    box-shadow:
+        0 0 0 3px rgba(20, 156, 79, 0.13);
+}
+
+
+/* =========================================================
+        SELECT MÚLTIPLE
+========================================================= */
+
+.registro-select-multiple {
+    width: 100%;
+
+    min-height: 160px;
+
+    padding: 10px;
+
+    color: #333333;
+
+    background-color: #ffffff;
+
+    border: 1px solid #cccccc;
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.registro-select-multiple:focus {
+    border-color: rgb(20, 156, 79);
+
+    box-shadow:
+        0 0 0 3px rgba(20, 156, 79, 0.13);
+}
+
+.registro-select-multiple option {
+    padding: 8px;
+}
+
+
+/* =========================================================
+        AYUDA
+========================================================= */
+
+.registro-ayuda {
+    margin: 0 0 10px;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+        RANGO DE INTERÉS
+========================================================= */
+
+.registro-rango-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    color: #666666;
+
+    font-size: 12px;
+}
+
+.registro-rango-info strong {
+    color: rgb(20, 156, 79);
+
+    font-size: 15px;
+}
+
+.registro-range {
+    width: 100%;
+
+    accent-color: rgb(20, 156, 79);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+        RADIO BUTTONS
+========================================================= */
+
+.registro-opciones {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+}
+
+.registro-radio {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0 !important;
+
+    padding: 12px 14px;
+
+    background-color: #f8f9fa;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.registro-radio:hover {
+    background-color: #f1fff7;
+
+    border-color: rgb(20, 156, 79);
+}
+
+.registro-radio input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: rgb(20, 156, 79);
+
+    cursor: pointer;
+}
+
+.registro-radio span {
+    color: #444444;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+        TEXTAREA
+========================================================= */
+
+.registro-textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    padding: 12px 14px;
+
+    color: #333333;
+
+    background-color: #ffffff;
+
+    border: 1px solid #cccccc;
+    border-radius: 9px;
+
+    resize: vertical;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.registro-textarea:focus {
+    border-color: rgb(20, 156, 79);
+
+    box-shadow:
+        0 0 0 3px rgba(20, 156, 79, 0.13);
+}
+
+.registro-contador {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #777777;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+        PRIVACIDAD
+========================================================= */
+
+.registro-privacidad {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background-color: #f1fff7;
+
+    border-left: 4px solid rgb(20, 156, 79);
+
+    border-radius: 8px;
+}
+
+.registro-privacidad i {
+    color: rgb(20, 156, 79);
+
+    font-size: 20px;
+}
+
+.registro-privacidad p {
+    margin: 0;
+
+    color: #555555;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+        BOTÓN ENVIAR
+========================================================= */
+
+.registro-acciones {
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+.registro-boton-enviar {
+    width: 100%;
+
+    padding: 13px 25px;
+
+    color: #ffffff;
+
+    background-color: rgb(20, 156, 79);
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.registro-boton-enviar:hover {
+    color: #000000;
+
+    background-color: rgb(0, 217, 255);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.12);
+}
+
+.registro-boton-enviar i {
+    margin-right: 7px;
+}
+
+
+/* =========================================================
+        MENSAJE DEL FORMULARIO
+========================================================= */
+
+.registro-mensaje {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.registro-mensaje.exito {
+    display: block;
+
+    color: #146c43;
+
+    background-color: #d1e7dd;
+
+    border: 1px solid #badbcc;
+}
+
+.registro-mensaje.error {
+    display: block;
+
+    color: #842029;
+
+    background-color: #f8d7da;
+
+    border: 1px solid #f5c2c7;
+}
+
+
+/*TABLET*/
+
+@media screen and (min-width: 769px) {
+
+    .registro-aradupet {
+        padding: 65px 20px;
+    }
+
+    .registro-titulo {
+        font-size: 36px;
+    }
+
+    .registro-descripcion {
+        font-size: 16px;
+    }
+
+    .registro-card {
+        padding: 35px;
+    }
+
+    .registro-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+    .registro-opciones {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .registro-boton-enviar {
+        width: auto;
+
+        min-width: 220px;
+    }
+
+}
+
+
+/*ESCRITORIO*/
+
+@media screen and (min-width: 1100px) {
+
+    .registro-card {
+        padding: 45px;
+    }
+
+}
+
+/* =========================================================
+        BOTÓN DURANTE EL ENVÍO
+========================================================= */
+
+.registro-boton-enviar:disabled {
+
+    opacity: 0.70;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+.registro-mensaje i {
+
+    margin-right: 7px;
+
+}

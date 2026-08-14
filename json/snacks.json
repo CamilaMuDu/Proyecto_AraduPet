@@ -1,0 +1,205 @@
+[
+    {
+        "id": 1,
+        "nombre": "Helado de carne",
+        "imagen": "img/Snacks/34d599e3-22af-4770-bd5d-e4b4a0840acc.JPG",
+        "mascota": "perro",
+        "tipo": "carne"
+    },
+    {
+        "id": 2,
+        "nombre": "Bites congelados",
+        "imagen": "img/Snacks/4315a07e-c3e9-4191-af8b-741351e5ed39.JPG",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 3,
+        "nombre": "Bully Strap",
+        "imagen": "img/Snacks/IMG_7472.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 4,
+        "nombre": "Chicken Fingers 6 unidades",
+        "imagen": "img/Snacks/IMG_7473.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 5,
+        "nombre": "Chicken Fingers 15 unidades",
+        "imagen": "img/Snacks/IMG_7474.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 6,
+        "nombre": "Suplemento Alimenticio",
+        "imagen": "img/Snacks/IMG_7475.jpg",
+        "mascota": "perro",
+        "tipo": "otros"
+    },
+    {
+        "id": 7,
+        "nombre": "Treats de salmón",
+        "imagen": "img/Snacks/IMG_7476.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 8,
+        "nombre": "Treats de pollo",
+        "imagen": "img/Snacks/IMG_7477.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 9,
+        "nombre": "Treats de cordero",
+        "imagen": "img/Snacks/IMG_7478.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 10,
+        "nombre": "Treats de pollo",
+        "imagen": "img/Snacks/IMG_7479.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 11,
+        "nombre": "Steak suave",
+        "imagen": "img/Snacks/IMG_7480.jpg",
+        "mascota": "perro",
+        "tipo": "carne"
+    },
+    {
+        "id": 12,
+        "nombre": "Treats de carne",
+        "imagen": "img/Snacks/IMG_7481.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 13,
+        "nombre": "Dentastix de pollo",
+        "imagen": "img/Snacks/IMG_7482.jpg",
+        "mascota": "perro",
+        "tipo": "dental"
+    },
+    {
+        "id": 14,
+        "nombre": "Treats de carne",
+        "imagen": "img/Snacks/IMG_7484.jpg",
+        "mascota": "perro",
+        "tipo": "premio"
+    },
+    {
+        "id": 15,
+        "nombre": "Steak creamy",
+        "imagen": "img/Snacks/IMG_7485.jpg",
+        "mascota": "gato",
+        "tipo": "carne"
+    },
+    {
+        "id": 16,
+        "nombre": "Galletas con relleno de mani",
+        "imagen": "img/Snacks/IMG_7486.jpg",
+        "mascota": "perro",
+        "tipo": "galleta"
+    },
+    {
+        "id": 17,
+        "nombre": "Dental treats",
+        "imagen": "img/Snacks/IMG_7487.jpg",
+        "mascota": "perro",
+        "tipo": "dental"
+    },
+    {
+        "id": 18,
+        "nombre": "Dental treats",
+        "imagen": "img/Snacks/IMG_7488.jpg",
+        "mascota": "perro",
+        "tipo": "dental"
+    },
+    {
+        "id": 19,
+        "nombre": "Steak de diferentes sabores",
+        "imagen": "img/Snacks/IMG_7527.jpg",
+        "mascota": "perro",
+        "tipo": "carne"
+    },
+    {
+        "id": 20,
+        "nombre": "Hueso de carnaza",
+        "imagen": "img/Snacks/IMG_7528.jpg",
+        "mascota": "perro",
+        "tipo": "hueso"
+    },
+    {
+        "id": 21,
+        "nombre": "Teasty bone",
+        "imagen": "img/Snacks/IMG_7529.jpg",
+        "mascota": "perro",
+        "tipo": "hueso"
+    },
+    {
+        "id": 22,
+        "nombre": "Hueso de carnaza",
+        "imagen": "img/Snacks/IMG_7530.jpg",
+        "mascota": "perro",
+        "tipo": "hueso"
+    },
+    {
+        "id": 23,
+        "nombre": "Hueso de carnaza",
+        "imagen": "img/Snacks/IMG_7531.jpg",
+        "mascota": "perro",
+        "tipo": "hueso"
+    },
+    {
+        "id": 24,
+        "nombre": "Higado deshidratado",
+        "imagen": "img/Snacks/IMG_7532.jpg",
+        "mascota": "perro",
+        "tipo": "deshidratado"
+    },
+    {
+        "id": 25,
+        "nombre": "Traqueas deshidratadas",
+        "imagen": "img/Snacks/IMG_7533.jpg",
+        "mascota": "perro",
+        "tipo": "deshidratado"
+    },
+    {
+        "id": 26,
+        "nombre": "Higado deshidratado",
+        "imagen": "img/Snacks/IMG_7534.jpg",
+        "mascota": "gato",
+        "tipo": "deshidratado"
+    },
+    {
+        "id": 27,
+        "nombre": "Strips de cerdo",
+        "imagen": "img/Snacks/IMG_7535.jpg",
+        "mascota": "perro",
+        "tipo": "carne"
+    },
+    {
+        "id": 28,
+        "nombre": "Oreja de cerdo deshidratada",
+        "imagen": "img/Snacks/IMG_7536.jpg",
+        "mascota": "perro",
+        "tipo": "deshidratado"
+    },
+    {
+        "id": 29,
+        "nombre": "Oreja de res deshidratada",
+        "imagen": "img/Snacks/IMG_7539.jpg",
+        "mascota": "perro",
+        "tipo": "deshidratado"
+    }
+]

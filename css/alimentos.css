@@ -982,9 +982,7 @@ body {
 
 @media screen and (min-width: 769px) {
 
-    /* =================================
-            CATÁLOGO
-    ================================= */
+    /*CATÁLOGO*/
 
     .catalogo-alimentos {
         padding:
@@ -992,9 +990,7 @@ body {
     }
 
 
-    /* =================================
-            ENCABEZADO
-    ================================= */
+    /*ENCABEZADO*/
 
     .catalogo-titulo {
         font-size: 38px;
@@ -1147,4 +1143,16 @@ body {
         grid-template-columns:
             repeat(5, minmax(0, 1fr));
     }
+}
+
+/* ==========================================
+      PRODUCTOS CARGADOS DESDE JSON
+========================================== */
+
+.productos-vacios {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
 }

@@ -71,6 +71,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
+
+                            <a class="nav-link" href="#registro">
+
+                                Registro
+
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#footer">Contáctanos
                             </a>
                         </li>
@@ -254,7 +263,8 @@
             <div class="historia-content">
 
                 <div class="historia-imagen-contenedor">
-                    <img src="img/historia.png" alt="Historia del emprendimiento Aradu Pet" class="historia-img">
+                    <img src="imgCreators/DaniySofi.JPG" alt="Historia del emprendimiento Aradu Pet"
+                        class="historia-img">
                 </div>
 
                 <div class="historia-descripcion">
@@ -484,6 +494,509 @@
     </section>
     <!-------------------------------
             FIN ACERCA DE
+-------------------------------->
+
+    <!-------------------------------
+     INICIO REGISTRO ARADU PET
+-------------------------------->
+
+    <section id="registro" class="registro-aradupet">
+
+        <div class="container">
+
+            <!-- ENCABEZADO -->
+
+            <div class="registro-encabezado">
+
+                <span class="registro-icono-principal">
+                    <i class="bi bi-person-heart"></i>
+                </span>
+
+                <h2 class="registro-titulo">
+                    Únete a la comunidad Aradu Pet
+                </h2>
+
+                <p class="registro-descripcion">
+                    Registra tus datos para mantenerte en contacto con
+                    Aradu Pet y recibir información sobre nuestros
+                    productos, servicios y novedades.
+                </p>
+
+            </div>
+
+
+            <!-- CONTENEDOR DEL FORMULARIO -->
+
+            <div class="registro-card">
+
+                <form id="formularioRegistro" class="registro-formulario" method="POST">
+
+                    <!-- CONFIGURACIÓN DEL CORREO -->
+
+    <input
+        type="hidden"
+        name="_subject"
+        value="Nuevo registro - Comunidad Aradu Pet"
+    >
+
+    <input
+        type="hidden"
+        name="_template"
+        value="table"
+    >
+
+    <input
+        type="text"
+        name="_honey"
+        style="display: none;"
+        tabindex="-1"
+        autocomplete="off"
+    >
+
+
+                    <!-- =====================================
+                         INFORMACIÓN PERSONAL
+                ====================================== -->
+
+                    <div class="registro-seccion">
+
+                        <div class="registro-seccion-titulo">
+
+                            <i class="bi bi-person-fill"></i>
+
+                            <h3>
+                                Información personal
+                            </h3>
+
+                        </div>
+
+
+                        <div class="registro-grid">
+
+
+                            <!-- NOMBRE COMPLETO -->
+
+                            <div class="registro-campo">
+
+                                <label for="nombreCompleto">
+
+                                    Nombre completo
+                                    <span class="campo-obligatorio">*</span>
+
+                                </label>
+
+
+                                <div class="registro-input-contenedor">
+
+                                    <i class="bi bi-person"></i>
+
+                                    <input type="text" id="nombreCompleto" name="nombreCompleto" class="registro-input"
+                                        placeholder="Escribe tu nombre completo" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CORREO ELECTRÓNICO -->
+
+                            <div class="registro-campo">
+
+                                <label for="correoRegistro">
+
+                                    Correo electrónico
+                                    <span class="campo-obligatorio">*</span>
+
+                                </label>
+
+
+                                <div class="registro-input-contenedor">
+
+                                    <i class="bi bi-envelope"></i>
+
+                                    <input type="email" id="correoRegistro" name="correo" class="registro-input"
+                                        placeholder="ejemplo@correo.com" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FECHA DE NACIMIENTO -->
+
+                            <div class="registro-campo">
+
+                                <label for="fechaNacimiento">
+
+                                    Fecha de nacimiento
+                                    <span class="campo-obligatorio">*</span>
+
+                                </label>
+
+
+                                <div class="registro-input-contenedor">
+
+                                    <i class="bi bi-calendar-event"></i>
+
+                                    <input type="date" id="fechaNacimiento" name="fechaNacimiento"
+                                        class="registro-input" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <input type="hidden" id="edad" name="edad" value="">
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                      INFORMACIÓN SOCIODEMOGRÁFICA
+                ====================================== -->
+
+                    <div class="registro-seccion">
+
+                        <div class="registro-seccion-titulo">
+
+                            <i class="bi bi-card-list"></i>
+
+                            <h3>
+                                Información adicional
+                            </h3>
+
+                        </div>
+
+
+                        <!-- NIVEL DE INTERÉS -->
+
+                        <div class="registro-campo registro-campo-completo">
+
+                            <label for="nivelInteres">
+
+                                Nivel de interés en recibir novedades de Aradu Pet
+
+                            </label>
+
+
+                            <div class="registro-rango-info">
+
+                                <span>
+                                    Poco interés
+                                </span>
+
+                                <strong id="valorInteres">
+                                    5 / 10
+                                </strong>
+
+                                <span>
+                                    Mucho interés
+                                </span>
+
+                            </div>
+
+
+                            <input type="range" id="nivelInteres" name="nivelInteres" class="registro-range" min="1"
+                                max="10" step="1" value="5">
+
+                        </div>
+
+                        <!-- GÉNERO -->
+
+                        <fieldset class="registro-campo registro-campo-completo">
+
+                            <legend>
+                                Género
+                                <span class="campo-obligatorio">*</span>
+                            </legend>
+
+
+                            <div class="registro-opciones">
+
+
+                                <label class="registro-radio">
+
+                                    <input type="radio" name="genero" value="Masculino" required>
+
+                                    <span>
+                                        Masculino
+                                    </span>
+
+                                </label>
+
+
+                                <label class="registro-radio">
+
+                                    <input type="radio" name="genero" value="Femenino">
+
+                                    <span>
+                                        Femenino
+                                    </span>
+
+                                </label>
+
+
+                                <label class="registro-radio">
+
+                                    <input type="radio" name="genero" value="Otro">
+
+                                    <span>
+                                        Otro
+                                    </span>
+
+                                </label>
+
+
+                                <label class="registro-radio">
+
+                                    <input type="radio" name="genero" value="Prefiero no indicar">
+
+                                    <span>
+                                        Prefiero no indicar
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- GRADO ACADÉMICO -->
+
+                        <div class="registro-campo registro-campo-completo">
+
+                            <label for="gradoAcademico">
+
+                                Grado académico
+
+                            </label>
+
+
+                            <p class="registro-ayuda">
+                                Puedes seleccionar más de una opción manteniendo
+                                presionada la tecla Ctrl.
+                            </p>
+
+
+                            <select id="gradoAcademico" name="gradoAcademico[]" class="registro-select-multiple"
+                                multiple size="5">
+
+                                <option value="Primaria">
+                                    Primaria
+                                </option>
+
+                                <option value="Secundaria">
+                                    Secundaria
+                                </option>
+
+                                <option value="Técnico">
+                                    Técnico
+                                </option>
+
+                                <option value="Universitario">
+                                    Universitario
+                                </option>
+
+                                <option value="Posgrado">
+                                    Posgrado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                        INFORMACIÓN ARADU PET
+                ====================================== -->
+
+                    <div class="registro-seccion">
+
+                        <div class="registro-seccion-titulo">
+
+                            <i class="bi bi-heart-fill"></i>
+
+                            <h3>
+                                Tus intereses en Aradu Pet
+                            </h3>
+
+                        </div>
+
+
+                        <div class="registro-grid">
+
+
+                            <!-- TIPO DE MASCOTA -->
+
+                            <div class="registro-campo">
+
+                                <label for="tipoMascota">
+                                    ¿Qué mascota tienes?
+                                </label>
+
+
+                                <select id="tipoMascota" name="tipoMascota" class="registro-select">
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="Perro">
+                                        Perro
+                                    </option>
+
+                                    <option value="Gato">
+                                        Gato
+                                    </option>
+
+                                    <option value="Perro y gato">
+                                        Perro y gato
+                                    </option>
+
+                                    <option value="Otra">
+                                        Otra
+                                    </option>
+
+                                    <option value="No tengo mascota">
+                                        No tengo mascota
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- INTERÉS -->
+
+                            <div class="registro-campo">
+
+                                <label for="interesAradu">
+                                    ¿Qué información te interesa?
+                                </label>
+
+
+                                <select id="interesAradu" name="interes" class="registro-select">
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="Alimentos">
+                                        Alimentos
+                                    </option>
+
+                                    <option value="Accesorios">
+                                        Accesorios
+                                    </option>
+
+                                    <option value="Juguetes">
+                                        Juguetes
+                                    </option>
+
+                                    <option value="Snacks">
+                                        Snacks
+                                    </option>
+
+                                    <option value="Higiene y bienestar">
+                                        Higiene y bienestar
+                                    </option>
+
+                                    <option value="Servicios veterinarios">
+                                        Servicios veterinarios
+                                    </option>
+
+                                    <option value="Promociones y novedades">
+                                        Promociones y novedades
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- COMENTARIO -->
+
+                        <div class="registro-campo registro-campo-completo">
+
+                            <label for="mensajeRegistro">
+                                Comentario adicional
+                            </label>
+
+
+                            <textarea id="mensajeRegistro" name="mensaje" class="registro-textarea" rows="4"
+                                maxlength="500" placeholder="¿Hay algo más que te gustaría comentarnos?"></textarea>
+
+
+                            <small class="registro-contador">
+                                Máximo 500 caracteres.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                            PRIVACIDAD
+                ====================================== -->
+
+                    <div class="registro-privacidad">
+
+                        <i class="bi bi-shield-check"></i>
+
+                        <p>
+                            Los datos proporcionados serán utilizados
+                            únicamente para fines de contacto e información
+                            relacionados con Aradu Pet.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =====================================
+                          BOTÓN ENVIAR
+                ====================================== -->
+
+                    <div class="registro-acciones">
+
+                        <button type="submit" class="registro-boton-enviar" id="botonEnviarRegistro">
+
+                            <i class="bi bi-send-fill"></i>
+
+                            Enviar registro
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =====================================
+                     MENSAJE DESPUÉS DEL ENVÍO
+                ====================================== -->
+
+                    <div id="mensajeFormulario" class="registro-mensaje" role="status" aria-live="polite">
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-------------------------------
+       FIN REGISTRO ARADU PET
 -------------------------------->
 
 
@@ -838,9 +1351,10 @@
 
 
     <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPaz07bD7qi4hLy84OIZBTbCrPqWnB28&callback=initMap" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPaz07bD7qi4hLy84OIZBTbCrPqWnB28&callback=initMap"
+        async defer>
 
-    </script>
+        </script>
 </body>
 
 </html>

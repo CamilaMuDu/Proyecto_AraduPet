@@ -829,9 +829,7 @@ body {
     }
 
 
-    /* =================================
-            PRODUCTOS
-    ================================= */
+    /*PRODUCTOS*/
 
     .productos-grid {
         display: grid;
@@ -843,9 +841,7 @@ body {
     }
 
 
-    /* =================================
-            TARJETA
-    ================================= */
+    /*TARJETA*/
 
     .producto-card {
         display: flex;
@@ -858,9 +854,7 @@ body {
     }
 
 
-    /* =================================
-            IMAGEN
-    ================================= */
+    /* IMAGEN*/
 
     .producto-imagen-contenedor {
         min-height: initial;
@@ -872,9 +866,7 @@ body {
     }
 
 
-    /* =================================
-            INFORMACIÓN
-    ================================= */
+    /*INFORMACIÓN*/
 
     .producto-informacion {
         padding: 17px;
@@ -904,4 +896,16 @@ body {
         grid-template-columns:
             repeat(4, minmax(0, 1fr));
     }
+}
+
+/* ==========================================
+      PRODUCTOS CARGADOS DESDE JSON
+========================================== */
+
+.productos-vacios {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
 }

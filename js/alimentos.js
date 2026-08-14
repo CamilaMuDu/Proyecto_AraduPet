@@ -1,6 +1,5 @@
 console.log("alimentos.js está conectado correctamente");
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -8,128 +7,64 @@ document.addEventListener("DOMContentLoaded", function () {
             OBTENER ELEMENTOS DEL HTML
     ========================================== */
 
-
     const botonesMascota =
         document.querySelectorAll(".boton-mascota");
-
-
-    const productos =
-        Array.from(
-            document.querySelectorAll(".producto-card")
-        );
-
 
     const productosGrid =
         document.getElementById("productosGrid");
 
-
-
     const cantidadProductos =
         document.getElementById("cantidadProductos");
 
-
-
     const productosVacios =
         document.getElementById("productosVacios");
-
-
-
 
     const ordenarProductos =
         document.getElementById("ordenarProductos");
 
 
-
     /* ==========================================
-                  FILTROS
+                    FILTROS
     ========================================== */
-
 
     const filtrosMarca =
         document.querySelectorAll(".filtro-marca");
 
-
-
     const filtrosTipo =
         document.querySelectorAll(".filtro-tipo");
-
-
 
     const filtrosEtapa =
         document.querySelectorAll(".filtro-etapa");
 
-
-
     const filtrosRaza =
         document.querySelectorAll(".filtro-raza");
 
-
-
     const filtrosSabor =
         document.querySelectorAll(".filtro-sabor");
-
-
-
-    /* ==========================================
-              BOTONES DEL PANEL
-    ========================================== */
 
     const limpiarFiltros =
         document.getElementById("limpiarFiltros");
 
 
-    const abrirFiltros =
-        document.getElementById("abrirFiltros");
-
-
-    const cerrarFiltros =
-        document.getElementById("cerrarFiltros");
-
-
-    const panelFiltros =
-        document.getElementById("panelFiltros");
-
-
-    const fondoFiltros =
-        document.getElementById("fondoFiltros");
-
-
-
     /* ==========================================
-             VALIDAR CATÁLOGO
+             ARREGLO DE ALIMENTOS
     ========================================== */
 
-    if (
-        productos.length === 0 ||
-        !productosGrid
-    ) {
-
-        console.warn(
-            "No se encontraron alimentos."
-        );
-
-        return;
-
-    }
-
+    let alimentos = [];
 
 
     /* ==========================================
-         MASCOTA SELECCIONADA INICIALMENTE
+          MASCOTA SELECCIONADA INICIAL
     ========================================== */
 
-
-    let mascotaSeleccionada =
-        "perro";
-
+    let mascotaSeleccionada = "perro";
 
 
     /* ==========================================
-              NORMALIZAR TEXTO
+               NORMALIZAR TEXTO
     ========================================== */
 
     function normalizarTexto(texto) {
-
 
         return (texto || "")
 
@@ -144,132 +79,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
             .trim();
 
-
     }
 
 
-
     /* ==========================================
-          PREPARAR TODOS LOS PRODUCTOS
+         OBTENER CHECKBOX SELECCIONADOS
     ========================================== */
 
-    productos.forEach(
-
-        function (
-            producto,
-            indice
-        ) {
-
-
-            /* ==============================
-                GUARDAR ORDEN ORIGINAL
-            ============================== */
-
-            producto.dataset.ordenOriginal =
-                indice;
-
-
-
-            /* ==============================
-                    OBTENER NOMBRE
-            ============================== */
-
-            const elementoNombre =
-                producto.querySelector(
-                    ".producto-nombre"
-                );
-
-
-            const nombreProducto =
-                elementoNombre
-                    ? elementoNombre.textContent.trim()
-                    : "";
-
-
-            producto.dataset.nombre =
-                nombreProducto;
-
-
-        }
-
-    );
-
-
-
-    /* ==========================================
-       OBTENER CHECKBOX SELECCIONADOS
-    ========================================== */
-
-    function obtenerValoresMarcados(
-        elementos
-    ) {
-
+    function obtenerValoresMarcados(elementos) {
 
         return Array.from(elementos)
 
-            .filter(
+            .filter(function (elemento) {
 
-                function (elemento) {
+                return elemento.checked;
 
-                    return elemento.checked;
+            })
 
-                }
+            .map(function (elemento) {
 
-            )
+                return normalizarTexto(
+                    elemento.value
+                );
 
-            .map(
-
-                function (elemento) {
-
-                    return normalizarTexto(
-                        elemento.value
-                    );
-
-                }
-
-            );
+            });
 
     }
 
 
-
     /* ==========================================
-         OBTENER VALORES DEL PRODUCTO
+       OBTENER VARIOS VALORES DEL PRODUCTO
     ========================================== */
 
-    function obtenerValoresProducto(
-        producto,
-        atributo
-    ) {
-
-
-        const valor =
-            producto.dataset[atributo] || "";
-
+    function obtenerValoresProducto(valor) {
 
         return normalizarTexto(valor)
 
             .split(/\s+/)
 
-            .filter(
+            .filter(function (valorIndividual) {
 
-                function (valorIndividual) {
+                return valorIndividual !== "";
 
-                    return (
-                        valorIndividual !== ""
-                    );
-
-                }
-
-            );
-
+            });
 
     }
 
 
-
     /* ==========================================
-           COMPROBAR UN FILTRO
+              COMPROBAR FILTRO
     ========================================== */
 
     function coincideFiltro(
@@ -277,20 +135,14 @@ document.addEventListener("DOMContentLoaded", function () {
         valoresProducto
     ) {
 
-
-
-        if (
-            valoresSeleccionados.length === 0
-        ) {
+        if (valoresSeleccionados.length === 0) {
 
             return true;
 
         }
 
 
-        if (
-            valoresProducto.length === 0
-        ) {
+        if (valoresProducto.length === 0) {
 
             return false;
 
@@ -301,267 +153,113 @@ document.addEventListener("DOMContentLoaded", function () {
 
             function (valorSeleccionado) {
 
-
                 return valoresProducto.includes(
                     valorSeleccionado
                 );
 
-
             }
 
         );
 
+    }
+
+
+    /* ==========================================
+          CREAR TARJETA DINÁMICAMENTE
+    ========================================== */
+
+    function crearTarjetaAlimento(alimento) {
+
+
+        const mascotaTexto =
+
+            alimento.mascota === "gato"
+                ? "Gato"
+                : "Perro";
+
+
+        const productoHTML = `
+
+            <article
+                class="producto-card"
+
+                data-id="${alimento.id}"
+
+                data-mascota="${alimento.mascota}"
+
+                data-marca="${alimento.marca}"
+
+                data-tipo="${alimento.tipo}"
+
+                data-etapa="${alimento.etapa}"
+
+                data-raza="${alimento.raza}"
+
+                data-sabor="${alimento.sabor}"
+            >
+
+
+                <div class="producto-imagen-contenedor">
+
+
+                    <img
+                        src="${alimento.imagen}"
+
+                        alt="${alimento.nombre}"
+
+                        class="producto-imagen"
+                    >
+
+
+                </div>
+
+
+                <div class="producto-informacion">
+
+
+                    <span class="producto-etiqueta">
+
+                        ${mascotaTexto}
+
+                    </span>
+
+
+                    <h2 class="producto-nombre">
+
+                        ${alimento.nombre}
+
+                    </h2>
+
+
+                    <button
+                        type="button"
+
+                        class="producto-boton boton-whatsapp"
+                    >
+
+                        Consultar producto
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+        `;
+
+
+        return productoHTML;
 
     }
 
 
-
     /* ==========================================
-             APLICAR FILTROS
+            ACTUALIZAR CONTADOR
     ========================================== */
 
-    function aplicarFiltros() {
-
-
-        /* ==============================
-                MARCAS MARCADAS
-        ============================== */
-
-        const marcasSeleccionadas =
-            obtenerValoresMarcados(
-                filtrosMarca
-            );
-
-
-
-        /* ==============================
-                 TIPOS MARCADOS
-        ============================== */
-
-        const tiposSeleccionados =
-            obtenerValoresMarcados(
-                filtrosTipo
-            );
-
-
-
-        /* ==============================
-                ETAPAS MARCADAS
-        ============================== */
-
-        const etapasSeleccionadas =
-            obtenerValoresMarcados(
-                filtrosEtapa
-            );
-
-
-
-        /* ==============================
-                 RAZAS MARCADAS
-        ============================== */
-
-        const razasSeleccionadas =
-            obtenerValoresMarcados(
-                filtrosRaza
-            );
-
-
-
-        /* ==============================
-                SABORES MARCADOS
-        ============================== */
-
-        const saboresSeleccionados =
-            obtenerValoresMarcados(
-                filtrosSabor
-            );
-
-
-
-        let cantidadVisible =
-            0;
-
-
-
-        /* ==================================
-             RECORRER LOS PRODUCTOS
-        ================================== */
-
-        productos.forEach(
-
-            function (producto) {
-
-
-                /* ==============================
-                        MASCOTA
-                ============================== */
-
-                const mascotasProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "mascota"
-                    );
-
-
-                const coincideMascota =
-                    mascotasProducto.includes(
-                        mascotaSeleccionada
-                    );
-
-
-
-                /* ==============================
-                         MARCA
-                ============================== */
-
-                const marcasProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "marca"
-                    );
-
-
-                const coincideMarca =
-                    coincideFiltro(
-                        marcasSeleccionadas,
-                        marcasProducto
-                    );
-
-
-
-                /* ==============================
-                    TIPO DE ALIMENTO
-                ============================== */
-
-                const tiposProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "tipo"
-                    );
-
-
-                const coincideTipo =
-                    coincideFiltro(
-                        tiposSeleccionados,
-                        tiposProducto
-                    );
-
-
-
-                /* ==============================
-                          ETAPA
-                ============================== */
-
-                const etapasProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "etapa"
-                    );
-
-
-                const coincideEtapa =
-                    coincideFiltro(
-                        etapasSeleccionadas,
-                        etapasProducto
-                    );
-
-
-
-                /* ==============================
-                     TAMAÑO / RAZA
-                ============================== */
-
-                const razasProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "raza"
-                    );
-
-
-                const coincideRaza =
-                    coincideFiltro(
-                        razasSeleccionadas,
-                        razasProducto
-                    );
-
-
-
-                /* ==============================
-                          SABOR
-                ============================== */
-
-                const saboresProducto =
-                    obtenerValoresProducto(
-                        producto,
-                        "sabor"
-                    );
-
-
-                const coincideSabor =
-                    coincideFiltro(
-                        saboresSeleccionados,
-                        saboresProducto
-                    );
-
-
-
-                /* ==============================
-                      RESULTADO FINAL
-                ============================== */
-
-                const debeMostrarse =
-
-                    coincideMascota &&
-                    coincideMarca &&
-                    coincideTipo &&
-                    coincideEtapa &&
-                    coincideRaza &&
-                    coincideSabor;
-
-
-
-                /* ==============================
-                    MOSTRAR / OCULTAR
-                ============================== */
-
-                producto.classList.toggle(
-                    "oculto",
-                    !debeMostrarse
-                );
-
-
-
-                /* ==============================
-                    CONTAR PRODUCTOS
-                ============================== */
-
-                if (debeMostrarse) {
-
-                    cantidadVisible++;
-
-                }
-
-
-            }
-
-        );
-
-        actualizarCantidad(
-            cantidadVisible
-        );
-
-
-    }
-
-
-
-    /* ==========================================
-           ACTUALIZAR CONTADOR
-    ========================================== */
-
-    function actualizarCantidad(
-        cantidad
-    ) {
+    function actualizarCantidad(cantidad) {
 
 
         if (cantidadProductos) {
@@ -577,14 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         : " productos"
                 );
 
-
         }
 
-
-
-        /* ==================================
-               SIN RESULTADOS
-        ================================== */
 
         if (productosVacios) {
 
@@ -595,16 +287,457 @@ document.addEventListener("DOMContentLoaded", function () {
                     ? "block"
                     : "none";
 
-
         }
-
 
     }
 
 
+    /* ==========================================
+         FILTRAR Y MOSTRAR LOS ALIMENTOS
+    ========================================== */
+
+    function mostrarProductos() {
+
+
+        /* ==================================
+                  MARCAS MARCADAS
+        ================================== */
+
+        const marcasSeleccionadas =
+
+            obtenerValoresMarcados(
+                filtrosMarca
+            );
+
+
+        /* ==================================
+                   TIPOS MARCADOS
+        ================================== */
+
+        const tiposSeleccionados =
+
+            obtenerValoresMarcados(
+                filtrosTipo
+            );
+
+
+        /* ==================================
+                  ETAPAS MARCADAS
+        ================================== */
+
+        const etapasSeleccionadas =
+
+            obtenerValoresMarcados(
+                filtrosEtapa
+            );
+
+
+        /* ==================================
+                   RAZAS MARCADAS
+        ================================== */
+
+        const razasSeleccionadas =
+
+            obtenerValoresMarcados(
+                filtrosRaza
+            );
+
+
+        /* ==================================
+                 SABORES MARCADOS
+        ================================== */
+
+        const saboresSeleccionados =
+
+            obtenerValoresMarcados(
+                filtrosSabor
+            );
+
+
+        /* ==================================
+                FILTRAR ALIMENTOS
+        ================================== */
+
+        let alimentosFiltrados =
+
+            alimentos.filter(
+
+                function (alimento) {
+
+
+                    /* MASCOTA */
+
+                    const coincideMascota =
+
+                        normalizarTexto(
+                            alimento.mascota
+                        )
+
+                        === mascotaSeleccionada;
+
+
+                    /* MARCA */
+
+                    const coincideMarca =
+
+                        coincideFiltro(
+
+                            marcasSeleccionadas,
+
+                            obtenerValoresProducto(
+                                alimento.marca
+                            )
+
+                        );
+
+
+                    /* TIPO */
+
+                    const coincideTipo =
+
+                        coincideFiltro(
+
+                            tiposSeleccionados,
+
+                            obtenerValoresProducto(
+                                alimento.tipo
+                            )
+
+                        );
+
+
+                    /* ETAPA */
+
+                    const coincideEtapa =
+
+                        coincideFiltro(
+
+                            etapasSeleccionadas,
+
+                            obtenerValoresProducto(
+                                alimento.etapa
+                            )
+
+                        );
+
+
+                    /* RAZA */
+
+                    const coincideRaza =
+
+                        coincideFiltro(
+
+                            razasSeleccionadas,
+
+                            obtenerValoresProducto(
+                                alimento.raza
+                            )
+
+                        );
+
+
+                    /* SABOR */
+
+                    const coincideSabor =
+
+                        coincideFiltro(
+
+                            saboresSeleccionados,
+
+                            obtenerValoresProducto(
+                                alimento.sabor
+                            )
+
+                        );
+
+
+                    return (
+
+                        coincideMascota &&
+
+                        coincideMarca &&
+
+                        coincideTipo &&
+
+                        coincideEtapa &&
+
+                        coincideRaza &&
+
+                        coincideSabor
+
+                    );
+
+                }
+
+            );
+
+
+        /* ==================================
+                  ORDENAMIENTO
+        ================================== */
+
+        const tipoOrden =
+
+            ordenarProductos
+                ? ordenarProductos.value
+                : "original";
+
+
+        alimentosFiltrados =
+            [...alimentosFiltrados];
+
+
+        /* ==================================
+                      A - Z
+        ================================== */
+
+        if (tipoOrden === "az") {
+
+
+            alimentosFiltrados.sort(
+
+                function (alimentoA, alimentoB) {
+
+
+                    return alimentoA.nombre.localeCompare(
+
+                        alimentoB.nombre,
+
+                        "es",
+
+                        {
+                            sensitivity: "base"
+                        }
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+                      Z - A
+        ================================== */
+
+        else if (tipoOrden === "za") {
+
+
+            alimentosFiltrados.sort(
+
+                function (alimentoA, alimentoB) {
+
+
+                    return alimentoB.nombre.localeCompare(
+
+                        alimentoA.nombre,
+
+                        "es",
+
+                        {
+                            sensitivity: "base"
+                        }
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+              ORDEN PREDETERMINADO
+        ================================== */
+
+        else {
+
+
+            alimentosFiltrados.sort(
+
+                function (alimentoA, alimentoB) {
+
+
+                    return (
+
+                        alimentoA.id -
+                        alimentoB.id
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+          ELIMINAR PRODUCTOS ANTERIORES
+        ================================== */
+
+        productosGrid
+
+            .querySelectorAll(
+                ".producto-card"
+            )
+
+            .forEach(
+
+                function (producto) {
+
+                    producto.remove();
+
+                }
+
+            );
+
+
+        /* ==================================
+          CREAR PRODUCTOS DESDE EL JSON
+        ================================== */
+
+        alimentosFiltrados.forEach(
+
+            function (alimento) {
+
+
+                const productoHTML =
+
+                    crearTarjetaAlimento(
+                        alimento
+                    );
+
+
+                productosVacios.insertAdjacentHTML(
+
+                    "beforebegin",
+
+                    productoHTML
+
+                );
+
+            }
+
+        );
+
+
+        actualizarCantidad(
+
+            alimentosFiltrados.length
+
+        );
+
+    }
+
 
     /* ==========================================
-         BOTONES SUPERIORES PERRO / GATO
+        CARGAR ALIMENTOS DESDE EL JSON
+    ========================================== */
+
+    function cargarAlimentos() {
+
+
+        fetch("json/alimentos.json")
+
+
+            .then(
+
+                function (respuesta) {
+
+
+                    if (!respuesta.ok) {
+
+
+                        throw new Error(
+
+                            "No se pudo cargar alimentos.json"
+
+                        );
+
+                    }
+
+
+                    return respuesta.json();
+
+                }
+
+            )
+
+
+            .then(
+
+                function (datos) {
+
+
+                    alimentos = datos;
+
+
+                    console.log(
+
+                        "Alimentos cargados:",
+
+                        alimentos
+
+                    );
+
+
+                    mostrarProductos();
+
+                }
+
+            )
+
+
+            .catch(
+
+                function (error) {
+
+
+                    console.error(
+
+                        "Error al cargar alimentos:",
+
+                        error
+
+                    );
+
+
+                    if (cantidadProductos) {
+
+
+                        cantidadProductos.textContent =
+
+                            "Error al cargar productos";
+
+                    }
+
+
+                    if (productosVacios) {
+
+
+                        productosVacios.style.display =
+                            "block";
+
+
+                        productosVacios.textContent =
+
+                            "No fue posible cargar los alimentos.";
+
+                    }
+
+                }
+
+            );
+
+    }
+
+
+    /* ==========================================
+       BOTONES SUPERIORES PERRO / GATO
     ========================================== */
 
     botonesMascota.forEach(
@@ -620,32 +753,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     mascotaSeleccionada =
+
                         normalizarTexto(
                             boton.dataset.filtro
                         );
 
 
                     botonesMascota.forEach(
-                        function (
-                            otroBoton
-                        ) {
+
+                        function (otroBoton) {
+
+
                             otroBoton.classList.remove(
                                 "activo"
                             );
+
                         }
+
                     );
+
 
                     boton.classList.add(
                         "activo"
                     );
 
-                    aplicarFiltros();
+
+                    mostrarProductos();
 
                 }
-            );
-        }
-    );
 
+            );
+
+        }
+
+    );
 
 
     /* ==========================================
@@ -655,17 +796,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const todosLosFiltros = [
 
         ...filtrosMarca,
+
         ...filtrosTipo,
+
         ...filtrosEtapa,
+
         ...filtrosRaza,
+
         ...filtrosSabor
 
     ];
 
 
-
     /* ==========================================
-        EVENTOS DE TODOS LOS CHECKBOX
+          EVENTOS DE LOS CHECKBOX
     ========================================== */
 
     todosLosFiltros.forEach(
@@ -677,15 +821,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 "change",
 
-                aplicarFiltros
+                mostrarProductos
 
             );
-
 
         }
 
     );
-
 
 
     /* ==========================================
@@ -699,181 +841,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             "change",
 
-            function () {
-
-
-                const tipoOrden =
-                    ordenarProductos.value;
-
-
-                const productosOrdenados =
-                    [...productos];
-
-
-
-                /* ==============================
-                         ORDEN A - Z
-                ============================== */
-
-                if (
-                    tipoOrden === "az"
-                ) {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return productoA
-                                .dataset
-                                .nombre
-                                .localeCompare(
-
-                                    productoB
-                                        .dataset
-                                        .nombre,
-
-                                    "es",
-
-                                    {
-                                        sensitivity:
-                                            "base"
-                                    }
-
-                                );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                /* ==============================
-                         ORDEN Z - A
-                ============================== */
-
-                else if (
-                    tipoOrden === "za"
-                ) {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return productoB
-                                .dataset
-                                .nombre
-                                .localeCompare(
-
-                                    productoA
-                                        .dataset
-                                        .nombre,
-
-                                    "es",
-
-                                    {
-                                        sensitivity:
-                                            "base"
-                                    }
-
-                                );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                /* ==============================
-                    ORDEN PREDETERMINADO
-                ============================== */
-
-                else {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return (
-
-                                Number(
-                                    productoA
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                                -
-
-                                Number(
-                                    productoB
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                            );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                /* ==============================
-                     REORDENAR EL GRID
-                ============================== */
-
-                productosOrdenados.forEach(
-
-                    function (producto) {
-
-
-                        productosGrid.appendChild(
-                            producto
-                        );
-
-
-                    }
-
-                );
-
-
-            }
+            mostrarProductos
 
         );
-
 
     }
 
 
-
     /* ==========================================
-             LIMPIAR FILTROS
+              LIMPIAR FILTROS
     ========================================== */
 
     if (limpiarFiltros) {
@@ -886,10 +862,6 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
 
-                /* ==============================
-                  DESMARCAR CHECKBOX
-                ============================== */
-
                 todosLosFiltros.forEach(
 
                     function (filtro) {
@@ -898,16 +870,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         filtro.checked =
                             false;
 
-
                     }
 
                 );
 
-
-
-                /* ==============================
-                  RESTABLECER ORDEN
-                ============================== */
 
                 if (ordenarProductos) {
 
@@ -915,288 +881,199 @@ document.addEventListener("DOMContentLoaded", function () {
                     ordenarProductos.value =
                         "original";
 
-
                 }
 
 
+                mostrarProductos();
 
-                /* ==============================
-                  RECUPERAR ORDEN ORIGINAL
-                ============================== */
+            }
 
-                const productosOriginales =
-                    [...productos].sort(
+        );
 
-                        function (
-                            productoA,
-                            productoB
-                        ) {
+    }
 
 
-                            return (
+    /* ==========================================
+          ABRIR FILTROS - JQUERY
+    ========================================== */
 
-                                Number(
-                                    productoA
-                                        .dataset
-                                        .ordenOriginal
-                                )
+    $("#abrirFiltros").on(
 
-                                -
+        "click",
 
-                                Number(
-                                    productoB
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                            );
+        function () {
 
 
-                        }
-
-                    );
-
+            $("#panelFiltros")
+                .addClass("mostrar");
 
 
-                productosOriginales.forEach(
-
-                    function (producto) {
-
-
-                        productosGrid.appendChild(
-                            producto
-                        );
+            $("#fondoFiltros")
+                .addClass("mostrar");
 
 
-                    }
-
+            $("body")
+                .css(
+                    "overflow",
+                    "hidden"
                 );
-
-
-                aplicarFiltros();
-
-
-            }
-
-        );
-
-
-    }
-
-
-
-    /* ==========================================
-              ABRIR PANEL
-    ========================================== */
-
-    function mostrarPanelFiltros() {
-
-
-        if (panelFiltros) {
-
-
-            panelFiltros.classList.add(
-                "mostrar"
-            );
-
-
-        }
-
-
-
-        if (fondoFiltros) {
-
-
-            fondoFiltros.classList.add(
-                "mostrar"
-            );
-
-
-        }
-
-        document.body.style.overflow =
-            "hidden";
-
-
-    }
-
-
-
-    /* ==========================================
-              CERRAR PANEL
-    ========================================== */
-
-    function ocultarPanelFiltros() {
-
-
-        if (panelFiltros) {
-
-
-            panelFiltros.classList.remove(
-                "mostrar"
-            );
-
-
-        }
-
-
-
-        if (fondoFiltros) {
-
-
-            fondoFiltros.classList.remove(
-                "mostrar"
-            );
-
-
-        }
-
-
-
-        document.body.style.overflow =
-            "";
-
-
-    }
-
-
-
-    /* ==========================================
-             BOTÓN FILTROS
-    ========================================== */
-
-    if (abrirFiltros) {
-
-
-        abrirFiltros.addEventListener(
-
-            "click",
-
-            mostrarPanelFiltros
-
-        );
-
-
-    }
-
-
-
-    /* ==========================================
-                 BOTÓN X
-    ========================================== */
-
-    if (cerrarFiltros) {
-
-
-        cerrarFiltros.addEventListener(
-
-            "click",
-
-            ocultarPanelFiltros
-
-        );
-
-
-    }
-
-
-
-    /* ==========================================
-          CLICK EN FONDO OSCURO
-    ========================================== */
-
-    if (fondoFiltros) {
-
-
-        fondoFiltros.addEventListener(
-
-            "click",
-
-            ocultarPanelFiltros
-
-        );
-
-    }
-
-
-
-    /* ==========================================
-                TECLA ESCAPE
-    ========================================== */
-
-    document.addEventListener(
-
-        "keydown",
-
-        function (evento) {
-
-
-            if (
-                evento.key === "Escape"
-            ) {
-
-
-                ocultarPanelFiltros();
-
-
-            }
-
 
         }
 
     );
 
 
-
     /* ==========================================
-               CARGA INICIAL
+          CERRAR FILTROS - JQUERY
     ========================================== */
 
+    $("#cerrarFiltros, #fondoFiltros").on(
 
-    aplicarFiltros();
+        "click",
 
-
-
-    /* =========================================
-        CONSULTAR PRODUCTO POR WHATSAPP
-========================================= */
-
-    const botonesWhatsApp =
-        document.querySelectorAll(".boton-whatsapp");
+        function () {
 
 
-    botonesWhatsApp.forEach(function (boton) {
+            $("#panelFiltros")
+                .removeClass("mostrar");
 
-        boton.addEventListener("click", function () {
+
+            $("#fondoFiltros")
+                .removeClass("mostrar");
+
+
+            $("body")
+                .css(
+                    "overflow",
+                    ""
+                );
+
+        }
+
+    );
+
+
+    /* ==========================================
+             ESCAPE - JQUERY
+    ========================================== */
+
+    $(document).on(
+
+        "keydown",
+
+        function (evento) {
+
+
+            if (evento.key === "Escape") {
+
+
+                $("#panelFiltros")
+                    .removeClass("mostrar");
+
+
+                $("#fondoFiltros")
+                    .removeClass("mostrar");
+
+
+                $("body")
+                    .css(
+                        "overflow",
+                        ""
+                    );
+
+            }
+
+        }
+
+    );
+
+
+    /* ==========================================
+          CONSULTAR PRODUCTO WHATSAPP
+    ========================================== */
+
+    productosGrid.addEventListener(
+
+        "click",
+
+        function (evento) {
+
+            const boton =
+
+                evento.target.closest(
+                    ".boton-whatsapp"
+                );
+
+
+            if (!boton) {
+
+                return;
+
+            }
+
 
             const tarjeta =
-                boton.closest(".producto-card");
+
+                boton.closest(
+                    ".producto-card"
+                );
+
 
             const nombreProducto =
+
                 tarjeta
-                    .querySelector(".producto-nombre")
+
+                    .querySelector(
+                        ".producto-nombre"
+                    )
+
                     .textContent
+
                     .trim();
 
+
             const numeroWhatsApp =
+
                 "50688043411";
 
+
             const mensaje =
+
                 "Hola, quisiera obtener información sobre el producto: "
+
                 + nombreProducto;
 
+
             const enlaceWhatsApp =
+
                 "https://wa.me/"
+
                 + numeroWhatsApp
+
                 + "?text="
-                + encodeURIComponent(mensaje);
+
+                + encodeURIComponent(
+                    mensaje
+                );
+
 
             window.open(
-                enlaceWhatsApp,
-                "_blank"
-            );
-        });
-    });
 
+                enlaceWhatsApp,
+
+                "_blank"
+
+            );
+
+        }
+
+    );
+
+
+    /* ==========================================
+                CARGA INICIAL
+    ========================================== */
+
+    cargarAlimentos();
 
 });

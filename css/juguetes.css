@@ -399,12 +399,6 @@ body {
         GRID DE JUGUETES
 ================================= */
 
-/*
-    MOBILE FIRST:
-    En teléfono las tarjetas aparecen
-    una debajo de otra.
-*/
-
 .productos-grid {
     display: flex;
     flex-direction: column;
@@ -597,7 +591,6 @@ body {
 
 /* =================================================
         TABLET
-        Desde 769px
 ================================================= */
 
 @media screen and (min-width: 769px) {
@@ -706,7 +699,6 @@ body {
 
 /* =================================================
         LAPTOP
-        Desde 993px
 ================================================= */
 
 @media screen and (min-width: 993px) {
@@ -720,7 +712,6 @@ body {
 
 /* =================================================
         ESCRITORIO
-        Desde 1251px
 ================================================= */
 
 @media screen and (min-width: 1251px) {
@@ -729,4 +720,16 @@ body {
         grid-template-columns:
             repeat(5, minmax(0, 1fr));
     }
+}
+
+/* ==========================================
+      PRODUCTOS CARGADOS DESDE JSON
+========================================== */
+
+.productos-vacios {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
 }

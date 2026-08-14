@@ -1,419 +1,144 @@
 console.log("higiene.js está conectado correctamente");
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==========================================
-            OBTENER ELEMENTOS
+            OBTENER ELEMENTOS DEL HTML
     ========================================== */
-
-    const productos =
-        Array.from(
-            document.querySelectorAll(".producto-card")
-        );
-
 
     const productosGrid =
         document.getElementById("productosGrid");
 
-
     const cantidadProductos =
         document.getElementById("cantidadProductos");
-
 
     const productosVacios =
         document.getElementById("productosVacios");
 
-
     const ordenarProductos =
         document.getElementById("ordenarProductos");
-
 
     const filtrosMascota =
         document.querySelectorAll(".filtro-mascota");
 
-
     const filtrosTipo =
         document.querySelectorAll(".filtro-tipo");
-
 
     const limpiarFiltros =
         document.getElementById("limpiarFiltros");
 
 
-    const abrirFiltros =
-        document.getElementById("abrirFiltros");
+    /* ==========================================
+             ARREGLO DE PRODUCTOS
+    ========================================== */
 
-
-    const cerrarFiltros =
-        document.getElementById("cerrarFiltros");
-
-
-    const panelFiltros =
-        document.getElementById("panelFiltros");
-
-
-    const fondoFiltros =
-        document.getElementById("fondoFiltros");
-
-
-    if (
-        productos.length === 0 ||
-        !productosGrid
-    ) {
-
-        console.warn(
-            "No se encontraron productos."
-        );
-
-        return;
-
-    }
-
-    function normalizarTexto(texto) {
-
-        return texto
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .trim();
-
-    }
-
+    let productosHigiene = [];
 
 
     /* ==========================================
-           DETECTAR TIPO DE PRODUCTO
+         OBTENER CHECKBOX SELECCIONADOS
     ========================================== */
 
-    function detectarTipoProducto(nombre) {
-
-        const texto =
-            normalizarTexto(nombre);
-
-
-        if (
-            texto.includes("shampoo")
-        ) {
-
-            return "shampoo";
-
-        }
-
-
-        /* HIGIENE ORAL */
-
-        if (
-            texto.includes("dental") ||
-            texto.includes("pasta")
-        ) {
-
-            return "oral";
-
-        }
-
-
-        /* CEPILLOS */
-
-        if (
-            texto.includes("cepillo")
-        ) {
-
-            return "cepillo";
-
-        }
-
-
-        /* TOALLAS, PADS Y PAÑALES */
-
-        if (
-            texto.includes("toalla") ||
-            texto.includes("pad") ||
-            texto.includes("panal")
-        ) {
-
-            return "limpieza";
-
-        }
-
-
-        /* UÑAS */
-
-        if (
-            texto.includes("una") ||
-            texto.includes("cortador")
-        ) {
-
-            return "unas";
-
-        }
-
-
-        /* ARENEROS */
-
-        if (
-            texto.includes("arenero")
-        ) {
-
-            return "arenero";
-
-        }
-
-
-        /* COMEDEROS Y FUENTES */
-
-        if (
-            texto.includes("comedero") ||
-            texto.includes("fuente")
-        ) {
-
-            return "alimentacion";
-
-        }
-
-
-        /* COLONIAS */
-
-        if (
-            texto.includes("colonia")
-        ) {
-
-            return "colonia";
-
-        }
-
-
-        /* OTROS */
-
-        return "otros";
-
-    }
-
-
-
-    /* ==========================================
-           PREPARAR PRODUCTOS
-    ========================================== */
-
-    productos.forEach(
-        function (producto, indice) {
-
-
-            /* ORDEN ORIGINAL */
-
-            producto.dataset.ordenOriginal =
-                indice;
-
-
-
-            /* NOMBRE */
-
-            const elementoNombre =
-                producto.querySelector(
-                    ".producto-nombre"
-                );
-
-
-            let nombreProducto = "";
-
-
-            if (elementoNombre) {
-
-                nombreProducto =
-                    elementoNombre
-                        .textContent
-                        .trim();
-
-            }
-
-
-            producto.dataset.nombre =
-                nombreProducto;
-
-
-
-            /* TIPO */
-
-            producto.dataset.tipo =
-                detectarTipoProducto(
-                    nombreProducto
-                );
-
-
-
-            /* MASCOTA */
-
-            const etiquetaMascota =
-                producto.querySelector(
-                    ".producto-etiqueta"
-                );
-
-
-            if (etiquetaMascota) {
-
-
-                const textoMascota =
-                    normalizarTexto(
-                        etiquetaMascota.textContent
-                    );
-
-                if (
-                    textoMascota === "perro" ||
-                    textoMascota === "perros"
-                ) {
-
-                    producto.dataset.mascota =
-                        "perro";
-
-                }
-
-
-                else if (
-                    textoMascota === "gato" ||
-                    textoMascota === "gatos"
-                ) {
-
-                    producto.dataset.mascota =
-                        "gato";
-
-                }
-
-
-            }
-
-
-        }
-    );
-
-
-
-    /* ==========================================
-          OBTENER CHECKBOX MARCADOS
-    ========================================== */
-
-    function obtenerValoresMarcados(
-        elementos
-    ) {
-
+    function obtenerValoresMarcados(elementos) {
 
         return Array.from(elementos)
 
-            .filter(
-                function (elemento) {
+            .filter(function (elemento) {
 
-                    return elemento.checked;
+                return elemento.checked;
 
-                }
-            )
+            })
 
-            .map(
-                function (elemento) {
+            .map(function (elemento) {
 
-                    return elemento.value;
+                return elemento.value;
 
-                }
-            );
+            });
 
     }
 
 
-
     /* ==========================================
-              APLICAR FILTROS
+        CREAR PRODUCTO DINÁMICAMENTE
     ========================================== */
 
-    function aplicarFiltros() {
+    function crearTarjetaProducto(producto) {
 
 
-        const mascotasSeleccionadas =
-            obtenerValoresMarcados(
-                filtrosMascota
-            );
+        const mascotaTexto =
+
+            producto.mascota === "gato"
+                ? "Gato"
+                : "Perro";
 
 
-        const tiposSeleccionados =
-            obtenerValoresMarcados(
-                filtrosTipo
-            );
+        const productoHTML = `
+
+            <article
+                class="producto-card"
+                data-id="${producto.id}"
+                data-mascota="${producto.mascota}"
+                data-tipo="${producto.tipo}"
+                data-nombre="${producto.nombre}"
+            >
+
+                <div class="producto-imagen-contenedor">
+
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}"
+                        class="producto-imagen"
+                    >
+
+                </div>
 
 
-        let cantidadVisible = 0;
+                <div class="producto-informacion">
 
 
+                    <span class="producto-etiqueta">
 
-        productos.forEach(
-            function (producto) {
+                        ${mascotaTexto}
 
-
-                /* MASCOTA */
-
-                const coincideMascota =
-
-                    mascotasSeleccionadas.length === 0 ||
-
-                    mascotasSeleccionadas.includes(
-                        producto.dataset.mascota
-                    );
+                    </span>
 
 
+                    <h2 class="producto-nombre">
 
-                /* TIPO */
+                        ${producto.nombre}
 
-                const coincideTipo =
-
-                    tiposSeleccionados.length === 0 ||
-
-                    tiposSeleccionados.includes(
-                        producto.dataset.tipo
-                    );
+                    </h2>
 
 
+                    <button
+                        type="button"
+                        class="producto-boton boton-whatsapp"
+                    >
 
-                /* RESULTADO */
+                        Consultar producto
 
-                const debeMostrarse =
-
-                    coincideMascota &&
-                    coincideTipo;
-
-
-
-                producto.classList.toggle(
-                    "oculto",
-                    !debeMostrarse
-                );
+                    </button>
 
 
-
-                if (debeMostrarse) {
-
-                    cantidadVisible++;
-
-                }
+                </div>
 
 
-            }
-        );
+            </article>
+
+        `;
 
 
-
-        actualizarCantidad(
-            cantidadVisible
-        );
-
+        return productoHTML;
 
     }
 
 
-
     /* ==========================================
-             ACTUALIZAR CONTADOR
+            ACTUALIZAR CONTADOR
     ========================================== */
 
-    function actualizarCantidad(
-        cantidad
-    ) {
+    function actualizarCantidad(cantidad) {
 
 
         if (cantidadProductos) {
@@ -428,9 +153,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         ? " producto"
                         : " productos"
                 );
+
         }
 
 
+        /* ==================================
+               SIN RESULTADOS
+        ================================== */
 
         if (productosVacios) {
 
@@ -440,28 +169,374 @@ document.addEventListener("DOMContentLoaded", function () {
                 cantidad === 0
                     ? "block"
                     : "none";
+
         }
 
     }
 
 
+    /* ==========================================
+          MOSTRAR / FILTRAR PRODUCTOS
+    ========================================== */
+
+    function mostrarProductos() {
+
+
+        /* ==================================
+              MASCOTAS SELECCIONADAS
+        ================================== */
+
+        const mascotasSeleccionadas =
+
+            obtenerValoresMarcados(
+                filtrosMascota
+            );
+
+
+        /* ==================================
+               TIPOS SELECCIONADOS
+        ================================== */
+
+        const tiposSeleccionados =
+
+            obtenerValoresMarcados(
+                filtrosTipo
+            );
+
+
+        /* ==================================
+              FILTRAR PRODUCTOS
+        ================================== */
+
+        let productosFiltrados =
+
+            productosHigiene.filter(
+
+                function (producto) {
+
+
+                    /* FILTRO MASCOTA */
+
+                    const coincideMascota =
+
+                        mascotasSeleccionadas.length === 0 ||
+
+                        mascotasSeleccionadas.includes(
+                            producto.mascota
+                        );
+
+
+                    /* FILTRO TIPO */
+
+                    const coincideTipo =
+
+                        tiposSeleccionados.length === 0 ||
+
+                        tiposSeleccionados.includes(
+                            producto.tipo
+                        );
+
+
+                    return (
+
+                        coincideMascota &&
+                        coincideTipo
+
+                    );
+
+                }
+
+            );
+
+
+        /* ==================================
+                    ORDENAMIENTO
+        ================================== */
+
+        const tipoOrden =
+
+            ordenarProductos
+                ? ordenarProductos.value
+                : "original";
+
+
+        productosFiltrados =
+            [...productosFiltrados];
+
+
+        /* ==================================
+                     A - Z
+        ================================== */
+
+        if (tipoOrden === "az") {
+
+
+            productosFiltrados.sort(
+
+                function (productoA, productoB) {
+
+
+                    return productoA.nombre.localeCompare(
+
+                        productoB.nombre,
+
+                        "es",
+
+                        {
+                            sensitivity: "base"
+                        }
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+                     Z - A
+        ================================== */
+
+        else if (tipoOrden === "za") {
+
+
+            productosFiltrados.sort(
+
+                function (productoA, productoB) {
+
+
+                    return productoB.nombre.localeCompare(
+
+                        productoA.nombre,
+
+                        "es",
+
+                        {
+                            sensitivity: "base"
+                        }
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+               ORDEN PREDETERMINADO
+        ================================== */
+
+        else {
+
+
+            productosFiltrados.sort(
+
+                function (productoA, productoB) {
+
+
+                    return (
+
+                        productoA.id -
+                        productoB.id
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================
+           ELIMINAR TARJETAS ANTERIORES
+        ================================== */
+
+        productosGrid
+
+            .querySelectorAll(
+                ".producto-card"
+            )
+
+            .forEach(
+
+                function (producto) {
+
+                    producto.remove();
+
+                }
+
+            );
+
+
+        /* ==================================
+            CREAR PRODUCTOS DESDE JSON
+        ================================== */
+
+        productosFiltrados.forEach(
+
+            function (producto) {
+
+
+                const productoHTML =
+
+                    crearTarjetaProducto(
+                        producto
+                    );
+
+
+                productosVacios.insertAdjacentHTML(
+
+                    "beforebegin",
+
+                    productoHTML
+
+                );
+
+            }
+
+        );
+
+
+        /* ==================================
+              ACTUALIZAR CONTADOR
+        ================================== */
+
+        actualizarCantidad(
+
+            productosFiltrados.length
+
+        );
+
+    }
+
 
     /* ==========================================
-          FILTROS DE MASCOTA
+       CARGAR PRODUCTOS DESDE HIGIENE.JSON
+    ========================================== */
+
+    function cargarProductosHigiene() {
+
+
+        fetch("json/higiene.json")
+
+
+            .then(
+
+                function (respuesta) {
+
+
+                    if (!respuesta.ok) {
+
+
+                        throw new Error(
+
+                            "No se pudo cargar higiene.json"
+
+                        );
+
+                    }
+
+
+                    return respuesta.json();
+
+                }
+
+            )
+
+
+            .then(
+
+                function (datos) {
+
+
+                    productosHigiene = datos;
+
+
+                    console.log(
+
+                        "Productos de higiene cargados:",
+
+                        productosHigiene
+
+                    );
+
+
+                    mostrarProductos();
+
+                }
+
+            )
+
+
+            .catch(
+
+                function (error) {
+
+
+                    console.error(
+
+                        "Error al cargar los productos:",
+
+                        error
+
+                    );
+
+
+                    if (cantidadProductos) {
+
+
+                        cantidadProductos.textContent =
+
+                            "Error al cargar productos";
+
+                    }
+
+
+                    if (productosVacios) {
+
+
+                        productosVacios.style.display =
+                            "block";
+
+
+                        productosVacios.textContent =
+
+                            "No fue posible cargar los productos de higiene.";
+
+                    }
+
+                }
+
+            );
+
+    }
+
+
+    /* ==========================================
+           FILTROS DE MASCOTA
     ========================================== */
 
     filtrosMascota.forEach(
+
         function (filtro) {
 
 
             filtro.addEventListener(
+
                 "change",
-                aplicarFiltros
+
+                mostrarProductos
+
             );
 
         }
-    );
 
+    );
 
 
     /* ==========================================
@@ -469,22 +544,25 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================================== */
 
     filtrosTipo.forEach(
+
         function (filtro) {
 
 
             filtro.addEventListener(
+
                 "change",
-                aplicarFiltros
+
+                mostrarProductos
+
             );
 
-
         }
+
     );
 
 
-
     /* ==========================================
-             ORDENAR PRODUCTOS
+              ORDENAR PRODUCTOS
     ========================================== */
 
     if (ordenarProductos) {
@@ -494,171 +572,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             "change",
 
-            function () {
-
-
-                const tipoOrden =
-                    ordenarProductos.value;
-
-
-                const productosOrdenados =
-                    [...productos];
-
-
-
-                /* A - Z */
-
-                if (
-                    tipoOrden === "az"
-                ) {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return productoA
-                                .dataset
-                                .nombre
-                                .localeCompare(
-
-                                    productoB
-                                        .dataset
-                                        .nombre,
-
-                                    "es",
-
-                                    {
-                                        sensitivity:
-                                            "base"
-                                    }
-
-                                );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                /* Z - A */
-
-                else if (
-                    tipoOrden === "za"
-                ) {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return productoB
-                                .dataset
-                                .nombre
-                                .localeCompare(
-
-                                    productoA
-                                        .dataset
-                                        .nombre,
-
-                                    "es",
-
-                                    {
-                                        sensitivity:
-                                            "base"
-                                    }
-
-                                );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                /* ORDEN ORIGINAL */
-
-                else {
-
-
-                    productosOrdenados.sort(
-
-                        function (
-                            productoA,
-                            productoB
-                        ) {
-
-
-                            return (
-
-                                Number(
-                                    productoA
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                                -
-
-                                Number(
-                                    productoB
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                            );
-
-
-                        }
-
-                    );
-
-
-                }
-
-
-
-                productosOrdenados.forEach(
-
-                    function (producto) {
-
-
-                        productosGrid.appendChild(
-                            producto
-                        );
-
-
-                    }
-
-                );
-
-
-            }
+            mostrarProductos
 
         );
-
 
     }
 
 
-
     /* ==========================================
-              LIMPIAR FILTROS
+               LIMPIAR FILTROS
     ========================================== */
 
     if (limpiarFiltros) {
@@ -671,9 +593,12 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
 
+                /* DESMARCAR MASCOTAS */
+
                 filtrosMascota.forEach(
 
                     function (filtro) {
+
 
                         filtro.checked =
                             false;
@@ -683,11 +608,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
+                /* DESMARCAR TIPOS */
 
                 filtrosTipo.forEach(
 
                     function (filtro) {
 
+
                         filtro.checked =
                             false;
 
@@ -696,8 +623,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
+                /* RESTAURAR ORDEN */
 
                 if (ordenarProductos) {
+
 
                     ordenarProductos.value =
                         "original";
@@ -705,238 +634,197 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
+                mostrarProductos();
 
-                const productosOriginales =
-                    [...productos].sort(
+            }
 
-                        function (
-                            productoA,
-                            productoB
-                        ) {
+        );
 
-
-                            return (
-
-                                Number(
-                                    productoA
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                                -
-
-                                Number(
-                                    productoB
-                                        .dataset
-                                        .ordenOriginal
-                                )
-
-                            );
+    }
 
 
-                        }
+    /* ==========================================
+          ABRIR FILTROS - JQUERY
+    ========================================== */
 
-                    );
+    $("#abrirFiltros").on(
 
+        "click",
 
-
-                productosOriginales.forEach(
-
-                    function (producto) {
-
-
-                        productosGrid.appendChild(
-                            producto
-                        );
+        function () {
 
 
-                    }
+            $("#panelFiltros")
+                .addClass("mostrar");
 
+
+            $("#fondoFiltros")
+                .addClass("mostrar");
+
+
+            $("body")
+                .css(
+                    "overflow",
+                    "hidden"
                 );
-
-
-
-                aplicarFiltros();
-
-
-            }
-
-        );
-
-
-    }
-
-
-
-    /* ==========================================
-              ABRIR PANEL
-    ========================================== */
-
-    function mostrarPanelFiltros() {
-
-
-        if (panelFiltros) {
-
-            panelFiltros.classList.add(
-                "mostrar"
-            );
-
-        }
-
-
-        if (fondoFiltros) {
-
-            fondoFiltros.classList.add(
-                "mostrar"
-            );
-
-        }
-
-
-        document.body.style.overflow =
-            "hidden";
-
-
-    }
-
-
-
-    /* ==========================================
-              CERRAR PANEL
-    ========================================== */
-
-    function ocultarPanelFiltros() {
-
-
-        if (panelFiltros) {
-
-            panelFiltros.classList.remove(
-                "mostrar"
-            );
-
-        }
-
-
-        if (fondoFiltros) {
-
-            fondoFiltros.classList.remove(
-                "mostrar"
-            );
-
-        }
-
-
-        document.body.style.overflow =
-            "";
-
-
-    }
-
-
-
-    if (abrirFiltros) {
-
-        abrirFiltros.addEventListener(
-            "click",
-            mostrarPanelFiltros
-        );
-
-    }
-
-
-
-    if (cerrarFiltros) {
-
-        cerrarFiltros.addEventListener(
-            "click",
-            ocultarPanelFiltros
-        );
-
-    }
-
-
-
-    if (fondoFiltros) {
-
-        fondoFiltros.addEventListener(
-            "click",
-            ocultarPanelFiltros
-        );
-
-    }
-
-
-
-    document.addEventListener(
-
-        "keydown",
-
-        function (evento) {
-
-
-            if (
-                evento.key === "Escape"
-            ) {
-
-                ocultarPanelFiltros();
-
-            }
-
 
         }
 
     );
 
 
-
     /* ==========================================
-              CARGA INICIAL
+          CERRAR FILTROS - JQUERY
     ========================================== */
 
-    aplicarFiltros();
+    $("#cerrarFiltros, #fondoFiltros").on(
+
+        "click",
+
+        function () {
 
 
-    /* =========================================
-     CONSULTAR PRODUCTO POR WHATSAPP
-========================================= */
+            $("#panelFiltros")
+                .removeClass("mostrar");
 
-    const botonesWhatsApp =
-        document.querySelectorAll(".boton-whatsapp");
 
-    botonesWhatsApp.forEach(function (boton) {
+            $("#fondoFiltros")
+                .removeClass("mostrar");
 
-        boton.addEventListener("click", function () {
+
+            $("body")
+                .css(
+                    "overflow",
+                    ""
+                );
+
+        }
+
+    );
+
+
+    /* ==========================================
+             ESCAPE - JQUERY
+    ========================================== */
+
+    $(document).on(
+
+        "keydown",
+
+        function (evento) {
+
+
+            if (evento.key === "Escape") {
+
+
+                $("#panelFiltros")
+                    .removeClass("mostrar");
+
+
+                $("#fondoFiltros")
+                    .removeClass("mostrar");
+
+
+                $("body")
+                    .css(
+                        "overflow",
+                        ""
+                    );
+
+            }
+
+        }
+
+    );
+
+
+    /* ==========================================
+          CONSULTAR PRODUCTO WHATSAPP
+    ========================================== */
+
+    productosGrid.addEventListener(
+
+        "click",
+
+        function (evento) {
+
+
+            const boton =
+
+                evento.target.closest(
+                    ".boton-whatsapp"
+                );
+
+
+            if (!boton) {
+
+                return;
+
+            }
+
 
             const tarjeta =
-                boton.closest(".producto-card");
+
+                boton.closest(
+                    ".producto-card"
+                );
+
 
             const nombreProducto =
+
                 tarjeta
-                    .querySelector(".producto-nombre")
+
+                    .querySelector(
+                        ".producto-nombre"
+                    )
+
                     .textContent
+
                     .trim();
 
+
             const numeroWhatsApp =
+
                 "50688043411";
 
+
             const mensaje =
-                "Hola, quisiera obtener información sobre el prducto: "
+
+                "Hola, quisiera obtener información sobre el producto: "
+
                 + nombreProducto;
 
+
             const enlaceWhatsApp =
+
                 "https://wa.me/"
+
                 + numeroWhatsApp
+
                 + "?text="
-                + encodeURIComponent(mensaje);
+
+                + encodeURIComponent(
+                    mensaje
+                );
+
 
             window.open(
+
                 enlaceWhatsApp,
+
                 "_blank"
+
             );
 
-        });
+        }
 
-    });
+    );
 
+
+    /* ==========================================
+                 CARGA INICIAL
+    ========================================== */
+
+    cargarProductosHigiene();
 
 });

@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     iniciarBuscador();
+     iniciarFormularioRegistro();
 
 });
 
@@ -1079,13 +1080,6 @@ function iniciarBuscador() {
             obtenerHistorial();
 
 
-        /*
-            Creamos una llave única.
-
-            Esto evita guardar repetidamente
-            la misma categoría o sección.
-        */
-
         const claveNueva =
             resultado.url
                 ? `url:${resultado.url}`
@@ -1110,8 +1104,6 @@ function iniciarBuscador() {
                 }
             );
 
-
-        /* Nueva búsqueda al principio */
 
         historial.unshift({
 
@@ -1192,9 +1184,6 @@ function iniciarBuscador() {
             return;
 
         }
-
-
-        /* Mostrar sección */
 
         seccionResultados.classList.add(
             "mostrar"
@@ -1398,12 +1387,6 @@ function iniciarBuscador() {
                 idSeccion
             );
 
-
-        /*
-            Si esta función algún día se utiliza
-            desde otra página, vuelve al index.
-        */
-
         if (
             !seccion
         ) {
@@ -1428,7 +1411,6 @@ function iniciarBuscador() {
         });
 
 
-        /* Resaltar temporalmente */
 
         seccion.classList.add(
             "seccion-encontrada"
@@ -1777,5 +1759,598 @@ function iniciarBuscador() {
     ===================================================== */
 
     mostrarHistorial();
+
+}
+
+/* =========================================================
+        FORMULARIO DE REGISTRO ARADU PET
+========================================================= */
+
+function iniciarFormularioRegistro() {
+
+
+    /* ==========================================
+            OBTENER ELEMENTOS
+    ========================================== */
+
+    const formularioRegistro =
+        document.getElementById(
+            "formularioRegistro"
+        );
+
+    const fechaNacimiento =
+        document.getElementById(
+            "fechaNacimiento"
+        );
+
+    const campoEdad =
+        document.getElementById(
+            "edad"
+        );
+
+    const nivelInteres =
+        document.getElementById(
+            "nivelInteres"
+        );
+
+    const valorInteres =
+        document.getElementById(
+            "valorInteres"
+        );
+
+    const mensajeFormulario =
+        document.getElementById(
+            "mensajeFormulario"
+        );
+
+
+    /* ==========================================
+            VALIDAR QUE EXISTA
+    ========================================== */
+
+    if (!formularioRegistro) {
+
+        return;
+
+    }
+
+
+    /* ==========================================
+        FECHA MÁXIMA = FECHA ACTUAL
+    ========================================== */
+
+    if (fechaNacimiento) {
+
+        const hoy =
+            new Date();
+
+        const anio =
+            hoy.getFullYear();
+
+        const mes =
+            String(
+                hoy.getMonth() + 1
+            ).padStart(
+                2,
+                "0"
+            );
+
+        const dia =
+            String(
+                hoy.getDate()
+            ).padStart(
+                2,
+                "0"
+            );
+
+
+        fechaNacimiento.max =
+
+            `${anio}-${mes}-${dia}`;
+
+    }
+
+
+    /* ==========================================
+           ACTUALIZAR NIVEL DE INTERÉS
+    ========================================== */
+
+    if (
+        nivelInteres &&
+        valorInteres
+    ) {
+
+
+        valorInteres.textContent =
+
+            nivelInteres.value +
+            " / 10";
+
+
+        nivelInteres.addEventListener(
+
+            "input",
+
+            function () {
+
+
+                valorInteres.textContent =
+
+                    nivelInteres.value +
+                    " / 10";
+
+            }
+
+        );
+
+    }
+
+
+    /* ==========================================
+             CALCULAR EDAD
+    ========================================== */
+
+    function calcularEdad(
+        fecha
+    ) {
+
+
+        if (!fecha) {
+
+            return "";
+
+        }
+
+
+        const nacimiento =
+            new Date(
+                fecha + "T00:00:00"
+            );
+
+
+        const hoy =
+            new Date();
+
+
+        let edad =
+
+            hoy.getFullYear() -
+            nacimiento.getFullYear();
+
+
+        const diferenciaMes =
+
+            hoy.getMonth() -
+            nacimiento.getMonth();
+
+
+        if (
+            diferenciaMes < 0 ||
+
+            (
+                diferenciaMes === 0 &&
+
+                hoy.getDate() <
+                nacimiento.getDate()
+            )
+        ) {
+
+            edad--;
+
+        }
+
+
+        return edad;
+
+    }
+
+
+    /* ==========================================
+          CAMBIO DE FECHA NACIMIENTO
+    ========================================== */
+
+    if (fechaNacimiento) {
+
+
+        fechaNacimiento.addEventListener(
+
+            "change",
+
+            function () {
+
+
+                const edadCalculada =
+
+                    calcularEdad(
+                        fechaNacimiento.value
+                    );
+
+
+                if (campoEdad) {
+
+                    campoEdad.value =
+                        edadCalculada;
+
+                }
+
+
+                console.log(
+
+                    "Edad calculada:",
+
+                    edadCalculada
+
+                );
+
+            }
+
+        );
+
+    }
+
+
+   /* ==========================================
+        ENVÍO DEL FORMULARIO POR EMAIL
+========================================== */
+
+formularioRegistro.addEventListener(
+
+    "submit",
+
+    async function (evento) {
+
+
+        /* ==================================
+            EVITAR ENVÍO NORMAL DEL HTML
+        ================================== */
+
+        evento.preventDefault();
+
+
+        /* ==================================
+             LIMPIAR MENSAJE ANTERIOR
+        ================================== */
+
+        mensajeFormulario.className =
+            "registro-mensaje";
+
+        mensajeFormulario.textContent =
+            "";
+
+
+        /* ==================================
+             VALIDAR EL FORMULARIO
+        ================================== */
+
+        if (
+            !formularioRegistro.checkValidity()
+        ) {
+
+
+            formularioRegistro.reportValidity();
+
+
+            return;
+
+        }
+
+
+        /* ==================================
+           CALCULAR EDAD ANTES DE ENVIAR
+        ================================== */
+
+        const edadCalculada =
+
+            calcularEdad(
+                fechaNacimiento.value
+            );
+
+
+        /* ==================================
+             VALIDAR LA EDAD
+        ================================== */
+
+        if (
+            edadCalculada === "" ||
+            edadCalculada < 0
+        ) {
+
+
+            mensajeFormulario.className =
+
+                "registro-mensaje error";
+
+
+            mensajeFormulario.textContent =
+
+                "Por favor, ingresa una fecha de nacimiento válida.";
+
+
+            return;
+
+        }
+
+
+        /* ==================================
+          GUARDAR EDAD EN INPUT OCULTO
+        ================================== */
+
+        if (campoEdad) {
+
+
+            campoEdad.value =
+                edadCalculada;
+
+        }
+
+
+        /* ==================================
+               OBTENER BOTÓN
+        ================================== */
+
+        const botonEnviar =
+
+            document.getElementById(
+                "botonEnviarRegistro"
+            );
+
+
+        /* ==================================
+              DESACTIVAR BOTÓN
+        ================================== */
+
+        if (botonEnviar) {
+
+
+            botonEnviar.disabled =
+                true;
+
+
+            botonEnviar.innerHTML = `
+
+                <span
+                    class="spinner-border
+                           spinner-border-sm
+                           me-2"
+                    aria-hidden="true">
+                </span>
+
+                Enviando...
+
+            `;
+
+        }
+
+
+        /* ==================================
+              OBTENER LOS DATOS
+        ================================== */
+
+        const datosFormulario =
+
+            new FormData(
+                formularioRegistro
+            );
+
+
+        /* ==================================
+             CORREO DE ARADU PET
+        ================================== */
+
+        const correoDestino =
+
+            "smoram2907@gmail.com";
+
+
+        /* ==================================
+                URL FORMSUBMIT
+        ================================== */
+
+        const urlEnvio =
+
+            "https://formsubmit.co/ajax/" +
+            correoDestino;
+
+
+        try {
+
+
+            /* ==================================
+                    ENVIAR DATOS
+            ================================== */
+
+            const respuesta =
+
+                await fetch(
+
+                    urlEnvio,
+
+                    {
+
+                        method:
+                            "POST",
+
+                        body:
+                            datosFormulario,
+
+                        headers: {
+
+                            "Accept":
+                                "application/json"
+
+                        }
+
+                    }
+
+                );
+
+
+            /* ==================================
+               CONVERTIR RESPUESTA A JSON
+            ================================== */
+
+            const resultado =
+
+                await respuesta.json();
+
+
+            /* ==================================
+               COMPROBAR SI FUE CORRECTO
+            ================================== */
+
+            if (!respuesta.ok) {
+
+
+                throw new Error(
+
+                    resultado.message ||
+
+                    "No se pudo enviar el formulario."
+
+                );
+
+            }
+
+
+            /* ==================================
+                    MENSAJE DE ÉXITO
+            ================================== */
+
+            mensajeFormulario.className =
+
+                "registro-mensaje exito";
+
+
+            mensajeFormulario.innerHTML = `
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Registro enviado correctamente.
+
+                Gracias por formar parte de
+                la comunidad Aradu Pet.
+
+            `;
+
+
+            /* ==================================
+                  LIMPIAR FORMULARIO
+            ================================== */
+
+            formularioRegistro.reset();
+
+
+            /* ==================================
+              RESTAURAR NIVEL DE INTERÉS
+            ================================== */
+
+            if (
+                nivelInteres &&
+                valorInteres
+            ) {
+
+
+                nivelInteres.value =
+                    "5";
+
+
+                valorInteres.textContent =
+                    "5 / 10";
+
+            }
+
+
+            /* ==================================
+                  LIMPIAR EDAD OCULTA
+            ================================== */
+
+            if (campoEdad) {
+
+
+                campoEdad.value =
+                    "";
+
+            }
+
+
+            console.log(
+
+                "Formulario enviado:",
+
+                resultado
+
+            );
+
+
+        }
+
+
+        catch (error) {
+
+
+            /* ==================================
+                    ERROR
+            ================================== */
+
+            console.error(
+
+                "Error al enviar formulario:",
+
+                error
+
+            );
+
+
+            mensajeFormulario.className =
+
+                "registro-mensaje error";
+
+
+            mensajeFormulario.innerHTML = `
+
+                <i class="bi bi-exclamation-circle-fill"></i>
+
+                No fue posible enviar el registro.
+
+                Por favor, intenta nuevamente.
+
+            `;
+
+
+        }
+
+
+        finally {
+
+
+            /* ==================================
+                 ACTIVAR BOTÓN NUEVAMENTE
+            ================================== */
+
+            if (botonEnviar) {
+
+
+                botonEnviar.disabled =
+                    false;
+
+
+                botonEnviar.innerHTML = `
+
+                    <i class="bi bi-send-fill"></i>
+
+                    Enviar registro
+
+                `;
+
+            }
+
+
+        }
+
+
+    }
+
+);
+
 
 }
