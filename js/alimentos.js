@@ -45,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const limpiarFiltros =
         document.getElementById("limpiarFiltros");
 
+    const botonVolver =
+        document.querySelector(
+            ".boton-volver-flotante"
+        );
+
 
     /* ==========================================
              ARREGLO DE ALIMENTOS
@@ -59,10 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let mascotaSeleccionada = "perro";
 
-
-    /* ==========================================
-               NORMALIZAR TEXTO
-    ========================================== */
 
     function normalizarTexto(texto) {
 
@@ -299,9 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function mostrarProductos() {
 
 
-        /* ==================================
-                  MARCAS MARCADAS
-        ================================== */
+        /*MARCAS*/
 
         const marcasSeleccionadas =
 
@@ -310,9 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* ==================================
-                   TIPOS MARCADOS
-        ================================== */
+        /*TIPOS*/
 
         const tiposSeleccionados =
 
@@ -321,9 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* ==================================
-                  ETAPAS MARCADAS
-        ================================== */
+        /*ETAPAS*/
 
         const etapasSeleccionadas =
 
@@ -332,9 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* ==================================
-                   RAZAS MARCADAS
-        ================================== */
+        /*RAZAS*/
 
         const razasSeleccionadas =
 
@@ -343,9 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* ==================================
-                 SABORES MARCADOS
-        ================================== */
+        /*SABORES*/
 
         const saboresSeleccionados =
 
@@ -737,7 +728,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==========================================
-       BOTONES SUPERIORES PERRO / GATO
+       BOTONES PERRO / GATO
     ========================================== */
 
     botonesMascota.forEach(
@@ -897,30 +888,38 @@ document.addEventListener("DOMContentLoaded", function () {
           ABRIR FILTROS - JQUERY
     ========================================== */
 
-    $("#abrirFiltros").on(
+$("#abrirFiltros").on(
 
-        "click",
+    "click",
 
-        function () {
+    function () {
+
+        $("#panelFiltros")
+            .addClass("mostrar");
+
+        $("#fondoFiltros")
+            .addClass("mostrar");
+
+        $("body")
+            .css(
+                "overflow",
+                "hidden"
+            );
 
 
-            $("#panelFiltros")
-                .addClass("mostrar");
+        /* OCULTAR BOTÓN REGRESAR */
 
+        if (botonVolver) {
 
-            $("#fondoFiltros")
-                .addClass("mostrar");
-
-
-            $("body")
-                .css(
-                    "overflow",
-                    "hidden"
-                );
+            botonVolver.classList.add(
+                "oculto-filtros"
+            );
 
         }
 
-    );
+    }
+
+);
 
 
     /* ==========================================
@@ -929,28 +928,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $("#cerrarFiltros, #fondoFiltros").on(
 
-        "click",
+    "click",
 
-        function () {
+    function () {
+
+        $("#panelFiltros")
+            .removeClass("mostrar");
+
+        $("#fondoFiltros")
+            .removeClass("mostrar");
+
+        $("body")
+            .css(
+                "overflow",
+                ""
+            );
 
 
-            $("#panelFiltros")
-                .removeClass("mostrar");
+        /* MOSTRAR BOTÓN REGRESAR */
 
+        if (botonVolver) {
 
-            $("#fondoFiltros")
-                .removeClass("mostrar");
-
-
-            $("body")
-                .css(
-                    "overflow",
-                    ""
-                );
+            botonVolver.classList.remove(
+                "oculto-filtros"
+            );
 
         }
 
-    );
+    }
+
+);
 
 
     /* ==========================================
@@ -959,33 +966,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $(document).on(
 
-        "keydown",
+    "keydown",
 
-        function (evento) {
+    function (evento) {
+
+        if (evento.key === "Escape") {
+
+            $("#panelFiltros")
+                .removeClass("mostrar");
+
+            $("#fondoFiltros")
+                .removeClass("mostrar");
+
+            $("body")
+                .css(
+                    "overflow",
+                    ""
+                );
 
 
-            if (evento.key === "Escape") {
+            /* MOSTRAR BOTÓN REGRESAR */
 
+            if (botonVolver) {
 
-                $("#panelFiltros")
-                    .removeClass("mostrar");
-
-
-                $("#fondoFiltros")
-                    .removeClass("mostrar");
-
-
-                $("body")
-                    .css(
-                        "overflow",
-                        ""
-                    );
+                botonVolver.classList.remove(
+                    "oculto-filtros"
+                );
 
             }
 
         }
 
-    );
+    }
+
+);
 
 
     /* ==========================================

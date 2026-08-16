@@ -1,6 +1,3 @@
-/* =========================================================
-        ARADU PET - LÓGICA PRINCIPAL
-========================================================= */
 
 console.log("logica.js está conectado correctamente");
 
@@ -9,14 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     iniciarBuscador();
-     iniciarFormularioRegistro();
+    iniciarFormularioRegistro();
+    cargarContenidoIndex();
 
 });
 
 
 
 /* =========================================================
-        BUSCADOR ARADU PET
+        BUSCADOR
 ========================================================= */
 
 function iniciarBuscador() {
@@ -78,18 +76,10 @@ function iniciarBuscador() {
     }
 
 
-    /* =====================================================
-            VARIABLES
-    ===================================================== */
-
     let indiceSeleccionado = -1;
 
     let resultadosActuales = [];
 
-
-    /* =====================================================
-            CONFIGURACIÓN DEL HISTORIAL
-    ===================================================== */
 
     const CLAVE_HISTORIAL =
         "aradupet_busquedas_recientes";
@@ -134,6 +124,7 @@ function iniciarBuscador() {
 
             palabras:
                 "historia emprendimiento familia veterinaria nosotros quienes somos origen negocio aradu pet",
+
 
             destino:
                 "historia",
@@ -223,7 +214,22 @@ function iniciarBuscador() {
 
         },
 
+        {
+            titulo:
+                "Registro",
 
+            descripcion:
+                "Únete a la comunidad Aradu Pet",
+
+            palabras:
+                "registro registrarse registrar formulario comunidad unirse datos cliente clientes inscripcion inscripción suscripcion suscripción novedades correo información",
+
+            destino:
+                "registro",
+
+            tipo:
+                "Sección"
+        },
         {
 
             titulo:
@@ -354,10 +360,6 @@ function iniciarBuscador() {
     ];
 
 
-    /* =====================================================
-            OBTENER TODOS LOS DATOS
-    ===================================================== */
-
     function obtenerDatosBusqueda() {
 
         return [
@@ -370,10 +372,6 @@ function iniciarBuscador() {
 
     }
 
-
-    /* =====================================================
-            NORMALIZAR TEXTO
-    ===================================================== */
 
     function normalizarTexto(texto) {
 
@@ -429,10 +427,6 @@ function iniciarBuscador() {
         let puntos = 0;
 
 
-        /* =================================================
-                COINCIDENCIA EXACTA
-        ================================================= */
-
         if (
             titulo === busqueda
         ) {
@@ -442,9 +436,6 @@ function iniciarBuscador() {
         }
 
 
-        /* =================================================
-                TÍTULO COMIENZA IGUAL
-        ================================================= */
 
         if (
             titulo.startsWith(
@@ -456,10 +447,6 @@ function iniciarBuscador() {
 
         }
 
-
-        /* =================================================
-                TÍTULO CONTIENE BÚSQUEDA
-        ================================================= */
 
         if (
             titulo.includes(
@@ -486,10 +473,6 @@ function iniciarBuscador() {
 
         }
 
-
-        /* =================================================
-                DESCRIPCIÓN
-        ================================================= */
 
         if (
             descripcion.includes(
@@ -831,8 +814,6 @@ function iniciarBuscador() {
                             resultado.titulo;
 
 
-                        /* Guardar en historial */
-
                         guardarBusquedaReciente(
                             terminoBuscado ||
                             resultado.titulo,
@@ -880,7 +861,7 @@ function iniciarBuscador() {
 
 
     /* =====================================================
-            ACTUALIZAR SELECCIÓN CON TECLADO
+            ACTUALIZAR SELECCIÓN
     ===================================================== */
 
     function actualizarSeleccion() {
@@ -903,7 +884,7 @@ function iniciarBuscador() {
                     "activa",
 
                     indice ===
-                        indiceSeleccionado
+                    indiceSeleccionado
 
                 );
 
@@ -914,7 +895,7 @@ function iniciarBuscador() {
         if (
             indiceSeleccionado >= 0 &&
             sugerencias[
-                indiceSeleccionado
+            indiceSeleccionado
             ]
         ) {
 
@@ -950,11 +931,6 @@ function iniciarBuscador() {
             -1;
 
     }
-
-
-    /* =====================================================
-            HISTORIAL
-    ===================================================== */
 
 
     /* =====================================================
@@ -1124,9 +1100,6 @@ function iniciarBuscador() {
 
         });
 
-
-        /* Conservar únicamente las últimas 6 */
-
         historial =
             historial.slice(
                 0,
@@ -1189,10 +1162,6 @@ function iniciarBuscador() {
             "mostrar"
         );
 
-
-        /* =================================================
-                INFORMACIÓN
-        ================================================= */
 
         if (
             informacionResultados
@@ -1344,7 +1313,7 @@ function iniciarBuscador() {
 
         if (
             resultado.tipo ===
-                "Categoría" &&
+            "Categoría" &&
             resultado.url
         ) {
 
@@ -1356,10 +1325,6 @@ function iniciarBuscador() {
 
         }
 
-
-        /* =================================================
-                IR A SECCIÓN DEL INDEX
-        ================================================= */
 
         if (
             resultado.destino
@@ -1373,10 +1338,6 @@ function iniciarBuscador() {
 
     }
 
-
-    /* =====================================================
-            IR A UNA SECCIÓN
-    ===================================================== */
 
     function irASeccion(
         idSeccion
@@ -1442,10 +1403,6 @@ function iniciarBuscador() {
             campoBusqueda.value.trim();
 
 
-        /* =================================================
-                CAMPO VACÍO
-        ================================================= */
-
         if (
             termino === ""
         ) {
@@ -1490,13 +1447,13 @@ function iniciarBuscador() {
         if (
             indiceSeleccionado >= 0 &&
             resultadosActuales[
-                indiceSeleccionado
+            indiceSeleccionado
             ]
         ) {
 
             const resultadoSeleccionado =
                 resultadosActuales[
-                    indiceSeleccionado
+                indiceSeleccionado
                 ];
 
 
@@ -1672,10 +1629,6 @@ function iniciarBuscador() {
     );
 
 
-    /* =====================================================
-            MOSTRAR SUGERENCIAS AL VOLVER AL INPUT
-    ===================================================== */
-
     campoBusqueda.addEventListener(
         "focus",
         function () {
@@ -1753,25 +1706,16 @@ function iniciarBuscador() {
 
     }
 
-
-    /* =====================================================
-            CARGAR HISTORIAL AL ABRIR EL INDEX
-    ===================================================== */
-
     mostrarHistorial();
 
 }
 
 /* =========================================================
-        FORMULARIO DE REGISTRO ARADU PET
+        FORMULARIO DE REGISTRO 
 ========================================================= */
 
 function iniciarFormularioRegistro() {
 
-
-    /* ==========================================
-            OBTENER ELEMENTOS
-    ========================================== */
 
     const formularioRegistro =
         document.getElementById(
@@ -1989,124 +1933,113 @@ function iniciarFormularioRegistro() {
     }
 
 
-   /* ==========================================
-        ENVÍO DEL FORMULARIO POR EMAIL
-========================================== */
+    /* ==========================================
+         ENVÍO DEL FORMULARIO POR EMAIL
+ ========================================== */
 
-formularioRegistro.addEventListener(
+    formularioRegistro.addEventListener(
 
-    "submit",
+        "submit",
 
-    async function (evento) {
-
-
-        /* ==================================
-            EVITAR ENVÍO NORMAL DEL HTML
-        ================================== */
-
-        evento.preventDefault();
+        async function (evento) {
 
 
-        /* ==================================
-             LIMPIAR MENSAJE ANTERIOR
-        ================================== */
+            /* ==================================
+                EVITAR ENVÍO NORMAL DEL HTML
+            ================================== */
 
-        mensajeFormulario.className =
-            "registro-mensaje";
-
-        mensajeFormulario.textContent =
-            "";
+            evento.preventDefault();
 
 
-        /* ==================================
-             VALIDAR EL FORMULARIO
-        ================================== */
-
-        if (
-            !formularioRegistro.checkValidity()
-        ) {
-
-
-            formularioRegistro.reportValidity();
-
-
-            return;
-
-        }
-
-
-        /* ==================================
-           CALCULAR EDAD ANTES DE ENVIAR
-        ================================== */
-
-        const edadCalculada =
-
-            calcularEdad(
-                fechaNacimiento.value
-            );
-
-
-        /* ==================================
-             VALIDAR LA EDAD
-        ================================== */
-
-        if (
-            edadCalculada === "" ||
-            edadCalculada < 0
-        ) {
-
+            /* ==================================
+                 LIMPIAR MENSAJE ANTERIOR
+            ================================== */
 
             mensajeFormulario.className =
-
-                "registro-mensaje error";
-
+                "registro-mensaje";
 
             mensajeFormulario.textContent =
-
-                "Por favor, ingresa una fecha de nacimiento válida.";
-
-
-            return;
-
-        }
+                "";
 
 
-        /* ==================================
-          GUARDAR EDAD EN INPUT OCULTO
-        ================================== */
+            /* ==================================
+                 VALIDAR EL FORMULARIO
+            ================================== */
 
-        if (campoEdad) {
-
-
-            campoEdad.value =
-                edadCalculada;
-
-        }
+            if (
+                !formularioRegistro.checkValidity()
+            ) {
 
 
-        /* ==================================
-               OBTENER BOTÓN
-        ================================== */
-
-        const botonEnviar =
-
-            document.getElementById(
-                "botonEnviarRegistro"
-            );
+                formularioRegistro.reportValidity();
 
 
-        /* ==================================
-              DESACTIVAR BOTÓN
-        ================================== */
+                return;
 
-        if (botonEnviar) {
+            }
 
 
-            botonEnviar.disabled =
-                true;
+            /* ==================================
+               CALCULAR EDAD ANTES DE ENVIAR
+            ================================== */
+
+            const edadCalculada =
+
+                calcularEdad(
+                    fechaNacimiento.value
+                );
 
 
-            botonEnviar.innerHTML = `
+            /* ==================================
+                 VALIDAR LA EDAD
+            ================================== */
+
+            if (
+                edadCalculada === "" ||
+                edadCalculada < 0
+            ) {
+
+
+                mensajeFormulario.className =
+
+                    "registro-mensaje error";
+
+
+                mensajeFormulario.textContent =
+
+                    "Por favor, ingresa una fecha de nacimiento válida.";
+
+
+                return;
+
+            }
+
+
+            if (campoEdad) {
+
+
+                campoEdad.value =
+                    edadCalculada;
+
+            }
+
+
+            const botonEnviar =
+
+                document.getElementById(
+                    "botonEnviarRegistro"
+                );
+
+
+
+            if (botonEnviar) {
+
+
+                botonEnviar.disabled =
+                    true;
+
+
+                botonEnviar.innerHTML = `
 
                 <span
                     class="spinner-border
@@ -2119,109 +2052,105 @@ formularioRegistro.addEventListener(
 
             `;
 
-        }
-
-
-        /* ==================================
-              OBTENER LOS DATOS
-        ================================== */
-
-        const datosFormulario =
-
-            new FormData(
-                formularioRegistro
-            );
-
-
-        /* ==================================
-             CORREO DE ARADU PET
-        ================================== */
-
-        const correoDestino =
-
-            "smoram2907@gmail.com";
-
-
-        /* ==================================
-                URL FORMSUBMIT
-        ================================== */
-
-        const urlEnvio =
-
-            "https://formsubmit.co/ajax/" +
-            correoDestino;
-
-
-        try {
-
-
-            /* ==================================
-                    ENVIAR DATOS
-            ================================== */
-
-            const respuesta =
-
-                await fetch(
-
-                    urlEnvio,
-
-                    {
-
-                        method:
-                            "POST",
-
-                        body:
-                            datosFormulario,
-
-                        headers: {
-
-                            "Accept":
-                                "application/json"
-
-                        }
-
-                    }
-
-                );
-
-
-            /* ==================================
-               CONVERTIR RESPUESTA A JSON
-            ================================== */
-
-            const resultado =
-
-                await respuesta.json();
-
-
-            /* ==================================
-               COMPROBAR SI FUE CORRECTO
-            ================================== */
-
-            if (!respuesta.ok) {
-
-
-                throw new Error(
-
-                    resultado.message ||
-
-                    "No se pudo enviar el formulario."
-
-                );
-
             }
 
 
             /* ==================================
-                    MENSAJE DE ÉXITO
+                  OBTENER LOS DATOS
             ================================== */
 
-            mensajeFormulario.className =
+            const datosFormulario =
 
-                "registro-mensaje exito";
+                new FormData(
+                    formularioRegistro
+                );
 
 
-            mensajeFormulario.innerHTML = `
+            /* ==================================
+                 CORREO DE ARADU PET
+            ================================== */
+
+            const correoDestino =
+
+                "aradupet123@gmail.com";
+
+
+            /* ==================================
+                    URL FORMSUBMIT
+            ================================== */
+
+            const urlEnvio =
+
+                "https://formsubmit.co/ajax/" +
+                correoDestino;
+
+
+            try {
+
+
+                /* ==================================
+                        ENVIAR DATOS
+                ================================== */
+
+                const respuesta =
+
+                    await fetch(
+
+                        urlEnvio,
+
+                        {
+
+                            method:
+                                "POST",
+
+                            body:
+                                datosFormulario,
+
+                            headers: {
+
+                                "Accept":
+                                    "application/json"
+
+                            }
+
+                        }
+
+                    );
+
+
+                /* ==================================
+                   CONVERTIR RESPUESTA A JSON
+                ================================== */
+
+                const resultado =
+
+                    await respuesta.json();
+
+
+                /* ==================================
+                   COMPROBAR SI FUE CORRECTO
+                ================================== */
+
+                if (!respuesta.ok) {
+
+
+                    throw new Error(
+
+                        resultado.message ||
+
+                        "No se pudo enviar el formulario."
+
+                    );
+
+                }
+
+
+                mensajeFormulario.className =
+
+                    "registro-mensaje exito";
+
+
+                mensajeFormulario.innerHTML = `
 
                 <i class="bi bi-check-circle-fill"></i>
 
@@ -2233,80 +2162,80 @@ formularioRegistro.addEventListener(
             `;
 
 
-            /* ==================================
-                  LIMPIAR FORMULARIO
-            ================================== */
+                /* ==================================
+                      LIMPIAR FORMULARIO
+                ================================== */
 
-            formularioRegistro.reset();
-
-
-            /* ==================================
-              RESTAURAR NIVEL DE INTERÉS
-            ================================== */
-
-            if (
-                nivelInteres &&
-                valorInteres
-            ) {
+                formularioRegistro.reset();
 
 
-                nivelInteres.value =
-                    "5";
+                /* ==================================
+                  RESTAURAR NIVEL DE INTERÉS
+                ================================== */
+
+                if (
+                    nivelInteres &&
+                    valorInteres
+                ) {
 
 
-                valorInteres.textContent =
-                    "5 / 10";
+                    nivelInteres.value =
+                        "5";
+
+
+                    valorInteres.textContent =
+                        "5 / 10";
+
+                }
+
+
+                /* ==================================
+                      LIMPIAR EDAD OCULTA
+                ================================== */
+
+                if (campoEdad) {
+
+
+                    campoEdad.value =
+                        "";
+
+                }
+
+
+                console.log(
+
+                    "Formulario enviado:",
+
+                    resultado
+
+                );
+
 
             }
 
 
-            /* ==================================
-                  LIMPIAR EDAD OCULTA
-            ================================== */
-
-            if (campoEdad) {
+            catch (error) {
 
 
-                campoEdad.value =
-                    "";
+                /* ==================================
+                        ERROR
+                ================================== */
 
-            }
+                console.error(
 
+                    "Error al enviar formulario:",
 
-            console.log(
+                    error
 
-                "Formulario enviado:",
-
-                resultado
-
-            );
+                );
 
 
-        }
+                mensajeFormulario.className =
+
+                    "registro-mensaje error";
 
 
-        catch (error) {
-
-
-            /* ==================================
-                    ERROR
-            ================================== */
-
-            console.error(
-
-                "Error al enviar formulario:",
-
-                error
-
-            );
-
-
-            mensajeFormulario.className =
-
-                "registro-mensaje error";
-
-
-            mensajeFormulario.innerHTML = `
+                mensajeFormulario.innerHTML = `
 
                 <i class="bi bi-exclamation-circle-fill"></i>
 
@@ -2317,24 +2246,24 @@ formularioRegistro.addEventListener(
             `;
 
 
-        }
+            }
 
 
-        finally {
+            finally {
 
 
-            /* ==================================
-                 ACTIVAR BOTÓN NUEVAMENTE
-            ================================== */
+                /* ==================================
+                     ACTIVAR BOTÓN NUEVAMENTE
+                ================================== */
 
-            if (botonEnviar) {
-
-
-                botonEnviar.disabled =
-                    false;
+                if (botonEnviar) {
 
 
-                botonEnviar.innerHTML = `
+                    botonEnviar.disabled =
+                        false;
+
+
+                    botonEnviar.innerHTML = `
 
                     <i class="bi bi-send-fill"></i>
 
@@ -2342,15 +2271,343 @@ formularioRegistro.addEventListener(
 
                 `;
 
+                }
+
+
             }
 
 
         }
 
+    );
+
+
+}
+
+/* =========================================================
+        CARGAR CONTENIDO DEL INDEX DESDE JSON
+========================================================= */
+
+function cargarContenidoIndex() {
+
+    fetch("json/index.json")
+
+        .then(function (respuesta) {
+
+            if (!respuesta.ok) {
+
+                throw new Error(
+                    "No se pudo cargar el archivo index.json"
+                );
+
+            }
+
+            return respuesta.json();
+
+        })
+
+        .then(function (datos) {
+
+            console.log(
+                "index.json cargado correctamente:",
+                datos
+            );
+
+
+            cargarLogo(datos.logo);
+
+            cargarCarousel(datos.carousel);
+
+            cargarImagenHistoria(datos.historia);
+
+            cargarImagenAcerca(datos.acerca);
+
+            cargarImagenesCreadores(datos.creadores);
+
+        })
+
+        .catch(function (error) {
+
+            console.error(
+                "Error al cargar index.json:",
+                error
+            );
+
+        });
+
+}
+
+/* =========================================================
+        LOGO NAVBAR
+========================================================= */
+
+function cargarLogo(logo) {
+
+    const contenedor =
+        document.getElementById(
+            "logoNavbar"
+        );
+
+
+    if (
+        !contenedor ||
+        !logo
+    ) {
+
+        return;
 
     }
 
-);
 
+    contenedor.innerHTML = `
+
+        <img
+            src="${logo.imagen}"
+            alt="${logo.alt}"
+            class="logo"
+        >
+
+    `;
+
+}
+
+/* =========================================================
+        CAROUSEL DESDE JSON
+========================================================= */
+
+function cargarCarousel(imagenes) {
+
+    const contenedor =
+        document.getElementById(
+            "carouselContenido"
+        );
+
+
+    if (
+        !contenedor ||
+        !Array.isArray(imagenes)
+    ) {
+
+        return;
+
+    }
+
+
+    contenedor.innerHTML = "";
+
+
+    imagenes.forEach(
+
+        function (
+            imagen,
+            indice
+        ) {
+
+
+            const activo =
+
+                indice === 0
+
+                    ? "active"
+
+                    : "";
+
+
+            const carouselItem = `
+
+                <div class="carousel-item ${activo}">
+
+                    <img
+                        src="${imagen.imagen}"
+                        class="d-block w-100 carousel-imagen"
+                        alt="${imagen.alt}"
+                    >
+
+                    <div
+                        class="carousel-caption
+                               d-none
+                               d-md-block"
+                    >
+
+                        <h1 class="fw-bold">
+
+                            ${imagen.titulo}
+
+                        </h1>
+
+                        <p>
+
+                            ${imagen.descripcion}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            contenedor.innerHTML +=
+                carouselItem;
+
+        }
+
+    );
+
+}
+
+/* =========================================================
+        IMAGEN HISTORIA
+========================================================= */
+
+function cargarImagenHistoria(historia) {
+
+    const contenedor =
+        document.getElementById(
+            "imagenHistoria"
+        );
+
+
+    if (
+        !contenedor ||
+        !historia
+    ) {
+
+        return;
+
+    }
+
+
+    contenedor.innerHTML = `
+
+        <img
+            src="${historia.imagen}"
+            alt="${historia.alt}"
+            class="historia-img"
+        >
+
+    `;
+
+}
+
+/* =========================================================
+        IMAGEN ACERCA DE
+========================================================= */
+
+function cargarImagenAcerca(acerca) {
+
+    const contenedor =
+        document.getElementById(
+            "imagenAcerca"
+        );
+
+
+    if (
+        !contenedor ||
+        !acerca
+    ) {
+
+        return;
+
+    }
+
+
+    contenedor.innerHTML = `
+
+        <img
+            src="${acerca.imagen}"
+            alt="${acerca.alt}"
+            class="img-fluid rounded shadow"
+        >
+
+    `;
+
+}
+
+/* =========================================================
+        IMÁGENES DE CREADORES
+========================================================= */
+
+function cargarImagenesCreadores(creadores) {
+
+    if (
+        !Array.isArray(creadores)
+    ) {
+
+        return;
+
+    }
+
+
+    const sebastian =
+        creadores.find(
+
+            function (creador) {
+
+                return creador.id === 1;
+
+            }
+
+        );
+
+
+    const camila =
+        creadores.find(
+
+            function (creador) {
+
+                return creador.id === 2;
+
+            }
+
+        );
+
+
+    const contenedorSebastian =
+        document.getElementById(
+            "imagenSebastian"
+        );
+
+
+    const contenedorCamila =
+        document.getElementById(
+            "imagenCamila"
+        );
+
+    if (
+        contenedorSebastian &&
+        sebastian
+    ) {
+
+        contenedorSebastian.innerHTML = `
+
+            <img
+                src="${sebastian.imagen}"
+                alt="${sebastian.alt}"
+                class="creador-imagen"
+            >
+
+        `;
+
+    }
+
+
+    if (
+        contenedorCamila &&
+        camila
+    ) {
+
+        contenedorCamila.innerHTML = `
+
+            <img
+                src="${camila.imagen}"
+                alt="${camila.alt}"
+                class="creador-imagen"
+            >
+
+        `;
+
+    }
 
 }

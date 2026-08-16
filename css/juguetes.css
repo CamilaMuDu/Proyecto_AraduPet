@@ -607,9 +607,6 @@ body {
         font-size: 16px;
     }
 
-
-    /* HERRAMIENTAS */
-
     .catalogo-herramientas {
         flex-direction: row;
         align-items: center;
@@ -731,5 +728,21 @@ body {
     grid-column: 1 / -1;
 
     width: 100%;
+
+}
+
+/* ==========================================
+   OCULTAR BOTÓN VOLVER AL ABRIR FILTROS
+========================================== */
+
+.boton-volver-flotante.oculto-filtros {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: scale(0.8);
 
 }

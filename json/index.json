@@ -1,0 +1,55 @@
+{
+    "logo": {
+        "imagen": "img/Logo.JPG",
+        "alt": "Logo Aradu Pet"
+    },
+
+    "carousel": [
+        {
+            "id": 1,
+            "imagen": "img/principal.png",
+            "alt": "Productos para mascotas",
+            "titulo": "Descubre los productos favoritos para tu mascota",
+            "descripcion": "Para una vida feliz y saludable."
+        },
+        {
+            "id": 2,
+            "imagen": "img/alimentos.png",
+            "alt": "Alimentos para mascotas",
+            "titulo": "Alimentos de calidad según sus necesidades",
+            "descripcion": "Productos seleccionados para una alimentación saludable y equilibrada."
+        },
+        {
+            "id": 3,
+            "imagen": "img/accesorios.png",
+            "alt": "Accesorios para mascotas",
+            "titulo": "Accesorios para tus mascotas",
+            "descripcion": "Consiente a tu mascota con accesorios, juguetes y artículos de higiene."
+        }
+    ],
+
+    "historia": {
+        "imagen": "imgCreators/DaniySofi.JPG",
+        "alt": "Historia del emprendimiento Aradu Pet"
+    },
+
+    "acerca": {
+        "imagen": "img/Logo.JPG",
+        "alt": "Logo Aradu Pet"
+    },
+
+    "creadores": [
+        {
+            "id": 1,
+            "nombre": "Sebastian Mora",
+            "imagen": "imgCreators/Sebas.JPG",
+            "alt": "Sebastian Mora"
+        },
+        {
+            "id": 2,
+            "nombre": "Camila Muñoz",
+            "imagen": "imgCreators/Cami.JPG",
+            "alt": "Camila Muñoz"
+        }
+    ]
+}

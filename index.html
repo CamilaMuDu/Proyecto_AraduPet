@@ -23,8 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-lg" id="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="img/Logo.JPG" alt="Logo Aradu Pet" class="logo">
+                <a class="navbar-brand" href="#" id="logoNavbar">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -113,7 +112,7 @@
                         </div>
 
                     </div>
-                    <!-- ===============================
+<!-- ===============================
         FIN BUSCADOR
 ================================ -->
                 </div>
@@ -126,128 +125,105 @@
 
 
     <!-------------------------------
-              INICIO CAROUSEL
-    -------------------------------->
-    <section class="seccion-carousel py-4">
+          INICIO CAROUSEL
+-------------------------------->
 
-        <div class="container">
+<section class="seccion-carousel py-4">
 
-            <div id="carouselAraduPet" class="carousel slide carousel-aradu shadow" data-bs-ride="carousel"
-                data-bs-interval="5000">
+    <div class="container">
 
-                <div class="carousel-indicators">
+        <div
+            id="carouselAraduPet"
+            class="carousel slide carousel-aradu shadow"
+            data-bs-ride="carousel"
+            data-bs-interval="5000"
+        >
 
-                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Imagen 1">
-                    </button>
+            <!-- INDICADORES -->
 
-                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="1" aria-label="Imagen 2">
-                    </button>
+            <div class="carousel-indicators">
 
-                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="2" aria-label="Imagen 3">
-                    </button>
-
-                </div>
-
-                <div class="carousel-inner">
-
-                    <!-- Primera imagen -->
-                    <div class="carousel-item active">
-
-                        <img src="img/principal.png" class="d-block w-100 carousel-imagen"
-                            alt="Productos para mascotas">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h1 class="fw-bold">
-                                Descubre los productos favoritos para tu mascota
-                            </h1>
-
-                            <p>
-                                Para una vida feliz y saludable.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <!-- Segunda imagen -->
-                    <div class="carousel-item">
-
-                        <img src="img/alimentos.png" class="d-block w-100 carousel-imagen"
-                            alt="Alimentos para mascotas">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h1 class="fw-bold">
-                                Alimentos de calidad según sus necesidades
-                            </h1>
-
-                            <p>
-                                Productos seleccionados para una alimentación saludable
-                                y equilibrada.
-                            </p>
-
-
-
-                        </div>
-
-                    </div>
-
-                    <!-- Tercera imagen -->
-                    <div class="carousel-item">
-
-                        <img src="img/accesorios.png" class="d-block w-100 carousel-imagen"
-                            alt="Accesorios para mascotas">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h1 class="fw-bold">
-                                Accesorios para tus mascotas
-                            </h1>
-
-                            <p>
-                                Consiente a tu mascota con accesorios, juguetes y
-                                artículos de higiene.
-                            </p>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Botón anterior -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAraduPet"
-                    data-bs-slide="prev">
-
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-                    <span class="visually-hidden">
-                        Anterior
-                    </span>
-
+                <button
+                    type="button"
+                    data-bs-target="#carouselAraduPet"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Imagen 1">
                 </button>
 
-                <!-- Botón siguiente -->
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselAraduPet"
-                    data-bs-slide="next">
+                <button
+                    type="button"
+                    data-bs-target="#carouselAraduPet"
+                    data-bs-slide-to="1"
+                    aria-label="Imagen 2">
+                </button>
 
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-                    <span class="visually-hidden">
-                        Siguiente
-                    </span>
-
+                <button
+                    type="button"
+                    data-bs-target="#carouselAraduPet"
+                    data-bs-slide-to="2"
+                    aria-label="Imagen 3">
                 </button>
 
             </div>
 
+            <div
+                class="carousel-inner"
+                id="carouselContenido">
+            </div>
+
+
+            <!-- BOTÓN ANTERIOR -->
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselAraduPet"
+                data-bs-slide="prev"
+            >
+
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Anterior
+                </span>
+
+            </button>
+
+
+            <!-- BOTÓN SIGUIENTE -->
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselAraduPet"
+                data-bs-slide="next"
+            >
+
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Siguiente
+                </span>
+
+            </button>
+
         </div>
-    </section>
-    <!-------------------------------
-                 FIN CAROUSEL
-    -------------------------------->
+
+    </div>
+
+</section>
+
+<!-------------------------------
+           FIN CAROUSEL
+-------------------------------->
 
     <!-------------------------------
             INICIO HISTORIA
@@ -262,9 +238,7 @@
 
             <div class="historia-content">
 
-                <div class="historia-imagen-contenedor">
-                    <img src="imgCreators/DaniySofi.JPG" alt="Historia del emprendimiento Aradu Pet"
-                        class="historia-img">
+                <div class="historia-imagen-contenedor" id="imagenHistoria">
                 </div>
 
                 <div class="historia-descripcion">
@@ -451,10 +425,7 @@
 
             <div class="row align-items-center">
 
-                <div class="col-lg-5 mb-4">
-
-                    <img src="img/Logo.JPG" class="img-fluid rounded shadow" alt="Logo Aradu Pet">
-
+                <div class="col-lg-5 mb-4" id="imagenAcerca">
                 </div>
 
                 <div class="col-lg-7">
@@ -533,25 +504,11 @@
 
                     <!-- CONFIGURACIÓN DEL CORREO -->
 
-    <input
-        type="hidden"
-        name="_subject"
-        value="Nuevo registro - Comunidad Aradu Pet"
-    >
+                    <input type="hidden" name="_subject" value="Nuevo registro - Comunidad Aradu Pet">
 
-    <input
-        type="hidden"
-        name="_template"
-        value="table"
-    >
+                    <input type="hidden" name="_template" value="table">
 
-    <input
-        type="text"
-        name="_honey"
-        style="display: none;"
-        tabindex="-1"
-        autocomplete="off"
-    >
+                    <input type="text" name="_honey" style="display: none;" tabindex="-1" autocomplete="off">
 
 
                     <!-- =====================================
@@ -1090,10 +1047,7 @@
             =========================== -->
                 <article class="creador-card">
 
-                    <div class="creador-imagen-contenedor">
-
-                        <img src="imgCreators/Sebas.JPG" alt="Sebastian Mora" class="creador-imagen">
-
+                    <div class="creador-imagen-contenedor" id="imagenSebastian">
                     </div>
 
                     <div class="creador-info">
@@ -1174,10 +1128,7 @@
             =========================== -->
                 <article class="creador-card">
 
-                    <div class="creador-imagen-contenedor">
-
-                        <img src="imgCreators/Cami.JPG" alt="Camila Muñoz" class="creador-imagen">
-
+                    <div class="creador-imagen-contenedor" id="imagenCamila">
                     </div>
 
                     <div class="creador-info">

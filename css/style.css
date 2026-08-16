@@ -221,9 +221,6 @@ body {
     z-index: 3;
 }
 
-
-/* TABLET Y ESCRITORIO */
-
 @media screen and (min-width: 769px) {
 
     .seccion-carousel {
@@ -1748,8 +1745,6 @@ footer p {
     }
 
 }
-
-/* TABLET Y ESCRITORIO */
 
 @media screen and (min-width: 769px) {
 

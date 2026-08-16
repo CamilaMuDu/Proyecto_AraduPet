@@ -11,6 +11,13 @@ const ubicacionAraduPet = {
 };
 
 
+/* ============================================
+        API KEY DE GOOGLE ROUTES
+============================================ */
+
+const GOOGLE_API_KEY = "AIzaSyCUPaz07bD7qi4hLy84OIZBTbCrPqWnB28";
+
+
 let mapa;
 let marcadorAradu;
 let directionsService;
@@ -32,39 +39,74 @@ function initMap() {
     );
 
 
-    /* Marcador de Aradu Pet */
+    /* ============================================
+            MARCADOR DE ARADU PET
+    ============================================ */
 
     marcadorAradu = new google.maps.Marker({
+
         position: ubicacionAraduPet,
+
         map: mapa,
+
         title: "Aradu Pet"
+
     });
 
 
-    /* Información del local */
+    /* ============================================
+            INFORMACIÓN DEL LOCAL
+    ============================================ */
 
-    const informacionAradu = new google.maps.InfoWindow({
-        content: `
-            <div>
-                <h5>Aradu Pet</h5>
-                <p>Villa Bonita, Alajuela, Costa Rica</p>
-                <strong>Tienda y atención veterinaria</strong>
-            </div>
-        `
-    });
+    const informacionAradu =
+        new google.maps.InfoWindow({
 
+            content: `
 
-    marcadorAradu.addListener("click", function () {
+                <div>
 
-        informacionAradu.open({
-            anchor: marcadorAradu,
-            map: mapa
+                    <h5>
+                        Aradu Pet
+                    </h5>
+
+                    <p>
+                        Villa Bonita,
+                        Alajuela,
+                        Costa Rica
+                    </p>
+
+                    <strong>
+                        Tienda y atención veterinaria
+                    </strong>
+
+                </div>
+
+            `
+
         });
 
-    });
+
+    marcadorAradu.addListener(
+        "click",
+        function () {
+
+            informacionAradu.open({
+
+                anchor:
+                    marcadorAradu,
+
+                map:
+                    mapa
+
+            });
+
+        }
+    );
 
 
-    /* Servicio para calcular rutas */
+    /* ============================================
+            SERVICIO VISUAL DE RUTAS
+    ============================================ */
 
     directionsService =
         new google.maps.DirectionsService();
@@ -72,21 +114,31 @@ function initMap() {
 
     directionsRenderer =
         new google.maps.DirectionsRenderer({
-            map: mapa
+
+            map:
+                mapa
+
         });
 
 
-    /* Botón para calcular ruta */
+    /* ============================================
+            BOTÓN DE RUTA
+    ============================================ */
 
     const botonRuta =
-        document.getElementById("btnRuta");
+        document.getElementById(
+            "btnRuta"
+        );
 
 
     if (botonRuta) {
 
         botonRuta.addEventListener(
+
             "click",
+
             obtenerUbicacionUsuario
+
         );
 
     }
@@ -101,31 +153,53 @@ function initMap() {
 function obtenerUbicacionUsuario() {
 
     const informacionRuta =
-        document.getElementById("informacionRuta");
+        document.getElementById(
+            "informacionRuta"
+        );
 
 
     informacionRuta.innerHTML =
         "Obteniendo tu ubicación...";
 
 
+    /* ============================================
+            VERIFICAR GEOLOCALIZACIÓN
+    ============================================ */
+
     if (!navigator.geolocation) {
 
-        informacionRuta.innerHTML =
-            "Tu navegador no permite utilizar geolocalización.";
+        informacionRuta.innerHTML = `
+
+            <div class="alert alert-danger">
+
+                Tu navegador no permite
+                utilizar geolocalización.
+
+            </div>
+
+        `;
 
         return;
+
     }
 
+
+    /* ============================================
+            SOLICITAR UBICACIÓN
+    ============================================ */
 
     navigator.geolocation.getCurrentPosition(
 
         function (posicion) {
 
+
             const ubicacionUsuario = {
 
-                lat: posicion.coords.latitude,
+                lat:
+                    posicion.coords.latitude,
 
-                lng: posicion.coords.longitude
+                lng:
+                    posicion.coords.longitude
 
             };
 
@@ -136,7 +210,20 @@ function obtenerUbicacionUsuario() {
             );
 
 
-            calcularRuta(
+            /* ====================================
+                    DIBUJAR RUTA EN MAPA
+            ==================================== */
+
+            dibujarRutaGoogleMaps(
+                ubicacionUsuario
+            );
+
+
+            /* ====================================
+                    CONSUMO API REST
+            ==================================== */
+
+            consumirRoutesAPI(
                 ubicacionUsuario
             );
 
@@ -152,19 +239,35 @@ function obtenerUbicacionUsuario() {
 
 
             informacionRuta.innerHTML = `
+
                 <div class="alert alert-danger">
-                    No fue posible obtener tu ubicación.
-                    Debes permitir el acceso a la ubicación.
+
+                    No fue posible obtener
+                    tu ubicación.
+
+                    <br>
+
+                    Debes permitir el acceso
+                    a la ubicación.
+
                 </div>
+
             `;
 
         },
 
 
         {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0
+
+            enableHighAccuracy:
+                true,
+
+            timeout:
+                10000,
+
+            maximumAge:
+                0
+
         }
 
     );
@@ -173,22 +276,23 @@ function obtenerUbicacionUsuario() {
 
 
 /* ============================================
-        CALCULAR RUTA
+        DIBUJAR RUTA EN GOOGLE MAPS
 ============================================ */
 
-function calcularRuta(ubicacionUsuario) {
-
-    const informacionRuta =
-        document.getElementById("informacionRuta");
+function dibujarRutaGoogleMaps(
+    ubicacionUsuario
+) {
 
 
     directionsService.route(
 
         {
 
-            origin: ubicacionUsuario,
+            origin:
+                ubicacionUsuario,
 
-            destination: ubicacionAraduPet,
+            destination:
+                ubicacionAraduPet,
 
             travelMode:
                 google.maps.TravelMode.DRIVING
@@ -196,65 +300,307 @@ function calcularRuta(ubicacionUsuario) {
         },
 
 
-        function (resultado, estado) {
+        function (
+            resultado,
+            estado
+        ) {
 
-            if (estado === "OK") {
+
+            if (
+                estado === "OK"
+            ) {
 
                 directionsRenderer
-                    .setDirections(resultado);
+                    .setDirections(
+                        resultado
+                    );
 
 
-                const ruta =
-                    resultado.routes[0].legs[0];
-
-
-                informacionRuta.innerHTML = `
-
-                    <div class="alert alert-success">
-
-                        <strong>
-                            Ruta hacia Aradu Pet
-                        </strong>
-
-                        <br>
-
-                        Distancia:
-                        ${ruta.distance.text}
-
-                        <br>
-
-                        Tiempo aproximado:
-                        ${ruta.duration.text}
-
-                    </div>
-
-                `;
+                console.log(
+                    "Ruta dibujada correctamente."
+                );
 
             }
+
 
             else {
 
                 console.error(
-                    "Error al calcular ruta:",
+                    "Error al dibujar ruta:",
                     estado
                 );
-
-
-                informacionRuta.innerHTML = `
-
-                    <div class="alert alert-danger">
-
-                        No fue posible calcular
-                        la ruta hacia Aradu Pet.
-
-                    </div>
-
-                `;
 
             }
 
         }
 
     );
+
+}
+
+
+/* ============================================
+        CONSUMO API REST EXTERNA
+        GOOGLE ROUTES API
+============================================ */
+
+async function consumirRoutesAPI(
+    ubicacionUsuario
+) {
+
+
+    const informacionRuta =
+        document.getElementById(
+            "informacionRuta"
+        );
+
+    const url =
+        "https://routes.googleapis.com/directions/v2:computeRoutes";
+
+    const datosRuta = {
+
+        origin: {
+
+            location: {
+
+                latLng: {
+
+                    latitude:
+                        ubicacionUsuario.lat,
+
+                    longitude:
+                        ubicacionUsuario.lng
+
+                }
+
+            }
+
+        },
+
+
+        destination: {
+
+            location: {
+
+                latLng: {
+
+                    latitude:
+                        ubicacionAraduPet.lat,
+
+                    longitude:
+                        ubicacionAraduPet.lng
+
+                }
+
+            }
+
+        },
+
+
+        travelMode:
+            "DRIVE",
+
+
+        routingPreference:
+            "TRAFFIC_AWARE",
+
+
+        languageCode:
+            "es-419",
+
+
+        units:
+            "METRIC"
+
+    };
+
+
+    try {
+
+
+        /* ============================================
+                CONSUMO REST
+        ============================================ */
+
+        const respuesta =
+            await fetch(
+
+                url,
+
+                {
+
+                    method:
+                        "POST",
+
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+
+                        "X-Goog-Api-Key":
+                            GOOGLE_API_KEY,
+
+
+                        "X-Goog-FieldMask":
+                            "routes.duration,routes.distanceMeters"
+
+                    },
+
+
+                    body:
+                        JSON.stringify(
+                            datosRuta
+                        )
+
+                }
+
+            );
+
+        if (!respuesta.ok) {
+
+            throw new Error(
+
+                "Error HTTP: " +
+                respuesta.status
+
+            );
+
+        }
+
+
+        /* ============================================
+                CONVERTIR A JSON
+        ============================================ */
+
+        const datos =
+            await respuesta.json();
+
+
+        console.log(
+            "Respuesta REST de Google Routes:",
+            datos
+        );
+
+
+        /* ============================================
+                VALIDAR QUE EXISTA RUTA
+        ============================================ */
+
+        if (
+            !datos.routes ||
+            datos.routes.length === 0
+        ) {
+
+            throw new Error(
+                "Google no devolvió ninguna ruta."
+            );
+
+        }
+
+
+        const ruta =
+            datos.routes[0];
+
+
+        /* ============================================
+                DISTANCIA
+        ============================================ */
+
+        const distanciaKm =
+            (
+                ruta.distanceMeters /
+                1000
+            ).toFixed(2);
+
+
+        /* ============================================
+                DURACIÓN
+        ============================================ */
+
+        const segundos =
+            parseInt(
+                ruta.duration
+            );
+
+
+        const minutos =
+            Math.round(
+                segundos / 60
+            );
+
+
+        /* ============================================
+                MOSTRAR RESULTADO
+        ============================================ */
+
+        informacionRuta.innerHTML = `
+
+            <div class="alert alert-success">
+
+                <strong>
+                    Ruta hacia Aradu Pet
+                </strong>
+
+                <br><br>
+
+                <i class="bi bi-signpost-2-fill"></i>
+
+                Distancia:
+
+                <strong>
+                    ${distanciaKm} km
+                </strong>
+
+                <br>
+
+
+                <i class="bi bi-clock-fill"></i>
+
+                Tiempo aproximado:
+
+                <strong>
+                    ${minutos} minutos
+                </strong>
+
+                <br><br>
+
+                <small>
+
+                    Información obtenida mediante
+                    Google Routes.
+
+                </small>
+
+            </div>
+
+        `;
+
+
+    }
+
+
+    catch (error) {
+
+
+        console.error(
+            "Error consumiendo Google Routes API:",
+            error
+        );
+
+
+        informacionRuta.innerHTML = `
+
+            <div class="alert alert-danger">
+
+                No fue posible consultar
+                la ruta
+
+            </div>
+
+        `;
+
+    }
 
 }

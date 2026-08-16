@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const limpiarFiltros =
         document.getElementById("limpiarFiltros");
 
+    const botonVolver =
+        document.querySelector(
+            ".boton-volver-flotante"
+        );
+
 
     /* ==========================================
              ARREGLO DE ACCESORIOS
@@ -617,45 +622,100 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ==========================================
-          ABRIR FILTROS - JQUERY
-    ========================================== */
+/* ==========================================
+      ABRIR FILTROS - JQUERY
+========================================== */
 
-    $("#abrirFiltros").on(
+$("#abrirFiltros").on(
 
-        "click",
+    "click",
 
-        function () {
-
-
-            $("#panelFiltros")
-                .addClass("mostrar");
+    function () {
 
 
-            $("#fondoFiltros")
-                .addClass("mostrar");
+        $("#panelFiltros")
+            .addClass("mostrar");
 
 
-            $("body")
-                .css(
-                    "overflow",
-                    "hidden"
-                );
+        $("#fondoFiltros")
+            .addClass("mostrar");
+
+
+        $("body")
+            .css(
+                "overflow",
+                "hidden"
+            );
+
+
+        /* OCULTAR BOTÓN REGRESAR */
+
+        if (botonVolver) {
+
+            botonVolver.classList.add(
+                "oculto-filtros"
+            );
 
         }
 
-    );
+    }
+
+);
+
+
+  /* ==========================================
+      CERRAR FILTROS - JQUERY
+========================================== */
+
+$("#cerrarFiltros, #fondoFiltros").on(
+
+    "click",
+
+    function () {
+
+
+        $("#panelFiltros")
+            .removeClass("mostrar");
+
+
+        $("#fondoFiltros")
+            .removeClass("mostrar");
+
+
+        $("body")
+            .css(
+                "overflow",
+                ""
+            );
+
+
+        /* MOSTRAR BOTÓN REGRESAR */
+
+        if (botonVolver) {
+
+            botonVolver.classList.remove(
+                "oculto-filtros"
+            );
+
+        }
+
+    }
+
+);
 
 
     /* ==========================================
-          CERRAR FILTROS - JQUERY
-    ========================================== */
+         ESCAPE - JQUERY
+========================================== */
 
-    $("#cerrarFiltros, #fondoFiltros").on(
+$(document).on(
 
-        "click",
+    "keydown",
 
-        function () {
+    function (evento) {
+
+
+        if (evento.key === "Escape") {
 
 
             $("#panelFiltros")
@@ -672,44 +732,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     ""
                 );
 
-        }
 
-    );
+            /* MOSTRAR BOTÓN REGRESAR */
 
+            if (botonVolver) {
 
-    /* ==========================================
-             ESCAPE - JQUERY
-    ========================================== */
-
-    $(document).on(
-
-        "keydown",
-
-        function (evento) {
-
-
-            if (evento.key === "Escape") {
-
-
-                $("#panelFiltros")
-                    .removeClass("mostrar");
-
-
-                $("#fondoFiltros")
-                    .removeClass("mostrar");
-
-
-                $("body")
-                    .css(
-                        "overflow",
-                        ""
-                    );
+                botonVolver.classList.remove(
+                    "oculto-filtros"
+                );
 
             }
 
         }
 
-    );
+    }
+
+);
 
 
     /* ==========================================
