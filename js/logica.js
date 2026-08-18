@@ -138,26 +138,6 @@ function iniciarBuscador() {
         {
 
             titulo:
-                "Categorías",
-
-            descripcion:
-                "Consulta todos nuestros productos",
-
-            palabras:
-                "categorias categorías productos catalogo catálogo alimentos accesorios juguetes snacks higiene tienda",
-
-            destino:
-                "categorias",
-
-            tipo:
-                "Sección"
-
-        },
-
-
-        {
-
-            titulo:
                 "Multimedia",
 
             descripcion:
