@@ -40,10 +40,6 @@
                             <a class="nav-link" href="#historia">Historia
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#categorias">Categorías
-                            </a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -112,7 +108,7 @@
                         </div>
 
                     </div>
-<!-- ===============================
+                    <!-- ===============================
         FIN BUSCADOR
 ================================ -->
                 </div>
@@ -128,100 +124,67 @@
           INICIO CAROUSEL
 -------------------------------->
 
-<section class="seccion-carousel py-4">
+    <section class="seccion-carousel py-4">
 
-    <div class="container">
+        <div class="container">
 
-        <div
-            id="carouselAraduPet"
-            class="carousel slide carousel-aradu shadow"
-            data-bs-ride="carousel"
-            data-bs-interval="5000"
-        >
+            <div id="carouselAraduPet" class="carousel slide carousel-aradu shadow" data-bs-ride="carousel"
+                data-bs-interval="5000">
 
-            <!-- INDICADORES -->
+                <div class="carousel-indicators">
 
-            <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Imagen 1">
+                    </button>
 
-                <button
-                    type="button"
-                    data-bs-target="#carouselAraduPet"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Imagen 1">
+                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="1" aria-label="Imagen 2">
+                    </button>
+
+                    <button type="button" data-bs-target="#carouselAraduPet" data-bs-slide-to="2" aria-label="Imagen 3">
+                    </button>
+
+                </div>
+
+                <div class="carousel-inner" id="carouselContenido">
+                </div>
+
+
+                <!-- BOTÓN ANTERIOR -->
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAraduPet"
+                    data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon" aria-hidden="true">
+                    </span>
+
+                    <span class="visually-hidden">
+                        Anterior
+                    </span>
+
                 </button>
 
-                <button
-                    type="button"
-                    data-bs-target="#carouselAraduPet"
-                    data-bs-slide-to="1"
-                    aria-label="Imagen 2">
-                </button>
 
-                <button
-                    type="button"
-                    data-bs-target="#carouselAraduPet"
-                    data-bs-slide-to="2"
-                    aria-label="Imagen 3">
+                <!-- BOTÓN SIGUIENTE -->
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAraduPet"
+                    data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon" aria-hidden="true">
+                    </span>
+
+                    <span class="visually-hidden">
+                        Siguiente
+                    </span>
+
                 </button>
 
             </div>
-
-            <div
-                class="carousel-inner"
-                id="carouselContenido">
-            </div>
-
-
-            <!-- BOTÓN ANTERIOR -->
-
-            <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselAraduPet"
-                data-bs-slide="prev"
-            >
-
-                <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true">
-                </span>
-
-                <span class="visually-hidden">
-                    Anterior
-                </span>
-
-            </button>
-
-
-            <!-- BOTÓN SIGUIENTE -->
-
-            <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselAraduPet"
-                data-bs-slide="next"
-            >
-
-                <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true">
-                </span>
-
-                <span class="visually-hidden">
-                    Siguiente
-                </span>
-
-            </button>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-<!-------------------------------
+    <!-------------------------------
            FIN CAROUSEL
 -------------------------------->
 
